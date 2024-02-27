@@ -1,6 +1,7 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
+import 'package:digibank/global_widget/text_refactor.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -16,7 +17,7 @@ class Home extends StatelessWidget {
         child: Scaffold(
       appBar: GlobalAppBar(
         title: 'Welcome',
-        centertitle: false,
+        centerTitle: false,
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
           IconButton(onPressed: () {}, icon: Icon(Icons.logout_outlined)),
@@ -40,9 +41,7 @@ class Home extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  
-                ],
+                children: [],
               ),
             )
           ],
@@ -51,24 +50,25 @@ class Home extends StatelessWidget {
     ));
   }
 
-  Column cardIcon(BuildContext context,{required route(),required title,required icon}) {
+  Column cardIcon(BuildContext context,
+      {required route(), required title, required icon}) {
     return Column(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => route()));
-                        },
-                        icon: FaIcon(
-                          // FontAwesomeIcons.moneyBillTransfer
-                          icon,
-                          color: ColorTheme.white,
-                        )),
-                    Text(
-                      title,
-                      style: GlobalTextStyles.labeltxt,
-                    )
-                  ],
-                );
+      children: [
+        IconButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => route()));
+            },
+            icon: FaIcon(
+              // FontAwesomeIcons.moneyBillTransfer
+              icon,
+              color: ColorTheme.white,
+            )),
+        Text(
+          title,
+          style: GlobalTextStyles.labeltxt,
+        )
+      ],
+    );
   }
 }
