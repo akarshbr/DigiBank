@@ -4,13 +4,13 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final Widget? leading;
   final List<Widget>? actions;
-  final bool? centertitle;
+  final bool? centerTitle;
 
   GlobalAppBar({
     this.title,
     this.leading,
     this.actions, 
-    this.centertitle=true,
+    this.centerTitle=true,
   });
 
   @override
@@ -19,7 +19,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(title!, style: TextStyle(
         fontFamily: 'Poppins',
       ),),
-      centerTitle: centertitle,
+      centerTitle: centerTitle,
       backgroundColor: ColorTheme.white,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
