@@ -1,6 +1,7 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
+import 'package:digibank/presentation/request_money/view/request_money.dart';
 import 'package:digibank/presentation/send_money_screen/view/send_money_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -46,6 +47,18 @@ class Home extends StatelessWidget {
                       route: SendMoney(),
                       title: "Send Money",
                       icon: FontAwesomeIcons.moneyBillTransfer),
+                  cardIcon(context,
+                      route: RequestMoney(),
+                      title: "Request Money",
+                      icon: FontAwesomeIcons.moneyCheck),
+                  cardIcon(context,
+                      route: null, //TODO
+                      title: "Account Summary",
+                      icon: FontAwesomeIcons.idCardClip),
+                  cardIcon(context,
+                      route: null,
+                      title: "Send Money",
+                      icon: FontAwesomeIcons.ellipsis),
                 ],
               ),
             )
