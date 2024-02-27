@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
         // ),
       ],
       child: MaterialApp(
-
         debugShowCheckedModeBanner: false,
         title: 'Digi Bank',
         theme: isDark == true ? ThemeData.dark() : ThemeData.light(),
