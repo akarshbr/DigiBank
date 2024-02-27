@@ -1,3 +1,4 @@
+import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/presentation/home/view/home.dart';
 import 'package:digibank/presentation/profile/view/profile.dart';
 import 'package:digibank/presentation/transaction/view/transaction.dart';
@@ -40,10 +41,10 @@ class BottomNavigation extends StatelessWidget {
                   elevation: 0,
                   backgroundColor: ColorTheme.white,
                   unselectedItemColor: ColorTheme.black,
-                  selectedItemColor: ColorTheme.yellow,
+                  selectedItemColor: ColorTheme.darkClr,
                   showSelectedLabels: true,
                   showUnselectedLabels: false,
-                  selectedLabelStyle: GoogleFonts.kanit(fontSize: 11),
+                  selectedLabelStyle: GlobalTextStyles.bottomlabel,
                   items: [
                     BottomNavigationBarItem(
                         icon: Icon(
