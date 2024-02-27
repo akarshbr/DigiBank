@@ -1,4 +1,3 @@
-import 'package:digibank/presentation/login_screen/view/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -18,14 +17,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return MaterialApp(
-      home: LoginScreen(),
-    );
-  }
-}
-
-=======
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return MultiProvider(
       providers: [
@@ -37,7 +28,7 @@ class MyApp extends StatelessWidget {
         // ),
       ],
       child: MaterialApp(
-        
+
         debugShowCheckedModeBanner: false,
         title: 'Digi Bank',
         theme: isDark == true ? ThemeData.dark() : ThemeData.light(),
@@ -46,4 +37,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
->>>>>>> 27666745bc056990fda0183bf215638b893c0d62
