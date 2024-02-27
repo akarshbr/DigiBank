@@ -1,7 +1,7 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
-import 'package:digibank/global_widget/text_refactor.dart';
+import 'package:digibank/presentation/send_money_screen/view/send_money_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -41,7 +41,12 @@ class Home extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [],
+                children: [
+                  cardIcon(context,
+                      route: SendMoney(),
+                      title: "Send Money",
+                      icon: FontAwesomeIcons.moneyBillTransfer),
+                ],
               ),
             )
           ],
@@ -51,13 +56,13 @@ class Home extends StatelessWidget {
   }
 
   Column cardIcon(BuildContext context,
-      {required route(), required title, required icon}) {
+      {required route, required title, required icon}) {
     return Column(
       children: [
         IconButton(
             onPressed: () {
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => route()));
+                  .push(MaterialPageRoute(builder: (context) => route));
             },
             icon: FaIcon(
               // FontAwesomeIcons.moneyBillTransfer
