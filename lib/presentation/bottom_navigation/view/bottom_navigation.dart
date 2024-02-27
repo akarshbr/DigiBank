@@ -1,5 +1,7 @@
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/presentation/home/view/home.dart';
+import 'package:digibank/presentation/profile/view/profile.dart';
+import 'package:digibank/presentation/transaction/view/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -19,16 +21,14 @@ class BottomNavigation extends StatelessWidget {
           builder: (context, provider, child) {
             return IndexedStack(
               index: provider.currentIndex,
-              children: [
-                Home()
-              ],
+              children: [Home(), TransactionScreen(), ProfileScreen()],
             );
           },
         ),
         bottomNavigationBar: Consumer<BottomNavigationController>(
           builder: (context, provider, child) {
             return Padding(
-              padding: const EdgeInsets.only(left: 5,right: 5,bottom: 5),
+              padding: const EdgeInsets.only(left: 5, right: 5, bottom: 5),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: BottomNavigationBar(
@@ -36,11 +36,10 @@ class BottomNavigation extends StatelessWidget {
                     provider.currentIndex = index;
                     print("tapped ${provider.currentIndex}");
                   },
-                  
                   type: BottomNavigationBarType.fixed,
                   currentIndex: provider.currentIndex,
                   elevation: 0,
-                 backgroundColor: ColorTheme.white,
+                  backgroundColor: ColorTheme.white,
                   unselectedItemColor: ColorTheme.black,
                   selectedItemColor: ColorTheme.darkClr,
                   showSelectedLabels: true,
@@ -65,7 +64,6 @@ class BottomNavigation extends StatelessWidget {
                         ),
                         label: "Profile",
                         activeIcon: Icon(Icons.person_2)),
-                        
                   ],
                 ),
               ),
