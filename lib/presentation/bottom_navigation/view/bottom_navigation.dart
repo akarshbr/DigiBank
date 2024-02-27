@@ -41,7 +41,7 @@ class BottomNavigation extends StatelessWidget {
                   elevation: 0,
                  backgroundColor: ColorTheme.white,
                   unselectedItemColor: ColorTheme.black,
-                  selectedItemColor: ColorTheme.yellow,
+                  selectedItemColor: ColorTheme.mainClr,
                   showSelectedLabels: true,
                   showUnselectedLabels: false,
                   selectedLabelStyle: GoogleFonts.kanit(fontSize: 11),
