@@ -10,11 +10,14 @@ class TextFormFieldRefactor extends StatelessWidget {
   final TextEditingController? textEditingController;
   final String? hintText;
 
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: textEditingController,
-      decoration: InputDecoration(),
+      decoration: InputDecoration(
+        border: OutlineInputBorder(borderSide: BorderSide(width: .1, color: Colors.white54))
+         ),
     );
   }
 }
