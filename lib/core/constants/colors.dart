@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
+
 class ColorTheme {
-  static Color yellow = Color(0xFFF5C754);
+  static Color mainClr = Color(0xFFF5C754);
   static Color white = Color(0xFFffffff);
   static Color black = Color.fromARGB(255, 0, 0, 0);
-  static Color blue = Color(0xFF405473);
+  static Color darkClr = Color(0xFF405473);
+  static Color red = Color.fromARGB(255, 209, 0, 0);
+  static Color green = Color(0xFF00c254);
+  static Color grey = Color(0xFF989898);
 }
+
+

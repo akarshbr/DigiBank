@@ -1,5 +1,7 @@
 import 'package:digibank/core/constants/colors.dart';
+import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final Widget? leading;
@@ -16,15 +18,10 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title!, style: TextStyle(
-        fontFamily: 'Poppins',
-      ),),
+      title: Text(title!,
+       style: GlobalTextStyles.titleStyl),
       centerTitle: centerTitle,
       backgroundColor: ColorTheme.white,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(20),
-              bottomLeft: Radius.circular(20))),
       leading: leading,
       actions: actions,
     );
