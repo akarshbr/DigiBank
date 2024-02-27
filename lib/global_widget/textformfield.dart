@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class GlobalTextfield extends StatelessWidget {
@@ -9,9 +10,9 @@ class GlobalTextfield extends StatelessWidget {
   final int? maxLines;
   final Key? formkey;
   final Widget? suffixIcon;
-  final bool readonly;
+  final bool? readonly;
   final String? hintText;
-  final bool obscuretext;
+  final bool? obscuretext;
   final List<TextInputFormatter>? inputFormatters;
 
   GlobalTextfield({
@@ -23,14 +24,14 @@ class GlobalTextfield extends StatelessWidget {
     this.maxLines,
     this.formkey,
     this.suffixIcon,
-    required this.readonly,
+    this.readonly,
     this.hintText,
-    required this.obscuretext,
-    required this.inputFormatters,
+    this.obscuretext=false,
+    this.inputFormatters,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Form(child: TextFormField());
   }
 }
