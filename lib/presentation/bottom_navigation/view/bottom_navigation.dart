@@ -1,3 +1,4 @@
+import 'package:digibank/presentation/home/view/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,9 @@ class BottomNavigation extends StatelessWidget {
           builder: (context, provider, child) {
             return IndexedStack(
               index: provider.currentIndex,
-              children: [],
+              children: [
+                Home()
+              ],
             );
           },
         ),
@@ -55,12 +58,6 @@ class BottomNavigation extends StatelessWidget {
                         ),
                         label: "Transaction",
                         activeIcon: Icon(Icons.payments)),
-                    BottomNavigationBarItem(
-                        icon: Icon(
-                          Icons.payment_outlined,
-                        ),
-                        label: "Payments",
-                        activeIcon: Icon(Icons.payment)),
                     BottomNavigationBarItem(
                         icon: Icon(
                           Icons.person_2_outlined,
