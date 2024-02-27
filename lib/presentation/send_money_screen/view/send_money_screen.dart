@@ -2,7 +2,7 @@ import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/global_widget/text_form_field.dart';
 import 'package:flutter/material.dart';
 
-import '../../../global_widget/text.dart';
+import '../../../global_widget/text_refactor.dart';
 
 void main() {
   runApp(MaterialApp(

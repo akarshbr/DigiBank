@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'presentation/bottom_navigation/controller/bottom_nav_controller.dart';
-import 'presentation/bottom_navigation/view/bottom_navigation.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.grey));
