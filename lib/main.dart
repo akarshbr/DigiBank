@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    // var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Digi Bank',

@@ -8,7 +8,7 @@ class PinAndOtpBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     return Container(
       height: 64,
       width: 64,
