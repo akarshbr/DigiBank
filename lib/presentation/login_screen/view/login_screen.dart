@@ -2,6 +2,7 @@ import 'package:digibank/global_widget/pin_and_otp_box.dart';
 import 'package:digibank/global_widget/text_refactor.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/colors.dart';
 import '../../bottom_navigation/view/bottom_navigation.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -35,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                 },
                 child: TextRefactor(text: "Login",textSize: 16,textFontWeight: FontWeight.bold),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFF5C754),
+                    backgroundColor: ColorTheme.mainClr,
                     padding: EdgeInsets.only(left: size.width * .2, right: size.width * .2,top: size.height*.02,bottom: size.height*.02),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
               ),
