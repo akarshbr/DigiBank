@@ -1,11 +1,13 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
-import 'package:digibank/presentation/send_money_screen/view/send_money_screen.dart';
+import 'package:digibank/presentation/home/widget/icon_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../global_widget/drawer_refactored.dart';
+import '../widget/user_details.dart';
+import '../widget/user_function.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -15,7 +17,7 @@ class Home extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      appBar: GlobalAppBar(
+      appBar: GLAppBar(
         title: 'Welcome',
         centerTitle: false,
         actions: [
@@ -28,52 +30,87 @@ class Home extends StatelessWidget {
       ),
       drawer: DrawerRefactored(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         child: ListView(
           children: [
+            //users functions card  TODO => add accountsummary page route in the below card
+            UsersFunctions(size, context),
+            SizedBox(
+              height: size.height * .05,
+            ),
+            //user details TODO=> add page routes
+            UserDetailsCard(size),
+            SizedBox(
+              height: size.height * .05,
+            ),
+            Text(
+              "Recharge & Pay Bills",
+              style: GLTextStyles.subtitleBlk,
+            ),
+            SizedBox(
+              height: size.height * .05,
+            ),
             Container(
-              width: size.width * .9,
-              height: size.width * .22,
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: ColorTheme.darkClr,
-                  borderRadius: BorderRadius.circular(10)),
+              width: size.aspectRatio,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  cardIcon(context,
-                      route: SendMoney(),
-                      title: "Send Money",
-                      icon: FontAwesomeIcons.moneyBillTransfer),
+                  //TODO
+                  IconBtn(context,
+                      route: null,
+                      title: "Mobile",
+                      icon: FontAwesomeIcons.mobileButton,
+                      style: GLTextStyles.labeltxtBlk,
+                      color: ColorTheme.black),
+                  IconBtn(context,
+                      route: null,
+                      title: "Electricity",
+                      icon: FontAwesomeIcons.lightbulb,
+                      style: GLTextStyles.labeltxtBlk,
+                      color: ColorTheme.black),
+                  IconBtn(context,
+                      route: null,
+                      title: "Credit Card",
+                      icon: FontAwesomeIcons.creditCard,
+                      style: GLTextStyles.labeltxtBlk,
+                      color: ColorTheme.black),
+                  IconBtn(context,
+                      route: null,
+                      title: "More",
+                      icon: FontAwesomeIcons.ellipsis,
+                      style: GLTextStyles.labeltxtBlk,
+                      color: ColorTheme.black)
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: size.height * .05,
+            ),
+            Text(
+              "Loans",
+              style: GLTextStyles.subtitleBlk,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 150,
+                    height: 50,
+                    color: ColorTheme.darkClr,
+                  ),
+                  Container(
+                    width: 150,
+                    height: 50,
+                    color: ColorTheme.darkClr,
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
     ));
-  }
-
-  Column cardIcon(BuildContext context,
-      {required route, required title, required icon}) {
-    return Column(
-      children: [
-        IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => route));
-            },
-            icon: FaIcon(
-              // FontAwesomeIcons.moneyBillTransfer
-              icon,
-              color: ColorTheme.white,
-            )),
-        Text(
-          title,
-          style: GlobalTextStyles.labeltxt,
-        )
-      ],
-    );
   }
 }

@@ -3,7 +3,6 @@ import 'package:digibank/presentation/home/view/home.dart';
 import 'package:digibank/presentation/profile/view/profile.dart';
 import 'package:digibank/presentation/transaction/view/transaction.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/constants/colors.dart';
@@ -36,7 +35,7 @@ class BottomNavigation extends StatelessWidget {
                     provider.currentIndex = index;
                     print("tapped ${provider.currentIndex}");
                   },
-                  type: BottomNavigationBarType.fixed,
+                  type: BottomNavigationBarType.shifting,
                   currentIndex: provider.currentIndex,
                   elevation: 0,
                   backgroundColor: ColorTheme.white,
@@ -44,7 +43,7 @@ class BottomNavigation extends StatelessWidget {
                   selectedItemColor: ColorTheme.darkClr,
                   showSelectedLabels: true,
                   showUnselectedLabels: false,
-                  selectedLabelStyle: GlobalTextStyles.bottomlabel,
+                  selectedLabelStyle: GLTextStyles.bottomlabel,
                   items: [
                     BottomNavigationBarItem(
                         icon: Icon(
