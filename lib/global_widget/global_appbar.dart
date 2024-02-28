@@ -7,18 +7,21 @@ class GLAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final List<Widget>? actions;
   final bool? centerTitle;
+  final TextStyle? titleTextStyle;
 
   GLAppBar({
     this.title,
     this.leading,
     this.actions,
     this.centerTitle = true,
+    this.titleTextStyle,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title!, style: GLTextStyles.titleStyl),
+      title: Text(title!, style: GLTextStyles.titleStyle),
+      titleTextStyle: GLTextStyles.titleStyle,
       centerTitle: centerTitle,
       backgroundColor: ColorTheme.white,
       leading: leading,
