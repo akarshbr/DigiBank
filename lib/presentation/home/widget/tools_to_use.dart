@@ -25,7 +25,7 @@ class ToolsToUse extends StatelessWidget {
           IconBtn(context,
               route: null,
               title: "Recharge",
-              icon: FontAwesomeIcons.mobileButton,
+              icon: FontAwesomeIcons.mobileScreen,
               style: GLTextStyles.labeltxtBlk,
               color: ColorTheme.black),
           IconBtn(context,

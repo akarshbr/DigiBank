@@ -1,4 +1,5 @@
 import 'package:digibank/presentation/home/controller/home_controler.dart';
+import 'package:digibank/presentation/profile/controller/profile_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,6 +14,9 @@ void main() {
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
     ChangeNotifierProvider(
       create: (context) => HomeController(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => ProfileControl(),
     ),
     // ChangeNotifierProvider(
     //   create: (context) => ,

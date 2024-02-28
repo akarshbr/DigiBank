@@ -1,7 +1,9 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
+import 'package:digibank/presentation/profile/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -15,113 +17,118 @@ class ProfileScreen extends StatelessWidget {
             title: "PROFILE",
             centerTitle: true,
             titleTextStyle: GLTextStyles.titleStyle,
-            leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back)),
+            leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
           ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 15,
-              ),
-              Center(
-                child: Container(
-                  width: size.width * .95,
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                  decoration: BoxDecoration(
-                      color: ColorTheme.darkClr,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          body: Consumer<ProfileControl>(
+            builder: (context, pControl, child) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      width: size.width * .95,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      decoration: BoxDecoration(
+                          color: ColorTheme.darkClr,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Column(
                         children: [
-                          Text(
-                            "Account No.",
-                            style: GLTextStyles.bodyTextwhite,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Account No.",
+                                style: GLTextStyles.bodyTextwhite,
+                              ),
+                              Text(
+                                "${pControl.accNo}",
+                                style: GLTextStyles.subtitleWhite2,
+                              )
+                            ],
                           ),
-                          Text(
-                            "3456xxxxxx2334",
-                            style: GLTextStyles.subtitleWhite2,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "IFSC",
+                                style: GLTextStyles.bodyTextwhite,
+                              ),
+                              Text(
+                                pControl.ifsc,
+                                style: GLTextStyles.subtitleWhite2,
+                              )
+                            ],
                           )
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "IFSC",
-                            style: GLTextStyles.bodyTextwhite,
-                          ),
-                          Text(
-                            "XYZ0000581",
-                            style: GLTextStyles.subtitleWhite2,
-                          )
-                        ],
-                      )
-                    ],
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Personal Details",
-                      style: GLTextStyles.bodyTextblack,
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Personal Details",
+                          style: GLTextStyles.titleTextBlk,
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          "Customer ID",
+                          style: GLTextStyles.subtitleGrey,
+                        ),
+                        Text(
+                          "${pControl.id}",
+                          style: GLTextStyles.subtitleBlk14,
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          "Name",
+                          style: GLTextStyles.subtitleGrey,
+                        ),
+                        Text(
+                          "${pControl.username}",
+                          style: GLTextStyles.subtitleBlk14,
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          "Mobile Number",
+                          style: GLTextStyles.subtitleGrey,
+                        ),
+                        Text(
+                          "+91 ${pControl.mobileNo}",
+                          style: GLTextStyles.subtitleBlk14,
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          "Email",
+                          style: GLTextStyles.subtitleGrey,
+                        ),
+                        Text(
+                          "${pControl.mailid}",
+                          style: GLTextStyles.subtitleBlk14,
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "Customer ID",
-                      style: GLTextStyles.subtitleGrey,
-                    ),
-                    Text(
-                      "A5322478",
-                      style: GLTextStyles.subtitleBlk2,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "Name",
-                      style: GLTextStyles.subtitleGrey,
-                    ),
-                    Text(
-                      "USERNAME",
-                      style: GLTextStyles.subtitleBlk2,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "Mobile Number",
-                      style: GLTextStyles.subtitleGrey,
-                    ),
-                    Text(
-                      "+91 9547325695",
-                      style: GLTextStyles.subtitleBlk2,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "Email",
-                      style: GLTextStyles.subtitleGrey,
-                    ),
-                    Text(
-                      "abc@gnail.com",
-                      style: GLTextStyles.subtitleBlk2,
-                    ),
-                  ],
-                ),
-              ),
-            ],
+                  ),
+                ],
+              );
+            },
           )),
     );
   }

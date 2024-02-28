@@ -13,7 +13,7 @@ class GLTextStyles {
     fontWeight: FontWeight.w500,
     color: ColorTheme.black,
   );
-  static TextStyle subtitleBlk2 = GoogleFonts.poppins(
+  static TextStyle subtitleBlk14 = GoogleFonts.poppins(
     fontSize: 14.0,
     fontWeight: FontWeight.w500,
     color: ColorTheme.black,
@@ -28,11 +28,11 @@ class GLTextStyles {
     fontWeight: FontWeight.w500,
     color: ColorTheme.white,
   );
-  static TextStyle subtitleGrey= GoogleFonts.poppins(
+  static TextStyle subtitleGrey = GoogleFonts.poppins(
     fontSize: 12.0,
     color: ColorTheme.grey,
   );
-  static TextStyle subtitleWhite3= GoogleFonts.poppins(
+  static TextStyle subtitleWhite3 = GoogleFonts.poppins(
     fontSize: 10.0,
     color: ColorTheme.white,
   );
@@ -43,7 +43,7 @@ class GLTextStyles {
   );
   static TextStyle titleTextBlk = GoogleFonts.raleway(
     fontSize: 16.0,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     color: ColorTheme.black,
   );
   static TextStyle bodyTextGrey = GoogleFonts.raleway(
@@ -55,11 +55,6 @@ class GLTextStyles {
     fontSize: 16.0,
     fontWeight: FontWeight.w400,
     color: ColorTheme.white,
-  );
-  static TextStyle bodyTextblack = GoogleFonts.raleway(
-    fontSize: 16.0,
-    fontWeight: FontWeight.w600,
-    color: ColorTheme.black,
   );
   static TextStyle labeltxtwhite = GoogleFonts.kanit(
     fontSize: 12,
