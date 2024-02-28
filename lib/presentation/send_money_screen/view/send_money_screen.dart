@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../global_widget/text_refactor.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: SendMoney(),
-  ));
-}
+
 
 class SendMoney extends StatelessWidget {
   const SendMoney({super.key});
