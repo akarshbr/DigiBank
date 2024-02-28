@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
             titleTextStyle: GLTextStyles.titleStyle,
             leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
           ),
-          body: Consumer<ProfileControl>(
+          body: Consumer<ProfileController>(
             builder: (context, pControl, child) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
