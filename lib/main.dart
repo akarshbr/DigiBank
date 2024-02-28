@@ -1,3 +1,4 @@
+import 'package:digibank/presentation/home/controller/home_controler.dart';
 import 'package:digibank/presentation/login_screen/view/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,6 +10,9 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.grey));
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
+    ChangeNotifierProvider(
+      create: (context) =>HomeController() ,
+    ),
     // ChangeNotifierProvider(
     //   create: (context) => ,
     // ),
