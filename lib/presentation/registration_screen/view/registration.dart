@@ -1,6 +1,6 @@
 import 'package:digibank/core/constants/colors.dart';
-import 'package:digibank/global_widget/text_form_field.dart';
 import 'package:digibank/global_widget/text_refactor.dart';
+import 'package:digibank/global_widget/title_and_textformfield.dart';
 import 'package:digibank/presentation/create_mpin_screen/view/create_mpin_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +23,12 @@ class RegistrationScreen extends StatelessWidget {
                 child: TextRefactor(
                     text: "Register your account", textSize: 22, textFontWeight: FontWeight.bold),
               ),
-              TextRefactor(text: "Account Number", textSize: 18),
-              TextFormFieldRefactor(),
-              TextRefactor(text: "Mobile Number", textSize: 18),
-              TextFormFieldRefactor(),
+              // TextRefactor(text: "Account Number", textSize: 18),
+              // TextFormFieldRefactor(),
+              TitleAndTextFormField(text: "Account Number", textSize: 18),
+              // TextRefactor(text: "Mobile Number", textSize: 18),
+              // TextFormFieldRefactor(),
+              TitleAndTextFormField(text: "Mobile Number", textSize: 18),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
