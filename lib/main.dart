@@ -1,3 +1,4 @@
+import 'package:digibank/presentation/home/controller/home_controler.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,9 +7,13 @@ import 'package:provider/provider.dart';
 import 'presentation/bottom_navigation/controller/bottom_nav_controller.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.grey));
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.grey));
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
+    ChangeNotifierProvider(
+      create: (context) => HomeController(),
+    ),
     // ChangeNotifierProvider(
     //   create: (context) => ,
     // ),
@@ -25,7 +30,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Digi Bank',
-      theme: /*isDark == true ? ThemeData.dark() : ThemeData.light()*/ ThemeData.light(),
+      theme: /*isDark == true ? ThemeData.dark() : ThemeData.light()*/
+          ThemeData.light(),
       home: RegistrationScreen(),
     );
   }
