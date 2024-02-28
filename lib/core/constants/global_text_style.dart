@@ -2,25 +2,51 @@ import 'package:digibank/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class GlobalTextStyles {
+class GLTextStyles {
   static TextStyle titleStyl = GoogleFonts.poppins(
     fontSize: 24.0,
     fontWeight: FontWeight.w400,
     color: ColorTheme.black,
   );
-
+  static TextStyle subtitleBlk = GoogleFonts.poppins(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w500,
+    color: ColorTheme.black,
+  );
+  static TextStyle subtitleWhite = GoogleFonts.poppins(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w500,
+    color: ColorTheme.white,
+  );
+  
+  static TextStyle titleTextGrey = GoogleFonts.raleway(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w500,
+    color: ColorTheme.grey,
+  );
+  static TextStyle titleTextBlk = GoogleFonts.raleway(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w500,
+    color: ColorTheme.black,
+  );
   static TextStyle bodyTextGrey = GoogleFonts.raleway(
     fontSize: 16.0,
+    fontWeight: FontWeight.w400,
     color: ColorTheme.grey,
   );
   static TextStyle bodyTextblack = GoogleFonts.raleway(
     fontSize: 16.0,
     color: ColorTheme.black,
   );
-  static TextStyle labeltxt = GoogleFonts.kanit(
+  static TextStyle labeltxtwhite = GoogleFonts.kanit(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     color: ColorTheme.white,
+  );
+  static TextStyle labeltxtBlk = GoogleFonts.kanit(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: ColorTheme.black,
   );
   static TextStyle bottomlabel = GoogleFonts.kanit(fontSize: 11);
 }
