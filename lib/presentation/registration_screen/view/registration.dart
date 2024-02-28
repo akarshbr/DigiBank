@@ -1,7 +1,7 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/global_widget/text_form_field.dart';
 import 'package:digibank/global_widget/text_refactor.dart';
-import 'package:digibank/presentation/login_screen/view/login_screen.dart';
+import 'package:digibank/presentation/create_mpin_screen/view/create_mpin_screen.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatelessWidget {
@@ -30,8 +30,8 @@ class RegistrationScreen extends StatelessWidget {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                        context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => CreateMpin()));
                   },
                   child:
                       TextRefactor(text: "SIGN IN", textSize: 16, textFontWeight: FontWeight.bold),

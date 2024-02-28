@@ -1,5 +1,4 @@
-import 'package:digibank/presentation/login_screen/view/login_screen.dart';
-import 'package:digibank/presentation/registeration/view/registration.dart';
+import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Digi Bank',
-      theme: /*isDark == true ? ThemeData.dark() : ThemeData.light()*/ThemeData.light(),
+      theme: /*isDark == true ? ThemeData.dark() : ThemeData.light()*/ ThemeData.light(),
       home: RegistrationScreen(),
     );
   }
