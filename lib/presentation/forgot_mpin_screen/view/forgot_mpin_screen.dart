@@ -1,12 +1,12 @@
-import 'package:digibank/presentation/confirm_mpin_screen/view/confirm_mpin_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
-import '../../../global_widget/pin_and_otp_box.dart';
+import '../../../global_widget/text_form_field.dart';
 import '../../../global_widget/text_refactor.dart';
+import '../../bottom_navigation/view/bottom_navigation.dart';
 
-class CreateMpinScreen extends StatelessWidget {
-  const CreateMpinScreen({super.key});
+class ForgotMpinScreen extends StatelessWidget {
+  const ForgotMpinScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +18,20 @@ class CreateMpinScreen extends StatelessWidget {
           width: size.width * 0.9,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextRefactor(
-                text: "Create Your MPIN",
-                textSize: 22,
-                textFontWeight: FontWeight.bold,
+              Center(
+                child: TextRefactor(
+                    text: "Forgot MPIN ?", textSize: 22, textFontWeight: FontWeight.bold),
               ),
-              TextRefactor(text: "MPIN", textSize: 18),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(4, (index) => PinAndOtpBox(gap: 20)),
-              ),
+              TextRefactor(text: "Enter your Mobile Number", textSize: 18),
+              TextFormFieldRefactor(),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => ConfirmMpinScreen()));
+                      context, MaterialPageRoute(builder: (context) => BottomNavigation()));
                 },
-                child: TextRefactor(text: "NEXT", textSize: 16, textFontWeight: FontWeight.bold),
+                child: TextRefactor(text: "Login", textSize: 16, textFontWeight: FontWeight.bold),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorTheme.mainClr,
                     padding: EdgeInsets.only(

@@ -31,7 +31,7 @@ class RegistrationScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => CreateMpin()));
+                        context, MaterialPageRoute(builder: (context) => CreateMpinScreen()));
                   },
                   child:
                       TextRefactor(text: "SIGN IN", textSize: 16, textFontWeight: FontWeight.bold),
