@@ -16,7 +16,7 @@ void main() {
       create: (context) => HomeController(),
     ),
     ChangeNotifierProvider(
-      create: (context) => ProfileControl(),
+      create: (context) => ProfileController(),
     ),
     // ChangeNotifierProvider(
     //   create: (context) => ,

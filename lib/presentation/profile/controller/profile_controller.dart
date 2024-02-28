@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/static_data/static_data.dart';
 
-class ProfileControl extends ChangeNotifier {
+class ProfileController extends ChangeNotifier {
   final String _username = StaticData.username;
   final int _accNo = StaticData.accNo;
   final int _balance = StaticData.balance;
