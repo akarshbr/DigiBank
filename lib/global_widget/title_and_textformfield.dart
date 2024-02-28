@@ -21,17 +21,21 @@ class TitleAndTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return SizedBox(
-      height: size.height * 0.1,
+      height: size.height * 0.2,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(text,
-              style: TextStyle(fontSize: textSize, fontWeight: textFontWeight, color: textColor)),
+              style: TextStyle(
+                  fontSize: textSize,
+                  fontWeight: textFontWeight,
+                  color: textColor)),
           TextFormField(
             controller: textEditingController,
+            keyboardType: TextInputType.number,
             decoration: InputDecoration(
-                border:
-                    OutlineInputBorder(borderSide: BorderSide(width: .1, color: Colors.white54))),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(width: .1, color: Colors.white54))),
           )
         ],
       ),
