@@ -8,46 +8,121 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size=MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        appBar: GLAppBar(title: "Profile",centerTitle: true,),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 15),
-          child: Column(
+          appBar: GLAppBar(
+            title: "PROFILE",
+            centerTitle: true,
+            titleTextStyle: GLTextStyles.titleStyle,
+            leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back)),
+          ),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: size.width*.95,
-                padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
-                decoration: BoxDecoration(
-                  color: ColorTheme.darkClr,
-                  borderRadius: BorderRadius.circular(10)
+              SizedBox(
+                height: 15,
+              ),
+              Center(
+                child: Container(
+                  width: size.width * .95,
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  decoration: BoxDecoration(
+                      color: ColorTheme.darkClr,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Account No.",
+                            style: GLTextStyles.bodyTextwhite,
+                          ),
+                          Text(
+                            "3456xxxxxx2334",
+                            style: GLTextStyles.subtitleWhite2,
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "IFSC",
+                            style: GLTextStyles.bodyTextwhite,
+                          ),
+                          Text(
+                            "XYZ0000581",
+                            style: GLTextStyles.subtitleWhite2,
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Account No.",style: GLTextStyles.bodyTextGrey,),
-                        Text("3456xxxxxx2334",style: GLTextStyles.subtitleWhite,)
-                      ],
-                      
+                    Text(
+                      "Personal Details",
+                      style: GLTextStyles.bodyTextblack,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("IFSC",style: GLTextStyles.bodyTextGrey,),
-                        Text("XYZ0000581",style: GLTextStyles.subtitleWhite,)
-                      ],
-                      
-                    )
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Customer ID",
+                      style: GLTextStyles.subtitleGrey,
+                    ),
+                    Text(
+                      "A5322478",
+                      style: GLTextStyles.subtitleBlk2,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Name",
+                      style: GLTextStyles.subtitleGrey,
+                    ),
+                    Text(
+                      "USERNAME",
+                      style: GLTextStyles.subtitleBlk2,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Mobile Number",
+                      style: GLTextStyles.subtitleGrey,
+                    ),
+                    Text(
+                      "+91 9547325695",
+                      style: GLTextStyles.subtitleBlk2,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Email",
+                      style: GLTextStyles.subtitleGrey,
+                    ),
+                    Text(
+                      "abc@gnail.com",
+                      style: GLTextStyles.subtitleBlk2,
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
-          ),
-        )
-      ),
+          )),
     );
   }
 }
