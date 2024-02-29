@@ -1,8 +1,11 @@
+import 'package:digibank/core/constants/global_text_style.dart';
+import 'package:digibank/global_widget/global_appbar.dart';
+import 'package:digibank/global_widget/global_meterial_btn.dart';
 import 'package:digibank/global_widget/text_form_field.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/colors.dart';
 import '../../../global_widget/text_refactor.dart';
-
 
 
 class SendMoney extends StatelessWidget {
@@ -13,102 +16,110 @@ class SendMoney extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        // appBar: GLAppBar(leading: IconButton(onPressed: (){}, icon: Icon(color: Colors.black,Icons.arrow_back),),),
+        appBar: AppBar(elevation: 0,backgroundColor: ColorTheme.white,leading: IconButton(onPressed: (){}, icon: Icon(color: Colors.black,Icons.arrow_back),),),
         body: Center(
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 100),
                 child: Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(15)),
                   height: size.height * .1,
                   width: size.width * .8,
-                  child: Card(
-                    color: Color(0xffF4F4F4),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(
-                          Icons.home_outlined,
-                          size: 30,
-                        ),
-                        Text(
-                          "Transfer to Bank",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            showModalBottomSheet(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return SizedBox(
-                                  height:size.height*9,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Center(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 15,
-                                                right: 15,
-                                                top: 10,
-                                                bottom: 10),
-                                            child: TextFormFieldRefactor(
-                                              hintText: 'Enter Account Number',
-                                            )
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 15,
-                                                right: 15,
-                                                top: 10,
-                                                bottom: 10),
-                                            child: TextFormFieldRefactor(
-                                              hintText: 'Re-enter Account Number',
-                                            )
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 15,
-                                                right: 15,
-                                                top: 10,
-                                                bottom: 10),
-                                            child: TextFormFieldRefactor(
-                                              hintText: 'Enter IFSC',
-                                            )
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 15,
-                                                right: 15,
-                                                top: 10,
-                                                bottom: 10),
-                                            child: TextFormFieldRefactor(
-                                              hintText: "Bank Account Holder's Name",
-                                            )
-                                          ),
-                                          ElevatedButton(
-                                              onPressed: () {},
-                                              child:
-                                                  TextRefactor(text: "Confirm")),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          icon: Icon(
+                  child: InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                        context: context,
+                        builder: (BuildContext context) {
+                          return SingleChildScrollView(
+                            physics: AlwaysScrollableScrollPhysics(),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Center(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
+                                        child: TextFormFieldRefactor(
+                                          hintText: 'Enter Account Number',
+                                        )),
+                                    Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
+                                        child: TextFormFieldRefactor(
+                                          hintText: 'Re-enter Account Number',
+                                        )),
+                                    Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
+                                        child: TextFormFieldRefactor(
+                                          hintText: 'Enter IFSC',
+                                        )),
+                                    Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
+                                        child: TextFormFieldRefactor(
+                                          hintText:
+                                              "Bank Account Holder's Name",
+                                        )),
+                                    SizedBox(height: 15,),
+                                    Center(
+                                        child: Container(
+                                          width: size.width*.4,
+                                          height: size.height*.05,
+                                          child: GLMetrialButton(
+                                              color: ColorTheme.darkClr,
+                                              text: 'CONFIRM',
+                                            txtClr: ColorTheme.white,
+                                          style:GLTextStyles.subtitleWhite),
+                                        )),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    child: Card(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      color: ColorTheme.lightgrey,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(
+                            Icons.home_outlined,
+                            size: 30,
+                          ),
+                          Text(
+                            "Transfer to Bank",
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Icon(
                             Icons.arrow_forward_ios,
                             size: 20,
                           ),
-                        )
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -116,48 +127,111 @@ class SendMoney extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Container(
-                height: size.height * .1,
-                width: size.width * .8,
-                child: Card(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(
-                        Icons.phone_iphone_rounded,
-                        size: 25,
-                      ),
-                      Text(
-                        "Pay to Phone Number",
-                        style: TextStyle(fontSize: 15),
-                      ),
-                      IconButton(
-                          onPressed: () {
-                            showModalBottomSheet(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return SizedBox(
-                                  height: 200,
-                                  child: Center(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: const <Widget>[
-                                        Text('GeeksforGeeks'),
-                                      ],
+              SizedBox(
+                child: Container(
+                  height: size.height * .1,
+                  width: size.width * .8,
+                  child: InkWell(onTap: () {
+                    // showModalBottomSheet(
+                    //   context: context,
+                    //   builder: (BuildContext context){
+                    //     return Padding(
+                    //       padding: const EdgeInsets.all(10.0),
+                    //       child: Center(
+                    //         child: Column(
+                    //           crossAxisAlignment: CrossAxisAlignment.start,
+                    //           children: [
+                    //             Padding(
+                    //                 padding: const EdgeInsets.only(
+                    //                     left: 15,
+                    //                     right: 15,
+                    //                     top: 10,
+                    //                     bottom: 10),
+                    //                 child: TextFormFieldRefactor(
+                    //                   hintText:
+                    //                   "Enter Mobile Number",
+                    //                 )),
+                    //             SizedBox(height: 15,),
+                    //             Center(
+                    //                 child: Container(
+                    //                   width: size.width*.3,
+                    //                   height: size.height*.05,
+                    //                   child: GLMetrialButton(
+                    //                       color: ColorTheme.darkClr,
+                    //                       text: 'PAY',
+                    //                       txtClr: ColorTheme.white,
+                    //                       style:GLTextStyles.subtitleWhite),
+                    //                 )),
+                    //           ],
+                    //         ),
+                    //       ),
+                    //     );
+                    //   },
+                    // );
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true, // Enable dragging to adjust height
+                      builder: (BuildContext context){
+                        return SingleChildScrollView( // Wrap with SingleChildScrollView
+                          physics: AlwaysScrollableScrollPhysics(), // Enable scrolling
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Center(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 15,
+                                        right: 15,
+                                        top: 10,
+                                        bottom: 10),
+                                    child: TextFormFieldRefactor(
+                                      hintText: "Enter Mobile Number",
                                     ),
                                   ),
-                                );
-                              },
-                            );
-                          },
-                          icon: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                          ))
-                    ],
+                                  SizedBox(height: 15,),
+                                  Center(
+                                    child: Container(
+                                      width: size.width*.3,
+                                      height: size.height*.05,
+                                      child: GLMetrialButton(
+                                        color: ColorTheme.darkClr,
+                                        text: 'PAY',
+                                        txtClr: ColorTheme.white,
+                                        style: GLTextStyles.subtitleWhite,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+
+                  },
+                    child: Card(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.phone_iphone_rounded,
+                              size: 25,
+                            ),
+                            Text(
+                              "Pay to Phone Number",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                            Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 20,
+                                )
+                          ],
+                        ),
+                        color: ColorTheme.lightgrey),
                   ),
-                  color: Color(0xffF4F4F4),
                 ),
               ),
             ],
