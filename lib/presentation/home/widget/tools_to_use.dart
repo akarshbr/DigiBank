@@ -1,4 +1,5 @@
 
+import 'package:digibank/presentation/mobile_recharge/view/mobile_recharge.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -23,28 +24,28 @@ class ToolsToUse extends StatelessWidget {
         children: [
           //TODO
           IconBtn(context,
-              route: null,
+              route: MobileRecharge(),
               title: "Recharge",
               icon: FontAwesomeIcons.mobileScreen,
-              style: GLTextStyles.labeltxtBlk,
+              style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
               route: null,
               title: "Electricity",
               icon: FontAwesomeIcons.lightbulb,
-              style: GLTextStyles.labeltxtBlk,
+              style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
               route: null,
               title: "Credit Card",
               icon: FontAwesomeIcons.creditCard,
-              style: GLTextStyles.labeltxtBlk,
+              style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
               route: null,
               title: "More",
               icon: FontAwesomeIcons.ellipsis,
-              style: GLTextStyles.labeltxtBlk,
+              style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black)
         ],
       ),

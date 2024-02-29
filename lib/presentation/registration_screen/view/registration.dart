@@ -25,10 +25,14 @@ class RegistrationScreen extends StatelessWidget {
               ),
               // TextRefactor(text: "Account Number", textSize: 18),
               // TextFormFieldRefactor(),
-              TitleAndTextFormField(text: "Account Number", textSize: 18),
               // TextRefactor(text: "Mobile Number", textSize: 18),
               // TextFormFieldRefactor(),
-              TitleAndTextFormField(text: "Mobile Number", textSize: 18),
+              Column(
+                children: [
+                  TitleAndTextFormField(text: "Account Number", textSize: 18),
+                  TitleAndTextFormField(text: "Mobile Number", textSize: 18),
+                ],
+              ),
               Center(
                 child: ElevatedButton(
                   onPressed: () {

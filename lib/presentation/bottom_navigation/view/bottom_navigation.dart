@@ -20,7 +20,7 @@ class BottomNavigation extends StatelessWidget {
           builder: (context, provider, child) {
             return IndexedStack(
               index: provider.currentIndex,
-              children: [Home(), TransactionScreen(), ProfileScreen()],
+              children: [HomeScreen(), TransactionScreen(), ProfileScreen()],
             );
           },
         ),
