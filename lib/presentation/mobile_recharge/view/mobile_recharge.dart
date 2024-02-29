@@ -27,7 +27,7 @@ class MobileRecharge extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          height: size.height * .6,
+          height: size.height * .5,
           width: size.width * 0.9,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
