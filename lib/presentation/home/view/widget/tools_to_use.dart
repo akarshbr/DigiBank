@@ -1,4 +1,5 @@
 import 'package:digibank/presentation/recharge_and_pay_bills/electricity/view/electricity_bills_screen.dart';
+import 'package:digibank/presentation/recharge_and_pay_bills/water/view/water_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -36,9 +37,9 @@ class ToolsToUse extends StatelessWidget {
               style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
-              route: null,
-              title: "Credit Card",
-              icon: FontAwesomeIcons.creditCard,
+              route: WaterBillsScreen(),
+              title: "Water",
+              icon: FontAwesomeIcons.faucetDrip,
               style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,

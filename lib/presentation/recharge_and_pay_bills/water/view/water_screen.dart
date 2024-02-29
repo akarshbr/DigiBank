@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/global_text_style.dart';
 import '../../../../global_widget/global_appbar.dart';
 
-class ElectricityBillsScreen extends StatelessWidget {
-  const ElectricityBillsScreen({super.key});
+class WaterBillsScreen extends StatelessWidget {
+  const WaterBillsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: GLAppBar(
-        title: "Electricity",
+        title: "Water",
         centerTitle: true,
         titleTextStyle: GLTextStyles.titleStyle,
         leading: IconButton(
@@ -19,7 +19,7 @@ class ElectricityBillsScreen extends StatelessWidget {
             },
             icon: Icon(Icons.arrow_back)),
       ),
-      body: Center(child: Text("Electricity")),
+      body: Center(child: Text("Water")),
     );
   }
 }
