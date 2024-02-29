@@ -2,7 +2,6 @@ import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
 import 'package:flutter/material.dart';
 
-
 import '../../../global_widget/drawer_refactored.dart';
 import '../widget/advertisment_slider.dart';
 import '../widget/buttons_for_loan.dart';
@@ -10,28 +9,29 @@ import '../widget/tools_to_use.dart';
 import '../widget/user_details.dart';
 import '../widget/user_function.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return SafeArea(
-        child: Scaffold(
-      appBar: GLAppBar(
-        title: 'DigiBank',
-        centerTitle: false,
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.logout_outlined)),
-          SizedBox(
-            width: 10,
-          )
-        ],
+      child: Scaffold(
+        appBar: GLAppBar(
+          title: 'DigiBank',
+          centerTitle: false,
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.logout_outlined)),
+            SizedBox(
+              width: 10,
+            )
+          ],
+        ),
+        drawer: DrawerRefactored(),
+        body: HomeWidget(size: size),
       ),
-      drawer: DrawerRefactored(),
-      body: HomeWidget(size: size),
-    ));
+    );
   }
 }
 
@@ -78,16 +78,17 @@ class HomeWidget extends StatelessWidget {
           SizedBox(
             height: size.height * .02,
           ),
-          //buttons like emiCalculator and credi score
-          ButtonsForLoan(size: size,),
+          //buttons like emiCalculator and credit score
+          ButtonsForLoan(
+            size: size,
+          ),
           SizedBox(
             height: size.height * .04,
           ),
-          // crousel slider for advertisment
+          // carousel slider for advertisement
           AdvertismentSlider(size: size)
         ],
       ),
     );
   }
 }
-
