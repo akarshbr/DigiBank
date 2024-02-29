@@ -3,10 +3,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../controller/home_controler.dart';
+import '../../controller/home_controler.dart';
 
-class AdvertismentSlider extends StatelessWidget {
-  const AdvertismentSlider({
+
+
+class AdvertisementSlider extends StatelessWidget {
+  const AdvertisementSlider({
     super.key,
     required this.size,
   });

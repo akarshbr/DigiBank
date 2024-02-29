@@ -1,10 +1,10 @@
-
-import 'package:digibank/presentation/mobile_recharge/view/mobile_recharge.dart';
+import 'package:digibank/presentation/recharge_and_pay_bills/electricity/view/electricity_bills_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../core/constants/colors.dart';
-import '../../../core/constants/global_text_style.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/global_text_style.dart';
+import '../../../recharge_and_pay_bills/mobile_recharge/view/mobile_recharge.dart';
 import 'icon_btn.dart';
 
 class ToolsToUse extends StatelessWidget {
@@ -30,7 +30,7 @@ class ToolsToUse extends StatelessWidget {
               style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
-              route: null,
+              route: ElectricityBillsScreen(),
               title: "Electricity",
               icon: FontAwesomeIcons.lightbulb,
               style: GLTextStyles.labeltxtBlk16,

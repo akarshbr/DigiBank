@@ -17,7 +17,9 @@ class ProfileScreen extends StatelessWidget {
             title: "PROFILE",
             centerTitle: true,
             titleTextStyle: GLTextStyles.titleStyle,
-            leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+            leading: IconButton(onPressed: () {
+              Navigator.pop(context);
+            }, icon: Icon(Icons.arrow_back)),
           ),
           body: Consumer<ProfileController>(
             builder: (context, pControl, child) {
