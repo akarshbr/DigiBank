@@ -1,6 +1,6 @@
 import 'package:digibank/presentation/home/controller/home_controler.dart';
-import 'package:digibank/presentation/mobile_recharge/controller/operator_controller.dart';
 import 'package:digibank/presentation/profile/controller/profile_controller.dart';
+import 'package:digibank/presentation/recharge_and_pay_bills/mobile_recharge/controller/operator_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:digibank/presentation/transaction/controller/transaction_controller.dart';
 import 'package:flutter/material.dart';

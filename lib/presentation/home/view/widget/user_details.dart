@@ -2,8 +2,10 @@ import 'package:digibank/presentation/home/controller/home_controler.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/constants/colors.dart';
-import '../../../core/constants/global_text_style.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/global_text_style.dart';
+
+
 
 Consumer<HomeController> UserDetailsCard(Size size) {
   return Consumer<HomeController>(

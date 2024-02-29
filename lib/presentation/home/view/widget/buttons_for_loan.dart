@@ -2,7 +2,9 @@ import 'package:digibank/global_widget/global_meterial_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../core/constants/colors.dart';
+import '../../../../core/constants/colors.dart';
+
+
 
 class ButtonsForLoan extends StatelessWidget {
   const ButtonsForLoan({
