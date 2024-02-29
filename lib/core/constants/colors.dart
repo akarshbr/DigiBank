@@ -9,6 +9,8 @@ class ColorTheme {
   static Color red = Color.fromARGB(255, 209, 0, 0);
   static Color green = Color(0xFF00c254);
   static Color grey = Color(0xFF989898);
+  static Color lightgrey = Color(0xffF4F4F4);
+
 }
 
 

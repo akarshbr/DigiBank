@@ -6,42 +6,52 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class GLMetrialButton extends StatelessWidget {
   const GLMetrialButton(
       {super.key,
-      required this.width,
-      required this.height,
+      this.width,
+      this.height,
       required this.color,
       this.txtClr,
-      required this.icon,
-      required this.text});
-  final width;
-  final height;
+      this.icon,
+      required this.text,
+      this.style});
+
+  final double? width;
+  final double? height;
   final color;
   final Color? txtClr;
-  final icon;
+  final IconData? icon;
   final text;
+  final style;
+
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {
-      },
+      onPressed: () {},
       minWidth: width,
       height: height,
       color: color,
       textColor: txtClr,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          FaIcon(
-            icon,
-            color: ColorTheme.white,
-          ),
-          SizedBox(width: 10),
-          Text(
-            text,
-            style: GLTextStyles.labeltxtwhite,
-          ),
-        ],
-      ),
+      child: icon == null
+          ? Center(
+              child: Text(
+                text,
+                style: GLTextStyles.labeltxtwhite,
+              ),
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                FaIcon(
+                  icon,
+                  color: ColorTheme.white,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  text,
+                  style: GLTextStyles.labeltxtwhite,
+                ),
+              ],
+            ),
     );
   }
 }
