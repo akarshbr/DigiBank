@@ -19,7 +19,11 @@ class MobileRecharge extends StatelessWidget {
         title: "Recharge",
         centerTitle: true,
         titleTextStyle: GLTextStyles.titleStyle,
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back)),
       ),
       body: Center(
         child: Container(
@@ -52,7 +56,7 @@ class MobileRecharge extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   child:
-                  TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
+                      TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
