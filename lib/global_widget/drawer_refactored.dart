@@ -57,7 +57,7 @@ class DrawerRefactored extends StatelessWidget {
             child: ListView.builder(itemCount: head.length,
               itemBuilder: (context, index) => ListTile(
                 // leading: icon[index],
-                title: Text(head[index],style: GLTextStyles.labeltxtBlk,),
+                title: Text(head[index],style: GLTextStyles.labeltxtBlk16,),
                 // subtitle: Text(subhead[index],style: GLTextStyles.subtitleBlk,),
               ),
             ),
