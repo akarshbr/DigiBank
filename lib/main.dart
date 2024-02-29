@@ -10,17 +10,16 @@ import 'package:provider/provider.dart';
 import 'presentation/bottom_navigation/controller/bottom_nav_controller.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.grey));
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.grey));
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
     ChangeNotifierProvider(create: (context) => HomeController()),
     ChangeNotifierProvider(create: (context) => ProfileController()),
-    ChangeNotifierProvider(create: (context) => OperatorController())
-    ChangeNotifierProvider(
-      create: (context) => TransactionController(),
-    ),
+    ChangeNotifierProvider(create: (context) => OperatorController()),
+    ChangeNotifierProvider(create: (context) => TransactionController()),
     // ChangeNotifierProvider(
-    //   create: (context) => ,
+    //   create: (context) => 
     // ),
   ], child: const MyApp()));
 }
