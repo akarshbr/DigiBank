@@ -61,10 +61,16 @@ class GLTextStyles {
     fontWeight: FontWeight.w400,
     color: ColorTheme.white,
   );
-  static TextStyle labeltxtBlk = GoogleFonts.kanit(
+  static TextStyle labeltxtBlk16 = GoogleFonts.kanit(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: ColorTheme.black,
   );
+  static TextStyle labeltxtBlk12 = GoogleFonts.kanit(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: ColorTheme.black,
+  );
   static TextStyle bottomlabel = GoogleFonts.kanit(fontSize: 11);
+
 }
