@@ -1,6 +1,7 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
+import 'package:digibank/presentation/bottom_navigation_screen/controller/bottom_nav_controller.dart';
 import 'package:digibank/presentation/profile_screen/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,13 +15,18 @@ class ProfileScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: GLAppBar(
-            title: "PROFILE",
-            centerTitle: true,
-            titleTextStyle: GLTextStyles.titleStyle,
-            leading: IconButton(onPressed: () {
-              Navigator.pop(context);
-            }, icon: Icon(Icons.arrow_back)),
-          ),
+              title: "PROFILE",
+              centerTitle: true,
+              titleTextStyle: GLTextStyles.titleStyle,
+              leading: Consumer<BottomNavigationController>(
+                builder: (context, bControl, child) {
+                  return IconButton(
+                      onPressed: () {
+                        bControl.currentIndex = 0;
+                      },
+                      icon: Icon(Icons.arrow_back));
+                },
+              )),
           body: Consumer<ProfileController>(
             builder: (context, pControl, child) {
               return Column(

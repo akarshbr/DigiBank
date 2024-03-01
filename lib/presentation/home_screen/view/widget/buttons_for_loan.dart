@@ -1,4 +1,6 @@
 import 'package:digibank/global_widget/global_meterial_btn.dart';
+import 'package:digibank/presentation/credit_score_screen/view/credit_score_screen.dart';
+import 'package:digibank/presentation/request_loan_screen/view/request_loan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,12 +23,14 @@ class ButtonsForLoan extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GLMetrialButton(
+              route: RequestLoanScreen(),
               width: size.width * .35,
               height: size.height * .065,
               color: ColorTheme.darkClr,
-              icon: FontAwesomeIcons.calculator,
-              text: "EMI Calculator"),
+              icon: FontAwesomeIcons.paperclip,
+              text: "Request Loan"),
           GLMetrialButton(
+              route: CreditScrScreen(),
               width: size.width * .35,
               height: size.height * .065,
               color: ColorTheme.darkClr,

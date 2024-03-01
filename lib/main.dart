@@ -1,4 +1,5 @@
 import 'package:digibank/presentation/account_summary_screen/controller/account_summary_control.dart';
+import 'package:digibank/presentation/credit_score_screen/controller/credit_scr_controller.dart';
 import 'package:digibank/presentation/home_screen/controller/home_controler.dart';
 import 'package:digibank/presentation/profile_screen/controller/profile_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/electricity/controller/electricity_controller.dart';
@@ -20,7 +21,11 @@ void main() {
     ChangeNotifierProvider(create: (context) => OperatorController()),
     ChangeNotifierProvider(create: (context) => TransactionController()),
     ChangeNotifierProvider(create: (context) => ACCSumaryCantrol()),
+<<<<<<< HEAD
     ChangeNotifierProvider(create: (context) => ElectricityController())
+=======
+    ChangeNotifierProvider(create: (context) => CreditScrController()),
+>>>>>>> c27fbe6631af824ae1879f56330101268b2cbd85
     // ChangeNotifierProvider(
     //   create: (context) =>
     // ),
