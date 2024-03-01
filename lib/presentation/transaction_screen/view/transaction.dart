@@ -1,9 +1,10 @@
-import 'package:digibank/presentation/transaction_screen/controller/transaction_controller.dart';
+import 'package:digibank/presentation/home_screen/view/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/constants/global_text_style.dart';
 import '../../../global_widget/global_appbar.dart';
+import '../../bottom_navigation_screen/controller/bottom_nav_controller.dart';
 import '../widget/datesection.dart';
 import '../widget/transaction_tile.dart';
 
@@ -17,6 +18,15 @@ class TransactionScreen extends StatelessWidget {
           title: "TRANSACTIONS",
           centerTitle: true,
           titleTextStyle: GLTextStyles.titleStyle,
+          leading: Consumer<BottomNavigationController>(
+                builder: (context, bControl, child) {
+                  return IconButton(
+                      onPressed: () {
+                        bControl.currentIndex = 0;
+                      },
+                      icon: Icon(Icons.arrow_back));
+                },
+              )
         ),
         body:
         //  Consumer<TransactionController>(

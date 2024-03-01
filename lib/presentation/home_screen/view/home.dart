@@ -54,12 +54,12 @@ class HomeWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       child: ListView(
         children: [
-          //users functions card  TODO => add accountsummary page route in the below card
+          //users functions card  
           UsersFunctions(size, context),
           SizedBox(
             height: size.height * .05,
           ),
-          //user details TODO=> add page routes
+          //user details 
           UserDetailsCard(size),
           SizedBox(
             height: size.height * .05,

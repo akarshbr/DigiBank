@@ -12,7 +12,8 @@ class GLMetrialButton extends StatelessWidget {
       this.txtClr,
       this.icon,
       required this.text,
-      this.style});
+      this.style,
+      this.route});
 
   final double? width;
   final double? height;
@@ -21,11 +22,15 @@ class GLMetrialButton extends StatelessWidget {
   final IconData? icon;
   final text;
   final style;
+  final route;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => route));
+      },
       minWidth: width,
       height: height,
       color: color,
