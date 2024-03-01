@@ -1,3 +1,4 @@
+import 'package:digibank/presentation/more_screen/view/more_screen.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/electricity/view/electricity_bills_screen.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/water/view/water_screen.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class ToolsToUse extends StatelessWidget {
               style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
-              route: null,
+              route: MoreScreen(),
               title: "More",
               icon: FontAwesomeIcons.ellipsis,
               style: GLTextStyles.labeltxtBlk16,
