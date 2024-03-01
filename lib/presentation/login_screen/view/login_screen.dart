@@ -4,7 +4,7 @@ import 'package:digibank/presentation/forgot_mpin_screen/view/forgot_mpin_screen
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
-import '../../bottom_navigation/view/bottom_navigation.dart';
+import '../../bottom_navigation_screen/view/bottom_navigation.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

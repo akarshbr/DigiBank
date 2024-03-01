@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
 import '../../../global_widget/text_refactor.dart';
-import '../../bottom_navigation/view/bottom_navigation.dart';
+import '../../bottom_navigation_screen/view/bottom_navigation.dart';
 
 class ForgotMpinScreen extends StatelessWidget {
   const ForgotMpinScreen({super.key});

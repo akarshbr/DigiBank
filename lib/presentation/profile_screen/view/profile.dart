@@ -1,7 +1,7 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
-import 'package:digibank/presentation/profile/controller/profile_controller.dart';
+import 'package:digibank/presentation/profile_screen/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

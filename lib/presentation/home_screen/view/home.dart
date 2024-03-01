@@ -1,10 +1,10 @@
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_appbar.dart';
-import 'package:digibank/presentation/home/view/widget/advertisment_slider.dart';
-import 'package:digibank/presentation/home/view/widget/buttons_for_loan.dart';
-import 'package:digibank/presentation/home/view/widget/tools_to_use.dart';
-import 'package:digibank/presentation/home/view/widget/user_details.dart';
-import 'package:digibank/presentation/home/view/widget/user_function.dart';
+import 'package:digibank/presentation/home_screen/view/widget/advertisment_slider.dart';
+import 'package:digibank/presentation/home_screen/view/widget/buttons_for_loan.dart';
+import 'package:digibank/presentation/home_screen/view/widget/tools_to_use.dart';
+import 'package:digibank/presentation/home_screen/view/widget/user_details.dart';
+import 'package:digibank/presentation/home_screen/view/widget/user_function.dart';
 import 'package:flutter/material.dart';
 
 import '../../../global_widget/drawer_refactored.dart';
@@ -22,8 +22,12 @@ class HomeScreen extends StatelessWidget {
           title: 'DigiBank',
           centerTitle: false,
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.logout_outlined)),
+            IconButton(onPressed: () {
+              // TODO
+            }, icon: Icon(Icons.notifications)),
+            IconButton(onPressed: () {
+              // TODO
+            }, icon: Icon(Icons.logout_outlined)),
             SizedBox(
               width: 10,
             )

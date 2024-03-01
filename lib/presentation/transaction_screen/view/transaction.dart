@@ -1,4 +1,4 @@
-import 'package:digibank/presentation/transaction/controller/transaction_controller.dart';
+import 'package:digibank/presentation/transaction_screen/controller/transaction_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

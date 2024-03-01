@@ -1,14 +1,14 @@
-import 'package:digibank/presentation/account_summary/controller/account_summary_control.dart';
-import 'package:digibank/presentation/home/controller/home_controler.dart';
-import 'package:digibank/presentation/profile/controller/profile_controller.dart';
+import 'package:digibank/presentation/account_summary_screen/controller/account_summary_control.dart';
+import 'package:digibank/presentation/home_screen/controller/home_controler.dart';
+import 'package:digibank/presentation/profile_screen/controller/profile_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/mobile_recharge/controller/operator_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
-import 'package:digibank/presentation/transaction/controller/transaction_controller.dart';
+import 'package:digibank/presentation/transaction_screen/controller/transaction_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import 'presentation/bottom_navigation/controller/bottom_nav_controller.dart';
+import 'presentation/bottom_navigation_screen/controller/bottom_nav_controller.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
