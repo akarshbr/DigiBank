@@ -1,5 +1,4 @@
 import 'package:digibank/global_widget/title_and_textformfield.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,8 +7,6 @@ import '../../../../core/constants/global_text_style.dart';
 import '../../../../global_widget/global_appbar.dart';
 import '../../../../global_widget/text_refactor.dart';
 import '../controller/operator_controller.dart';
-
-
 
 class MobileRecharge extends StatelessWidget {
   const MobileRecharge({super.key});
@@ -73,20 +70,28 @@ class MobileRecharge extends StatelessWidget {
   }
 }
 
-class Operator {
-  static Map<String, dynamic> operators = {
-    "Airtel": "asset/operator_icon/airtel.png",
-    "BSNL": "asset/operator_icon/bsnl.png",
-    "Jio": "asset/operator_icon/jio.png",
-    "VI": "asset/operator_icon/vi.png"
-  };
-}
-List<DropdownMenuItem<String>> get dropdownItems{
-  List<DropdownMenuItem<String>> menuItems =[
-    DropdownMenuItem(child: ListTile(leading: Image(image: AssetImage("asset/operator_icon/airtel.png")),title: Text("Airtel")),value: "Airtel"),
-    DropdownMenuItem(child: ListTile(leading: Image(image: AssetImage("asset/operator_icon/bsnl.png")),title: Text("BSNL")),value: "BSNL"),
-    DropdownMenuItem(child: ListTile(leading: Image(image: AssetImage("asset/operator_icon/jio.png")),title: Text("Jio")),value: "Jio"),
-    DropdownMenuItem(child: ListTile(leading: Image(image: AssetImage("asset/operator_icon/vi.png")),title: Text("data")),value: "VI")
+List<DropdownMenuItem<String>> get dropdownItems {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(
+        child: ListTile(
+            leading: Image(width: 30, image: AssetImage("asset/operator_icon/airtel.png")),
+            title: Text("Airtel")),
+        value: "Airtel"),
+    DropdownMenuItem(
+        child: ListTile(
+            leading: Image(width: 30, image: AssetImage("asset/operator_icon/bsnl.png")),
+            title: Text("BSNL")),
+        value: "BSNL"),
+    DropdownMenuItem(
+        child: ListTile(
+            leading: Image(width: 30, image: AssetImage("asset/operator_icon/jio.png")),
+            title: Text("Jio")),
+        value: "Jio"),
+    DropdownMenuItem(
+        child: ListTile(
+            leading: Image(width: 30, image: AssetImage("asset/operator_icon/vi.png")),
+            title: Text("data")),
+        value: "VI")
   ];
   return menuItems;
 }
