@@ -36,22 +36,17 @@ class MobileRecharge extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               TitleAndTextFormField(text: "Enter Mobile Number"),
-              Consumer<OperatorController>(builder: (context, OperatorController, _) {
+              Consumer<OperatorController>(builder: (context, operatorController, _) {
                 return DropdownButton<String>(
                   padding: EdgeInsets.all(5),
                   isExpanded: true,
-                  value: OperatorController.operatorSelected,
+                  value: operatorController.operatorSelected,
                   hint: Text("Select Operator"),
                   onChanged: (String? selectedOperator) {
                     print('Selected Operator: $selectedOperator');
-                    OperatorController.setOperator(selectedOperator!);
+                    operatorController.setOperator(selectedOperator!);
                   },
-                  items: Operator.operators.keys.map((String operator) {
-                    return DropdownMenuItem<String>(
-                      value: operator,
-                      child: Text(operator),
-                    );
-                  }).toList(),
+                  items: dropdownItems,
                 );
               }),
               TitleAndTextFormField(text: "₹ Enter Amount"),
@@ -85,4 +80,13 @@ class Operator {
     "Jio": "asset/operator_icon/jio.png",
     "VI": "asset/operator_icon/vi.png"
   };
+}
+List<DropdownMenuItem<String>> get dropdownItems{
+  List<DropdownMenuItem<String>> menuItems =[
+    DropdownMenuItem(child: ListTile(leading: Image(image: AssetImage("asset/operator_icon/airtel.png")),title: Text("Airtel")),value: "Airtel"),
+    DropdownMenuItem(child: ListTile(leading: Image(image: AssetImage("asset/operator_icon/bsnl.png")),title: Text("BSNL")),value: "BSNL"),
+    DropdownMenuItem(child: ListTile(leading: Image(image: AssetImage("asset/operator_icon/jio.png")),title: Text("Jio")),value: "Jio"),
+    DropdownMenuItem(child: ListTile(leading: Image(image: AssetImage("asset/operator_icon/vi.png")),title: Text("data")),value: "VI")
+  ];
+  return menuItems;
 }
