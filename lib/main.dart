@@ -21,11 +21,8 @@ void main() {
     ChangeNotifierProvider(create: (context) => OperatorController()),
     ChangeNotifierProvider(create: (context) => TransactionController()),
     ChangeNotifierProvider(create: (context) => ACCSumaryCantrol()),
-<<<<<<< HEAD
-    ChangeNotifierProvider(create: (context) => ElectricityController())
-=======
+    ChangeNotifierProvider(create: (context) => ElectricityController()),
     ChangeNotifierProvider(create: (context) => CreditScrController()),
->>>>>>> c27fbe6631af824ae1879f56330101268b2cbd85
     // ChangeNotifierProvider(
     //   create: (context) =>
     // ),
