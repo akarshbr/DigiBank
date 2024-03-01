@@ -1,11 +1,11 @@
-import 'package:digibank/presentation/home/controller/home_controler.dart';
+import 'package:digibank/presentation/account_summary_screen/view/account_summary.dart';
+import 'package:digibank/presentation/home_screen/controller/home_controler.dart';
+import 'package:digibank/presentation/profile_screen/view/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/global_text_style.dart';
-
-
 
 Consumer<HomeController> UserDetailsCard(Size size) {
   return Consumer<HomeController>(
@@ -46,7 +46,8 @@ Consumer<HomeController> UserDetailsCard(Size size) {
                 ),
                 TextButton(
                     onPressed: () {
-                      // TODO
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ProfileScreen()));
                     },
                     child: Text(
                       "View All Accounts",
@@ -63,7 +64,8 @@ Consumer<HomeController> UserDetailsCard(Size size) {
                 ),
                 TextButton(
                     onPressed: () {
-                      // TODO
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => AccountSummary()));
                     },
                     child: Text(
                       "View Balance",

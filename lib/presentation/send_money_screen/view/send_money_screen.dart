@@ -1,12 +1,9 @@
 import 'package:digibank/core/constants/global_text_style.dart';
-import 'package:digibank/global_widget/global_appbar.dart';
 import 'package:digibank/global_widget/global_meterial_btn.dart';
 import 'package:digibank/global_widget/text_form_field.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
-import '../../../global_widget/text_refactor.dart';
-
 
 class SendMoney extends StatelessWidget {
   const SendMoney({super.key});
@@ -16,8 +13,16 @@ class SendMoney extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        // appBar: GLAppBar(leading: IconButton(onPressed: (){}, icon: Icon(color: Colors.black,Icons.arrow_back),),),
-        appBar: AppBar(elevation: 0,backgroundColor: ColorTheme.white,leading: IconButton(onPressed: (){}, icon: Icon(color: Colors.black,Icons.arrow_back),),),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: ColorTheme.white,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(color: Colors.black, Icons.arrow_back),
+          ),
+        ),
         body: Center(
           child: Column(
             children: [
@@ -79,17 +84,19 @@ class SendMoney extends StatelessWidget {
                                           hintText:
                                               "Bank Account Holder's Name",
                                         )),
-                                    SizedBox(height: 15,),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
                                     Center(
                                         child: Container(
-                                          width: size.width*.4,
-                                          height: size.height*.05,
-                                          child: GLMetrialButton(
-                                              color: ColorTheme.darkClr,
-                                              text: 'CONFIRM',
-                                            txtClr: ColorTheme.white,
-                                          style:GLTextStyles.subtitleWhite),
-                                        )),
+                                      width: size.width * .4,
+                                      height: size.height * .05,
+                                      child: GLMetrialButton(
+                                          color: ColorTheme.darkClr,
+                                          text: 'CONFIRM',
+                                          txtClr: ColorTheme.white,
+                                          style: GLTextStyles.subtitleWhite),
+                                    )),
                                   ],
                                 ),
                               ),
@@ -98,7 +105,9 @@ class SendMoney extends StatelessWidget {
                         },
                       );
                     },
-                    child: Card(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                       color: ColorTheme.lightgrey,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -131,88 +140,95 @@ class SendMoney extends StatelessWidget {
                 child: Container(
                   height: size.height * .1,
                   width: size.width * .8,
-                  child: InkWell(onTap: () {
-                    // showModalBottomSheet(
-                    //   context: context,
-                    //   builder: (BuildContext context){
-                    //     return Padding(
-                    //       padding: const EdgeInsets.all(10.0),
-                    //       child: Center(
-                    //         child: Column(
-                    //           crossAxisAlignment: CrossAxisAlignment.start,
-                    //           children: [
-                    //             Padding(
-                    //                 padding: const EdgeInsets.only(
-                    //                     left: 15,
-                    //                     right: 15,
-                    //                     top: 10,
-                    //                     bottom: 10),
-                    //                 child: TextFormFieldRefactor(
-                    //                   hintText:
-                    //                   "Enter Mobile Number",
-                    //                 )),
-                    //             SizedBox(height: 15,),
-                    //             Center(
-                    //                 child: Container(
-                    //                   width: size.width*.3,
-                    //                   height: size.height*.05,
-                    //                   child: GLMetrialButton(
-                    //                       color: ColorTheme.darkClr,
-                    //                       text: 'PAY',
-                    //                       txtClr: ColorTheme.white,
-                    //                       style:GLTextStyles.subtitleWhite),
-                    //                 )),
-                    //           ],
-                    //         ),
-                    //       ),
-                    //     );
-                    //   },
-                    // );
-                    showModalBottomSheet(
-                      context: context,
-                      isScrollControlled: true, // Enable dragging to adjust height
-                      builder: (BuildContext context){
-                        return SingleChildScrollView( // Wrap with SingleChildScrollView
-                          physics: AlwaysScrollableScrollPhysics(), // Enable scrolling
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Center(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 15,
-                                        right: 15,
-                                        top: 10,
-                                        bottom: 10),
-                                    child: TextFormFieldRefactor(
-                                      hintText: "Enter Mobile Number",
-                                    ),
-                                  ),
-                                  SizedBox(height: 15,),
-                                  Center(
-                                    child: Container(
-                                      width: size.width*.3,
-                                      height: size.height*.05,
-                                      child: GLMetrialButton(
-                                        color: ColorTheme.darkClr,
-                                        text: 'PAY',
-                                        txtClr: ColorTheme.white,
-                                        style: GLTextStyles.subtitleWhite,
+                  child: InkWell(
+                    onTap: () {
+                      // showModalBottomSheet(
+                      //   context: context,
+                      //   builder: (BuildContext context){
+                      //     return Padding(
+                      //       padding: const EdgeInsets.all(10.0),
+                      //       child: Center(
+                      //         child: Column(
+                      //           crossAxisAlignment: CrossAxisAlignment.start,
+                      //           children: [
+                      //             Padding(
+                      //                 padding: const EdgeInsets.only(
+                      //                     left: 15,
+                      //                     right: 15,
+                      //                     top: 10,
+                      //                     bottom: 10),
+                      //                 child: TextFormFieldRefactor(
+                      //                   hintText:
+                      //                   "Enter Mobile Number",
+                      //                 )),
+                      //             SizedBox(height: 15,),
+                      //             Center(
+                      //                 child: Container(
+                      //                   width: size.width*.3,
+                      //                   height: size.height*.05,
+                      //                   child: GLMetrialButton(
+                      //                       color: ColorTheme.darkClr,
+                      //                       text: 'PAY',
+                      //                       txtClr: ColorTheme.white,
+                      //                       style:GLTextStyles.subtitleWhite),
+                      //                 )),
+                      //           ],
+                      //         ),
+                      //       ),
+                      //     );
+                      //   },
+                      // );
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled:
+                            true, // Enable dragging to adjust height
+                        builder: (BuildContext context) {
+                          return SingleChildScrollView(
+                            // Wrap with SingleChildScrollView
+                            physics:
+                                AlwaysScrollableScrollPhysics(), // Enable scrolling
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Center(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 15,
+                                          right: 15,
+                                          top: 10,
+                                          bottom: 10),
+                                      child: TextFormFieldRefactor(
+                                        hintText: "Enter Mobile Number",
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        width: size.width * .3,
+                                        height: size.height * .05,
+                                        child: GLMetrialButton(
+                                          color: ColorTheme.darkClr,
+                                          text: 'PAY',
+                                          txtClr: ColorTheme.white,
+                                          style: GLTextStyles.subtitleWhite,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      },
-                    );
-
-                  },
-                    child: Card(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                          );
+                        },
+                      );
+                    },
+                    child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -225,9 +241,9 @@ class SendMoney extends StatelessWidget {
                               style: TextStyle(fontSize: 15),
                             ),
                             Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 20,
-                                )
+                              Icons.arrow_forward_ios,
+                              size: 20,
+                            )
                           ],
                         ),
                         color: ColorTheme.lightgrey),

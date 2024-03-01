@@ -1,15 +1,12 @@
-import 'package:digibank/presentation/account_summary/view/account_summary.dart';
-import 'package:digibank/presentation/more_screen/view/more_screen.dart';
+import 'package:digibank/presentation/account_summary_screen/view/account_summary.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/global_text_style.dart';
-import '../../../request_money/view/request_money.dart';
+import '../../../request_money_screen/view/request_money.dart';
 import '../../../send_money_screen/view/send_money_screen.dart';
 import 'icon_btn.dart';
-
-
 
 Container UsersFunctions(Size size, BuildContext context) {
   return Container(
@@ -40,7 +37,7 @@ Container UsersFunctions(Size size, BuildContext context) {
             style: GLTextStyles.labeltxtwhite,
             color: ColorTheme.white),
         IconBtn(context,
-            route: MoreScreen(),
+            route: null,
             title: "More",
             icon: FontAwesomeIcons.ellipsis,
             color: ColorTheme.white,

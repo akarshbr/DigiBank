@@ -1,4 +1,4 @@
-import 'package:digibank/presentation/account_summary/controller/account_summary_control.dart';
+import 'package:digibank/presentation/account_summary_screen/controller/account_summary_control.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

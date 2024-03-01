@@ -1,7 +1,7 @@
 import 'package:digibank/core/constants/global_text_style.dart';
-import 'package:digibank/presentation/home/view/home.dart';
-import 'package:digibank/presentation/profile/view/profile.dart';
-import 'package:digibank/presentation/transaction/view/transaction.dart';
+import 'package:digibank/presentation/home_screen/view/home.dart';
+import 'package:digibank/presentation/profile_screen/view/profile.dart';
+import 'package:digibank/presentation/transaction_screen/view/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
