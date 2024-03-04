@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../core/constants/global_text_style.dart';
 import '../../../global_widget/global_appbar.dart';
@@ -19,7 +20,17 @@ class MoreScreen extends StatelessWidget {
             },
             icon: Icon(Icons.arrow_back)),
       ),
-      body: Center(child: Text("Under Construction")),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "Under Construction",
+            style: GLTextStyles.labeltxtBlk20,
+          ),
+          Container(child: LottieBuilder.asset("asset/animation/loading.json"))
+        ],
+      ),
     );
   }
 }
