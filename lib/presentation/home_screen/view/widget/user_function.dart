@@ -1,4 +1,5 @@
 import 'package:digibank/presentation/account_summary_screen/view/account_summary.dart';
+import 'package:digibank/presentation/more_screen/view/more_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -37,7 +38,7 @@ Container UsersFunctions(Size size, BuildContext context) {
             style: GLTextStyles.labeltxtwhite,
             color: ColorTheme.white),
         IconBtn(context,
-            route: null,
+            route: MoreScreen(),
             title: "More",
             icon: FontAwesomeIcons.ellipsis,
             color: ColorTheme.white,

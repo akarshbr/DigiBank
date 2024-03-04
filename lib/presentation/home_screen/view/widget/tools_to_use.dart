@@ -24,7 +24,6 @@ class ToolsToUse extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          //TODO
           IconBtn(context,
               route: MobileRecharge(),
               title: "Recharge",

@@ -10,7 +10,7 @@ class CreditScrController extends ChangeNotifier {
 
   void generateRandomValue() {
     Random random = Random();
-    value = 300.0 + random.nextDouble() * (900.0 - 300.0);
+    value = 450.0 + random.nextDouble() * (900.0 - 450.0);
     value= double.parse(value.toStringAsFixed(0));
     notifyListeners();
   }
