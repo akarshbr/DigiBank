@@ -84,6 +84,16 @@ class SendMoney extends StatelessWidget {
                                           hintText:
                                               "Bank Account Holder's Name",
                                         )),
+                                        Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 15,
+                                            bottom: 15),
+                                        child: TextFormFieldRefactor(
+                                          hintText:
+                                              "Enter Amount",
+                                        )),
                                     SizedBox(
                                       height: 15,
                                     ),
@@ -203,6 +213,16 @@ class SendMoney extends StatelessWidget {
                                         hintText: "Enter Mobile Number",
                                       ),
                                     ),
+                                    Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 15,
+                                            bottom: 15),
+                                        child: TextFormFieldRefactor(
+                                          hintText:
+                                              "Enter Amount",
+                                        )),
                                     SizedBox(
                                       height: 15,
                                     ),
