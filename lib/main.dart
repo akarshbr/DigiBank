@@ -6,6 +6,7 @@ import 'package:digibank/presentation/recharge_and_pay_bills/electricity/control
 import 'package:digibank/presentation/recharge_and_pay_bills/mobile_recharge/controller/operator_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/water/controller/water_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
+import 'package:digibank/presentation/request_loan_screen/controller/loan_type_controller.dart';
 import 'package:digibank/presentation/transaction_screen/controller/transaction_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -24,7 +25,9 @@ void main() {
     ChangeNotifierProvider(create: (context) => ACCSumaryCantrol()),
     ChangeNotifierProvider(create: (context) => ElectricityController()),
     ChangeNotifierProvider(create: (context) => CreditScrController()),
-    ChangeNotifierProvider(create: (context) => WaterController())
+    ChangeNotifierProvider(create: (context) => WaterController()),
+    ChangeNotifierProvider(create: (context) => LoanTypeController())
+
     // ChangeNotifierProvider(
     //   create: (context) =>
     // ),
