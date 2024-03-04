@@ -1,6 +1,5 @@
 import 'package:digibank/presentation/account_summary_screen/view/account_summary.dart';
 import 'package:digibank/presentation/home_screen/controller/home_controler.dart';
-import 'package:digibank/presentation/profile_screen/view/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
