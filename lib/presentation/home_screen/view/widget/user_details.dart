@@ -44,15 +44,15 @@ Consumer<HomeController> UserDetailsCard(Size size) {
                   hControl.username,
                   style: GLTextStyles.titleTextBlk,
                 ),
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ProfileScreen()));
-                    },
-                    child: Text(
-                      "View All Accounts",
-                      style: GLTextStyles.bodyTextGrey,
-                    ))
+                // TextButton(
+                //     onPressed: () {
+                //       Navigator.of(context).push(MaterialPageRoute(
+                //           builder: (context) => ProfileScreen()));
+                //     },
+                //     child: Text(
+                //       "View All Accounts",
+                //       style: GLTextStyles.bodyTextGrey,
+                //     ))
               ],
             ),
             Row(
