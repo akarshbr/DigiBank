@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
                       onPressed: () {
                         bControl.currentIndex = 0;
                       },
-                      icon: Icon(Icons.arrow_back));
+                      icon: const Icon(Icons.arrow_back));
                 },
               )),
           body: Consumer<ProfileController>(
@@ -32,14 +32,14 @@ class ProfileScreen extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Center(
                     child: Container(
                       width: size.width * .95,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
                           color: ColorTheme.darkClr,
                           borderRadius: BorderRadius.circular(10)),
@@ -75,7 +75,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Padding(
@@ -87,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
                           "Personal Details",
                           style: GLTextStyles.titleTextBlk,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Text(
@@ -98,7 +98,7 @@ class ProfileScreen extends StatelessWidget {
                           "${pControl.id}",
                           style: GLTextStyles.subtitleBlk14,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Text(
@@ -109,7 +109,7 @@ class ProfileScreen extends StatelessWidget {
                           "${pControl.username}",
                           style: GLTextStyles.subtitleBlk14,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Text(
@@ -120,7 +120,7 @@ class ProfileScreen extends StatelessWidget {
                           "+91 ${pControl.mobileNo}",
                           style: GLTextStyles.subtitleBlk14,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Text(

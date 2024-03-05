@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:digibank/global_widget/title_and_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,35 +25,33 @@ class MobileRecharge extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
       ),
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: size.height * .5,
           width: size.width * 0.9,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TitleAndTextFormField(text: "Enter Mobile Number"),
+              const TitleAndTextFormField(text: "Enter Mobile Number"),
               Consumer<OperatorController>(builder: (context, operatorController, _) {
                 return DropdownButton<String>(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   isExpanded: true,
                   value: operatorController.operatorSelected,
-                  hint: Text("Select Operator"),
+                  hint: const Text("Select Operator"),
                   onChanged: (String? selectedOperator) {
-                    print('Selected Operator: $selectedOperator');
+                    log('Selected Operator: $selectedOperator');
                     operatorController.setOperator(selectedOperator!);
                   },
                   items: dropdownItems,
                 );
               }),
-              TitleAndTextFormField(text: "₹ Enter Amount"),
+              const TitleAndTextFormField(text: "₹ Enter Amount"),
               Center(
                 child: ElevatedButton(
                   onPressed: () {},
-                  child:
-                      TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
@@ -60,6 +60,8 @@ class MobileRecharge extends StatelessWidget {
                           top: size.height * .02,
                           bottom: size.height * .02),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                  child:
+                      const TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                 ),
               )
             ],
@@ -72,26 +74,26 @@ class MobileRecharge extends StatelessWidget {
 
 List<DropdownMenuItem<String>> get dropdownItems {
   List<DropdownMenuItem<String>> menuItems = [
-    DropdownMenuItem(
+    const DropdownMenuItem(
+        value: "Airtel",
         child: ListTile(
             leading: Image(width: 30, image: AssetImage("asset/operator_icon/airtel.png")),
-            title: Text("Airtel")),
-        value: "Airtel"),
-    DropdownMenuItem(
+            title: Text("Airtel"))),
+    const DropdownMenuItem(
+        value: "BSNL",
         child: ListTile(
             leading: Image(width: 30, image: AssetImage("asset/operator_icon/bsnl.png")),
-            title: Text("BSNL")),
-        value: "BSNL"),
-    DropdownMenuItem(
+            title: Text("BSNL"))),
+    const DropdownMenuItem(
+        value: "Jio",
         child: ListTile(
             leading: Image(width: 30, image: AssetImage("asset/operator_icon/jio.png")),
-            title: Text("Jio")),
-        value: "Jio"),
-    DropdownMenuItem(
+            title: Text("Jio"))),
+    const DropdownMenuItem(
+        value: "VI",
         child: ListTile(
             leading: Image(width: 30, image: AssetImage("asset/operator_icon/vi.png")),
-            title: Text("data")),
-        value: "VI")
+            title: Text("data")))
   ];
   return menuItems;
 }

@@ -9,7 +9,7 @@ class GLAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? centerTitle;
   final TextStyle? titleTextStyle;
 
-  GLAppBar({
+  const GLAppBar({super.key, 
     this.title,
     this.leading,
     this.actions,
@@ -30,5 +30,5 @@ class GLAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

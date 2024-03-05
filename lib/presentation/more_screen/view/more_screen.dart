@@ -18,7 +18,7 @@ class MoreScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -28,7 +28,7 @@ class MoreScreen extends StatelessWidget {
             "Under Construction",
             style: GLTextStyles.labeltxtBlk20,
           ),
-          Container(child: LottieBuilder.asset("asset/animation/loading.json"))
+          LottieBuilder.asset("asset/animation/loading.json")
         ],
       ),
     );

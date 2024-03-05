@@ -15,7 +15,7 @@ import 'package:provider/provider.dart';
 import 'presentation/bottom_navigation_screen/controller/bottom_nav_controller.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.grey));
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.grey));
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
     ChangeNotifierProvider(create: (context) => HomeController()),
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
       title: 'Digi Bank',
       theme: /*isDark == true ? ThemeData.dark() : ThemeData.light()*/
           ThemeData.light(),
-      home: RegistrationScreen(),
+      home: const RegistrationScreen(),
     );
   }
 }

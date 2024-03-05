@@ -23,7 +23,7 @@ class TransactionScreen extends StatelessWidget {
                       onPressed: () {
                         bControl.currentIndex = 0;
                       },
-                      icon: Icon(Icons.arrow_back));
+                      icon: const Icon(Icons.arrow_back));
                 },
               )
         ),

@@ -50,7 +50,7 @@ class GLMetrialButton extends StatelessWidget {
                   icon,
                   color: ColorTheme.white,
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
                   text,
                   style: GLTextStyles.labeltxtwhite,

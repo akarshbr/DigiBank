@@ -1,4 +1,6 @@
 
+// ignore_for_file: unnecessary_string_interpolations
+
  import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:flutter/material.dart';
 

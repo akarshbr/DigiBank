@@ -20,7 +20,7 @@ class PinAndOtpBox extends StatelessWidget {
             FocusScope.of(context).nextFocus();
           }
         },
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: InputBorder.none
         ),
         keyboardType: TextInputType.number,

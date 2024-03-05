@@ -18,7 +18,7 @@ class AdvertisementSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeController>(builder: (context, hContol, child) {
-      return Container(
+      return SizedBox(
         width: size.aspectRatio,
             height: size.height*.2,
         child: CarouselSlider.builder(

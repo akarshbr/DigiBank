@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:digibank/presentation/request_loan_screen/controller/loan_type_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,26 +22,26 @@ class RequestLoanScreen extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: Icon(color: Colors.black, Icons.arrow_back),
+            icon: const Icon(color: Colors.black, Icons.arrow_back),
           ),
       ),
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: size.height * .5,
           width: size.width * 0.9,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TitleAndTextFormField(text: "Name"),
-              TitleAndTextFormField(text: "Mobile Number"),
+              const TitleAndTextFormField(text: "Name"),
+              const TitleAndTextFormField(text: "Mobile Number"),
               Consumer<LoanTypeController>(builder: (context, operatorController, _) {
                 return DropdownButton<String>(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   isExpanded: true,
                   value: operatorController.loantypeSelected,
-                  hint: Text("Select Loan Type"),
+                  hint: const Text("Select Loan Type"),
                   onChanged: (String? selectedLoantype) {
-                    print('Selected Loan Type: $selectedLoantype');
+                    log('Selected Loan Type: $selectedLoantype');
                     operatorController.setOperator(selectedLoantype!);
                   },
                   items: dropdownItems,
@@ -48,8 +50,6 @@ class RequestLoanScreen extends StatelessWidget {
               Center(
                 child: ElevatedButton(
                   onPressed: () {},
-                  child:
-                  TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
@@ -58,6 +58,8 @@ class RequestLoanScreen extends StatelessWidget {
                           top: size.height * .02,
                           bottom: size.height * .02),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                  child:
+                  const TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                 ),
               )
             ],
@@ -69,18 +71,18 @@ class RequestLoanScreen extends StatelessWidget {
 }
 List<DropdownMenuItem<String>> get dropdownItems {
   List<DropdownMenuItem<String>> menuItems = [
-    DropdownMenuItem(
+    const DropdownMenuItem(
+        value: "Home",
         child: ListTile(
-            title: Text("Home")),
-        value: "Home"),
-    DropdownMenuItem(
+            title: Text("Home"))),
+    const DropdownMenuItem(
+        value: "Educational",
         child: ListTile(
-            title: Text("Educational")),
-        value: "Educational"),
-    DropdownMenuItem(
+            title: Text("Educational"))),
+    const DropdownMenuItem(
+        value: "Vehicle",
         child: ListTile(
-            title: Text("Vehicle")),
-        value: "Vehicle"),
+            title: Text("Vehicle"))),
   ];
   return menuItems;
 }

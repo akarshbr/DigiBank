@@ -24,16 +24,16 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(onPressed: () {
               // TODO
-            }, icon: Icon(Icons.notifications)),
+            }, icon: const Icon(Icons.notifications)),
             IconButton(onPressed: () {
               // TODO
-            }, icon: Icon(Icons.logout_outlined)),
-            SizedBox(
+            }, icon: const Icon(Icons.logout_outlined)),
+            const SizedBox(
               width: 10,
             )
           ],
         ),
-        drawer: DrawerRefactored(),
+        drawer: const DrawerRefactored(),
         body: HomeWidget(size: size),
       ),
     );

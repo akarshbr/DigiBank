@@ -12,14 +12,14 @@ class RegistrationScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: size.height * .6,
           width: size.width * 0.9,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+              const Center(
                 child: TextRefactor(
                     text: "Register your account", textSize: 22, textFontWeight: FontWeight.bold),
               ),
@@ -27,7 +27,7 @@ class RegistrationScreen extends StatelessWidget {
               // TextFormFieldRefactor(),
               // TextRefactor(text: "Mobile Number", textSize: 18),
               // TextFormFieldRefactor(),
-              Column(
+              const Column(
                 children: [
                   TitleAndTextFormField(text: "Account Number", textSize: 18),
                   TitleAndTextFormField(text: "Mobile Number", textSize: 18),
@@ -37,10 +37,8 @@ class RegistrationScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => CreateMpinScreen()));
+                        context, MaterialPageRoute(builder: (context) => const CreateMpinScreen()));
                   },
-                  child:
-                      TextRefactor(text: "SIGN IN", textSize: 16, textFontWeight: FontWeight.bold),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
@@ -49,6 +47,8 @@ class RegistrationScreen extends StatelessWidget {
                           top: size.height * .02,
                           bottom: size.height * .02),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                  child:
+                      const TextRefactor(text: "SIGN IN", textSize: 16, textFontWeight: FontWeight.bold),
                 ),
               )
             ],

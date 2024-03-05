@@ -33,7 +33,7 @@ class TitleAndTextFormField extends StatelessWidget {
           TextFormField(
             controller: textEditingController,
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 border: OutlineInputBorder(
                     borderSide: BorderSide(width: .1, color: Colors.white54))),
           )

@@ -22,7 +22,7 @@ class CreditScrScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
@@ -32,59 +32,57 @@ class CreditScrScreen extends StatelessWidget {
               "Your Credit Report",
               style: GLTextStyles.labeltxtBlk16,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Center(child: Consumer<CreditScrController>(
               builder: (context, crControl, child) {
-                return Container(
-                  child: SfRadialGauge(
-                    axes: <RadialAxis>[
-                      RadialAxis(
-                        minimum: 300,
-                        maximum: 900,
-                        interval: 50,
-                        ranges: <GaugeRange>[
-                          GaugeRange(
-                            startValue: 300,
-                            endValue: 500,
-                            color: Colors.red,
+                return SfRadialGauge(
+                  axes: <RadialAxis>[
+                    RadialAxis(
+                      minimum: 300,
+                      maximum: 900,
+                      interval: 50,
+                      ranges: <GaugeRange>[
+                        GaugeRange(
+                          startValue: 300,
+                          endValue: 500,
+                          color: Colors.red,
+                        ),
+                        GaugeRange(
+                          startValue: 500,
+                          endValue: 700,
+                          color: Colors.orange,
+                        ),
+                        GaugeRange(
+                          startValue: 700,
+                          endValue: 800,
+                          color: Colors.yellow,
+                        ),
+                        GaugeRange(
+                          startValue: 800,
+                          endValue: 900,
+                          color: Colors.green,
+                        ),
+                      ],
+                      pointers: <GaugePointer>[
+                        NeedlePointer(
+                          value: crControl.value,
+                          enableAnimation: true,
+                        )
+                      ],
+                      annotations: <GaugeAnnotation>[
+                        GaugeAnnotation(
+                          widget: Text(
+                            "${crControl.value}",
+                            style: GLTextStyles.labeltxtBlk20,
                           ),
-                          GaugeRange(
-                            startValue: 500,
-                            endValue: 700,
-                            color: Colors.orange,
-                          ),
-                          GaugeRange(
-                            startValue: 700,
-                            endValue: 800,
-                            color: Colors.yellow,
-                          ),
-                          GaugeRange(
-                            startValue: 800,
-                            endValue: 900,
-                            color: Colors.green,
-                          ),
-                        ],
-                        pointers: <GaugePointer>[
-                          NeedlePointer(
-                            value: crControl.value,
-                            enableAnimation: true,
-                          )
-                        ],
-                        annotations: <GaugeAnnotation>[
-                          GaugeAnnotation(
-                            widget: Text(
-                              "${crControl.value}",
-                              style: GLTextStyles.labeltxtBlk20,
-                            ),
-                            positionFactor: 0.4,
-                            angle: 90,
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                          positionFactor: 0.4,
+                          angle: 90,
+                        ),
+                      ],
+                    )
+                  ],
                 );
               },
             ))
