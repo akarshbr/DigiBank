@@ -118,7 +118,7 @@ class SendMoney extends StatelessWidget {
                     child: Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      color: ColorTheme.lightgrey,
+                      color: ColorTheme.lightGrey,
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -249,7 +249,7 @@ class SendMoney extends StatelessWidget {
                     child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        color: ColorTheme.lightgrey,
+                        color: ColorTheme.lightGrey,
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [

@@ -12,10 +12,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
+import 'core/constants/colors.dart';
 import 'presentation/bottom_navigation_screen/controller/bottom_nav_controller.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.grey));
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.white,statusBarIconBrightness: Brightness.dark));
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
     ChangeNotifierProvider(create: (context) => HomeController()),
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Digi Bank',
       theme: /*isDark == true ? ThemeData.dark() : ThemeData.light()*/
-          ThemeData.light(),
+          ThemeData(scaffoldBackgroundColor: ColorTheme.white),
       home: const RegistrationScreen(),
     );
   }

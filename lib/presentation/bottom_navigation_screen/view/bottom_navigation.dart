@@ -46,25 +46,28 @@ class BottomNavigation extends StatelessWidget {
                   showSelectedLabels: true,
                   showUnselectedLabels: false,
                   selectedLabelStyle: GLTextStyles.bottomlabel,
-                  items: const [
+                  items: [
                     BottomNavigationBarItem(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.home,
                         ),
                         label: "Home",
-                        activeIcon: Icon(Icons.home_filled)),
+                        activeIcon: const Icon(Icons.home_filled),
+                        backgroundColor: ColorTheme.white),
                     BottomNavigationBarItem(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.payments_outlined,
                         ),
                         label: "Transaction",
-                        activeIcon: Icon(Icons.payments)),
+                        activeIcon: const Icon(Icons.payments),
+                        backgroundColor: ColorTheme.white),
                     BottomNavigationBarItem(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.person_2_outlined,
                         ),
                         label: "Profile",
-                        activeIcon: Icon(Icons.person_2)),
+                        activeIcon: const Icon(Icons.person_2),
+                        backgroundColor: ColorTheme.white),
                   ],
                 ),
               ),

@@ -24,6 +24,7 @@ class GLAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleTextStyle: GLTextStyles.titleStyle,
       centerTitle: centerTitle,
       backgroundColor: ColorTheme.white,
+      surfaceTintColor: ColorTheme.white,
       leading: leading,
       actions: actions,
     );
