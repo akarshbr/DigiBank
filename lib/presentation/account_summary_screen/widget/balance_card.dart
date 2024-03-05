@@ -16,10 +16,10 @@ class BalanceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ACCSumaryCantrol>(
-      builder: (context, AScontol, child) {
+      builder: (context, aScontol, child) {
         return Container(
           width: size.width * .75,
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           decoration: BoxDecoration(
               color: ColorTheme.darkClr,
               borderRadius: BorderRadius.circular(10)),
@@ -32,7 +32,7 @@ class BalanceCard extends StatelessWidget {
               ),
               Center(
                 child: Text(
-                  "${AScontol.balance}",
+                  "${aScontol.balance}",
                   style: GLTextStyles.subtitleWhite,
                 ),
               ),

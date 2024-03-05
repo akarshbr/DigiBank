@@ -13,25 +13,24 @@ class ForgotMpinScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: size.height * .4,
           width: size.width * 0.9,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+              const Center(
                 child: TextRefactor(
                     text: "Forgot MPIN ?", textSize: 22, textFontWeight: FontWeight.bold),
               ),
-              TitleAndTextFormField(text: "Enter Your Mobile Number"),
+              const TitleAndTextFormField(text: "Enter Your Mobile Number"),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
-                        context, MaterialPageRoute(builder: (context) => BottomNavigation()));
+                        context, MaterialPageRoute(builder: (context) => const BottomNavigation()));
                   },
-                  child: TextRefactor(text: "Login", textSize: 16, textFontWeight: FontWeight.bold),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
@@ -40,6 +39,7 @@ class ForgotMpinScreen extends StatelessWidget {
                           top: size.height * .02,
                           bottom: size.height * .02),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                  child: const TextRefactor(text: "Login", textSize: 16, textFontWeight: FontWeight.bold),
                 ),
               ),
             ],

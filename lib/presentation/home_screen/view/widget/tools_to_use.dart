@@ -19,31 +19,31 @@ class ToolsToUse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: size.aspectRatio,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconBtn(context,
-              route: MobileRecharge(),
+              route: const MobileRecharge(),
               title: "Recharge",
               icon: FontAwesomeIcons.mobileScreen,
               style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
-              route: ElectricityBillsScreen(),
+              route: const ElectricityBillsScreen(),
               title: "Electricity",
               icon: FontAwesomeIcons.lightbulb,
               style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
-              route: WaterBillsScreen(),
+              route: const WaterBillsScreen(),
               title: "Water",
               icon: FontAwesomeIcons.faucetDrip,
               style: GLTextStyles.labeltxtBlk16,
               color: ColorTheme.black),
           IconBtn(context,
-              route: MoreScreen(),
+              route: const MoreScreen(),
               title: "More",
               icon: FontAwesomeIcons.ellipsis,
               style: GLTextStyles.labeltxtBlk16,

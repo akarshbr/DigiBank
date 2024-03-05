@@ -21,20 +21,20 @@ class AccountSummary extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
       ),
       body: Consumer<ACCSumaryCantrol>(
-        builder: (context, ASControl, child) {
+        builder: (context, aSControl, child) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Center(
                 child: Container(
                   width: size.width * .95,
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
                       color: ColorTheme.darkClr,
                       borderRadius: BorderRadius.circular(10)),
@@ -48,7 +48,7 @@ class AccountSummary extends StatelessWidget {
                       ),
                       Center(
                         child: Text(
-                          "${ASControl.balance}",
+                          "${aSControl.balance}",
                           style: GLTextStyles.subtitleWhite,
                         ),
                       ),
@@ -62,13 +62,13 @@ class AccountSummary extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Center(
                 child: Container(
                   width: size.width * .95,
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
                       color: ColorTheme.darkClr,
                       borderRadius: BorderRadius.circular(10)),
@@ -82,7 +82,7 @@ class AccountSummary extends StatelessWidget {
                             style: GLTextStyles.bodyTextwhite,
                           ),
                           Text(
-                            "${ASControl.accNo}",
+                            "${aSControl.accNo}",
                             style: GLTextStyles.subtitleWhite2,
                           )
                         ],
@@ -95,7 +95,7 @@ class AccountSummary extends StatelessWidget {
                             style: GLTextStyles.bodyTextwhite,
                           ),
                           Text(
-                            ASControl.ifsc,
+                            aSControl.ifsc,
                             style: GLTextStyles.subtitleWhite2,
                           )
                         ],
@@ -104,7 +104,7 @@ class AccountSummary extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
@@ -116,7 +116,7 @@ class AccountSummary extends StatelessWidget {
                       "Personal Details",
                       style: GLTextStyles.titleTextBlk,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Text(
@@ -124,10 +124,10 @@ class AccountSummary extends StatelessWidget {
                       style: GLTextStyles.subtitleGrey,
                     ),
                     Text(
-                      "${ASControl.id}",
+                      "${aSControl.id}",
                       style: GLTextStyles.subtitleBlk14,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Text(
@@ -135,10 +135,10 @@ class AccountSummary extends StatelessWidget {
                       style: GLTextStyles.subtitleGrey,
                     ),
                     Text(
-                      "${ASControl.username}",
+                      "${aSControl.username}",
                       style: GLTextStyles.subtitleBlk14,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Text(
@@ -146,10 +146,10 @@ class AccountSummary extends StatelessWidget {
                       style: GLTextStyles.subtitleGrey,
                     ),
                     Text(
-                      "+91 ${ASControl.mobileNo}",
+                      "+91 ${aSControl.mobileNo}",
                       style: GLTextStyles.subtitleBlk14,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Text(
@@ -157,7 +157,7 @@ class AccountSummary extends StatelessWidget {
                       style: GLTextStyles.subtitleGrey,
                     ),
                     Text(
-                      "${ASControl.mailid}",
+                      "${aSControl.mailid}",
                       style: GLTextStyles.subtitleBlk14,
                     ),
                   ],

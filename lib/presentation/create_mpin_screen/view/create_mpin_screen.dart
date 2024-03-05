@@ -13,28 +13,27 @@ class CreateMpinScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: size.height * .6,
           width: size.width * 0.9,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TextRefactor(
+              const TextRefactor(
                 text: "Create Your MPIN",
                 textSize: 22,
                 textFontWeight: FontWeight.bold,
               ),
-              TextRefactor(text: "MPIN", textSize: 18),
+              const TextRefactor(text: "MPIN", textSize: 18),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(4, (index) => PinAndOtpBox(gap: 20)),
+                children: List.generate(4, (index) => const PinAndOtpBox(gap: 20)),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => ConfirmMpinScreen()));
+                      context, MaterialPageRoute(builder: (context) => const ConfirmMpinScreen()));
                 },
-                child: TextRefactor(text: "NEXT", textSize: 16, textFontWeight: FontWeight.bold),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorTheme.mainClr,
                     padding: EdgeInsets.only(
@@ -43,6 +42,7 @@ class CreateMpinScreen extends StatelessWidget {
                         top: size.height * .02,
                         bottom: size.height * .02),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                child: const TextRefactor(text: "NEXT", textSize: 16, textFontWeight: FontWeight.bold),
               ),
             ],
           ),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/presentation/home_screen/view/home.dart';
 import 'package:digibank/presentation/profile_screen/view/profile.dart';
@@ -20,7 +22,7 @@ class BottomNavigation extends StatelessWidget {
           builder: (context, provider, child) {
             return IndexedStack(
               index: provider.currentIndex,
-              children: [HomeScreen(), TransactionScreen(), ProfileScreen()],
+              children: const [HomeScreen(), TransactionScreen(), ProfileScreen()],
             );
           },
         ),
@@ -33,7 +35,7 @@ class BottomNavigation extends StatelessWidget {
                 child: BottomNavigationBar(
                   onTap: (index) {
                     provider.currentIndex = index;
-                    print("tapped ${provider.currentIndex}");
+                    log("tapped ${provider.currentIndex}");
                   },
                   type: BottomNavigationBarType.shifting,
                   currentIndex: provider.currentIndex,
@@ -44,7 +46,7 @@ class BottomNavigation extends StatelessWidget {
                   showSelectedLabels: true,
                   showUnselectedLabels: false,
                   selectedLabelStyle: GLTextStyles.bottomlabel,
-                  items: [
+                  items: const [
                     BottomNavigationBarItem(
                         icon: Icon(
                           Icons.home,

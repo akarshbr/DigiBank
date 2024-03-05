@@ -20,7 +20,7 @@ class SendMoney extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: Icon(color: Colors.black, Icons.arrow_back),
+            icon: const Icon(color: Colors.black, Icons.arrow_back),
           ),
         ),
         body: Center(
@@ -40,15 +40,15 @@ class SendMoney extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return SingleChildScrollView(
-                            physics: AlwaysScrollableScrollPhysics(),
+                            physics: const AlwaysScrollableScrollPhysics(),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Center(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
-                                        padding: const EdgeInsets.only(
+                                    const Padding(
+                                        padding: EdgeInsets.only(
                                             left: 15,
                                             right: 15,
                                             top: 10,
@@ -56,8 +56,8 @@ class SendMoney extends StatelessWidget {
                                         child: TextFormFieldRefactor(
                                           hintText: 'Enter Account Number',
                                         )),
-                                    Padding(
-                                        padding: const EdgeInsets.only(
+                                    const Padding(
+                                        padding: EdgeInsets.only(
                                             left: 15,
                                             right: 15,
                                             top: 10,
@@ -65,8 +65,8 @@ class SendMoney extends StatelessWidget {
                                         child: TextFormFieldRefactor(
                                           hintText: 'Re-enter Account Number',
                                         )),
-                                    Padding(
-                                        padding: const EdgeInsets.only(
+                                    const Padding(
+                                        padding: EdgeInsets.only(
                                             left: 15,
                                             right: 15,
                                             top: 10,
@@ -74,8 +74,8 @@ class SendMoney extends StatelessWidget {
                                         child: TextFormFieldRefactor(
                                           hintText: 'Enter IFSC',
                                         )),
-                                    Padding(
-                                        padding: const EdgeInsets.only(
+                                    const Padding(
+                                        padding: EdgeInsets.only(
                                             left: 15,
                                             right: 15,
                                             top: 10,
@@ -84,8 +84,8 @@ class SendMoney extends StatelessWidget {
                                           hintText:
                                               "Bank Account Holder's Name",
                                         )),
-                                        Padding(
-                                        padding: const EdgeInsets.only(
+                                        const Padding(
+                                        padding: EdgeInsets.only(
                                             left: 15,
                                             right: 15,
                                             top: 15,
@@ -94,11 +94,11 @@ class SendMoney extends StatelessWidget {
                                           hintText:
                                               "Enter Amount",
                                         )),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Center(
-                                        child: Container(
+                                        child: SizedBox(
                                       width: size.width * .4,
                                       height: size.height * .05,
                                       child: GLMetrialButton(
@@ -119,7 +119,7 @@ class SendMoney extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       color: ColorTheme.lightgrey,
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Icon(
@@ -143,11 +143,11 @@ class SendMoney extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SizedBox(
-                child: Container(
+                child: SizedBox(
                   height: size.height * .1,
                   width: size.width * .8,
                   child: InkWell(
@@ -196,15 +196,15 @@ class SendMoney extends StatelessWidget {
                           return SingleChildScrollView(
                             // Wrap with SingleChildScrollView
                             physics:
-                                AlwaysScrollableScrollPhysics(), // Enable scrolling
+                                const AlwaysScrollableScrollPhysics(), // Enable scrolling
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Center(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
+                                    const Padding(
+                                      padding: EdgeInsets.only(
                                           left: 15,
                                           right: 15,
                                           top: 10,
@@ -213,8 +213,8 @@ class SendMoney extends StatelessWidget {
                                         hintText: "Enter Mobile Number",
                                       ),
                                     ),
-                                    Padding(
-                                        padding: const EdgeInsets.only(
+                                    const Padding(
+                                        padding: EdgeInsets.only(
                                             left: 15,
                                             right: 15,
                                             top: 15,
@@ -223,11 +223,11 @@ class SendMoney extends StatelessWidget {
                                           hintText:
                                               "Enter Amount",
                                         )),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Center(
-                                      child: Container(
+                                      child: SizedBox(
                                         width: size.width * .3,
                                         height: size.height * .05,
                                         child: GLMetrialButton(
@@ -249,7 +249,8 @@ class SendMoney extends StatelessWidget {
                     child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Row(
+                        color: ColorTheme.lightgrey,
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Icon(
@@ -265,8 +266,7 @@ class SendMoney extends StatelessWidget {
                               size: 20,
                             )
                           ],
-                        ),
-                        color: ColorTheme.lightgrey),
+                        )),
                   ),
                 ),
               ),

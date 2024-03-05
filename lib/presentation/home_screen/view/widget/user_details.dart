@@ -11,7 +11,7 @@ Consumer<HomeController> UserDetailsCard(Size size) {
     builder: (context, hControl, child) {
       return Container(
         width: size.aspectRatio,
-        padding: EdgeInsets.only(left: 8, right: 8, top: 15, bottom: 5),
+        padding: const EdgeInsets.only(left: 8, right: 8, top: 15, bottom: 5),
         decoration: BoxDecoration(
           color: ColorTheme.white,
           border: Border.all(
@@ -24,7 +24,7 @@ Consumer<HomeController> UserDetailsCard(Size size) {
               color: Colors.grey.withOpacity(0.9),
               spreadRadius: 3,
               blurRadius: 5,
-              offset: Offset(0, 5), // changes position of shadow
+              offset: const Offset(0, 5), // changes position of shadow
             ),
           ],
         ),
@@ -64,7 +64,7 @@ Consumer<HomeController> UserDetailsCard(Size size) {
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => AccountSummary()));
+                          builder: (context) => const AccountSummary()));
                     },
                     child: Text(
                       "View Balance",

@@ -6,7 +6,7 @@ import '../../../core/constants/global_text_style.dart';
 Widget dateSection(String date) {
     return Container(
       color: ColorTheme.grey.withOpacity(.5),
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Text(
         date,
         style: GLTextStyles.labeltxtBlk12

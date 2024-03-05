@@ -23,10 +23,10 @@ class WaterBillsScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
       ),
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: size.height * .5,
           width: size.width * 0.9,
           child: Column(
@@ -34,7 +34,7 @@ class WaterBillsScreen extends StatelessWidget {
             children: [
               Consumer<WaterController>(builder: (context, waterController, _) {
                 return DropdownButton(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     isExpanded: true,
                     value: waterController.providerSelected,
                     items: dropdownItems,
@@ -42,12 +42,10 @@ class WaterBillsScreen extends StatelessWidget {
                       waterController.setProvider(selectedProvider!);
                     });
               }),
-              TitleAndTextFormField(text: "Enter Consumer ID"),
+              const TitleAndTextFormField(text: "Enter Consumer ID"),
               Center(
                 child: ElevatedButton(
                   onPressed: () {},
-                  child:
-                      TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
@@ -56,6 +54,8 @@ class WaterBillsScreen extends StatelessWidget {
                           top: size.height * .02,
                           bottom: size.height * .02),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                  child:
+                      const TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                 ),
               )
             ],
@@ -68,11 +68,11 @@ class WaterBillsScreen extends StatelessWidget {
 
 List<DropdownMenuItem<String>> get dropdownItems {
   List<DropdownMenuItem<String>> menuItems = [
-    DropdownMenuItem(
+    const DropdownMenuItem(
+      value: "Kerala Water Authority(KWA)",
       child: ListTile(
           leading: Image(width: 30,image: AssetImage("asset/water_icon/kwa.png")),
           title: Text("Kerala Water Authority(KWA)")),
-      value: "Kerala Water Authority(KWA)",
     )
   ];
   return menuItems;

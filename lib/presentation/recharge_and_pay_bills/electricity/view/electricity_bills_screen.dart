@@ -23,9 +23,10 @@ class ElectricityBillsScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
       ),
       body: Center(
+        // ignore: sized_box_for_whitespace
         child: Container(
           height: size.height * .5,
           width: size.width * 0.9,
@@ -34,7 +35,7 @@ class ElectricityBillsScreen extends StatelessWidget {
             children: [
               Consumer<ElectricityController>(builder: (builder, electricityController, _) {
                 return DropdownButton(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     isExpanded: true,
                     items: dropDownItems,
                     value: electricityController.providerSelected,
@@ -42,12 +43,10 @@ class ElectricityBillsScreen extends StatelessWidget {
                       electricityController.setProvider(selectedProvider!);
                     });
               }),
-              TitleAndTextFormField(text: "Enter Consumer Number"),
+              const TitleAndTextFormField(text: "Enter Consumer Number"),
               Center(
                 child: ElevatedButton(
                   onPressed: () {},
-                  child:
-                      TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
@@ -56,6 +55,8 @@ class ElectricityBillsScreen extends StatelessWidget {
                           top: size.height * .02,
                           bottom: size.height * .02),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                  child:
+                      const TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
                 ),
               )
             ],
@@ -68,22 +69,22 @@ class ElectricityBillsScreen extends StatelessWidget {
 
 List<DropdownMenuItem<String>> get dropDownItems {
   List<DropdownMenuItem<String>> menuItems = [
-    DropdownMenuItem(
+    const DropdownMenuItem(
+        value: "KSEB",
         child: ListTile(
             leading: Image(width: 30, image: AssetImage("asset/electricity_icon/KSEB_Logo.png")),
-            title: Text("KSEB")),
-        value: "KSEB"),
-    DropdownMenuItem(
+            title: Text("KSEB"))),
+    const DropdownMenuItem(
+        value: "TATA Power",
         child: ListTile(
             leading:
                 Image(width: 30, image: AssetImage("asset/electricity_icon/Tata_Power_Logo.png")),
-            title: Text("TATA Power")),
-        value: "TATA Power"),
-    DropdownMenuItem(
+            title: Text("TATA Power"))),
+    const DropdownMenuItem(
+        value: "ADANI Power",
         child: ListTile(
             leading: Image(width: 30, image: AssetImage("asset/electricity_icon/adaniPower.png")),
-            title: Text("ADANI Power")),
-        value: "ADANI Power"),
+            title: Text("ADANI Power"))),
   ];
   return menuItems;
 }

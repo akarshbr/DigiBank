@@ -40,7 +40,7 @@ class DrawerRefactored extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen(),));
                       },
                       child: Text(
                         'View Profile',

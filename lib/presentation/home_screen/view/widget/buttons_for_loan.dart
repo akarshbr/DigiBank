@@ -18,12 +18,12 @@ class ButtonsForLoan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GLMetrialButton(
-              route: RequestLoanScreen(),
+              route: const RequestLoanScreen(),
               width: size.width * .35,
               height: size.height * .065,
               color: ColorTheme.darkClr,

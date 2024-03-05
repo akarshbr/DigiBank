@@ -12,7 +12,7 @@ import 'icon_btn.dart';
 Container UsersFunctions(Size size, BuildContext context) {
   return Container(
     width: size.aspectRatio,
-    padding: EdgeInsets.all(10),
+    padding: const EdgeInsets.all(10),
     decoration: BoxDecoration(
         color: ColorTheme.darkClr, borderRadius: BorderRadius.circular(10)),
     child: Row(
@@ -20,25 +20,25 @@ Container UsersFunctions(Size size, BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         IconBtn(context,
-            route: SendMoney(),
+            route: const SendMoney(),
             title: "Send Money",
             icon: FontAwesomeIcons.moneyBillTransfer,
             style: GLTextStyles.labeltxtwhite,
             color: ColorTheme.white),
         IconBtn(context,
-            route: RequestMoney(),
+            route: const RequestMoney(),
             title: "Request Money",
             icon: FontAwesomeIcons.moneyCheck,
             style: GLTextStyles.labeltxtwhite,
             color: ColorTheme.white),
         IconBtn(context,
-            route: AccountSummary(),
+            route: const AccountSummary(),
             title: "Account Summary",
             icon: FontAwesomeIcons.idCardClip,
             style: GLTextStyles.labeltxtwhite,
             color: ColorTheme.white),
         IconBtn(context,
-            route: MoreScreen(),
+            route: const MoreScreen(),
             title: "More",
             icon: FontAwesomeIcons.ellipsis,
             color: ColorTheme.white,

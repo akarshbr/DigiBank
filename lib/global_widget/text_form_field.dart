@@ -16,7 +16,7 @@ class TextFormFieldRefactor extends StatelessWidget {
     return TextFormField(
       controller: textEditingController,
       decoration: InputDecoration(hintText: hintText,
-        border: OutlineInputBorder(borderSide: BorderSide(width: .1, color: Colors.white54))
+        border: const OutlineInputBorder(borderSide: BorderSide(width: .1, color: Colors.white54))
          ),
     );
   }
