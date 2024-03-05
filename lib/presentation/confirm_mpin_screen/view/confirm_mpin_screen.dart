@@ -27,7 +27,7 @@ class ConfirmMpinScreen extends StatelessWidget {
               const TextRefactor(text: "MPIN", textSize: 18),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(4, (index) => const PinAndOtpBox(gap: 20)),
+                children: List.generate(4, (index) => const PinAndOtpBox()),
               ),
               ElevatedButton(
                 onPressed: () {
