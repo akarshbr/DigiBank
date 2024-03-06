@@ -29,8 +29,8 @@ class RegistrationScreen extends StatelessWidget {
               // TextFormFieldRefactor(),
               const Column(
                 children: [
+                  TitleAndTextFormField(text: "Username", textSize: 18),
                   TitleAndTextFormField(text: "Account Number", textSize: 18),
-                  TitleAndTextFormField(text: "Mobile Number", textSize: 18),
                 ],
               ),
               Center(
