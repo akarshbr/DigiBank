@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
     // var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Digi Bank',
+      title: 'DigiBank',
       theme: /*isDark == true ? ThemeData.dark() : ThemeData.light()*/
           ThemeData(scaffoldBackgroundColor: ColorTheme.white),
       home: const RegistrationScreen(),
