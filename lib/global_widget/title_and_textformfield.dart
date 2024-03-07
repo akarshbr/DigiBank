@@ -8,7 +8,8 @@ class TitleAndTextFormField extends StatelessWidget {
       this.textFontWeight,
       this.textColor,
       this.textEditingController,
-      this.hintText});
+      this.hintText,
+      this.keyboardType});
 
   final String text;
   final double? textSize;
@@ -16,6 +17,7 @@ class TitleAndTextFormField extends StatelessWidget {
   final Color? textColor;
   final TextEditingController? textEditingController;
   final String? hintText;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class TitleAndTextFormField extends StatelessWidget {
                   color: textColor)),
           TextFormField(
             controller: textEditingController,
-            keyboardType: TextInputType.number,
+            keyboardType: keyboardType,
             decoration: const InputDecoration(
                 border: OutlineInputBorder(
                     borderSide: BorderSide(width: .1, color: Colors.white54))),

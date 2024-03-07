@@ -5,6 +5,7 @@ import 'package:digibank/presentation/profile_screen/controller/profile_controll
 import 'package:digibank/presentation/recharge_and_pay_bills/electricity/controller/electricity_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/mobile_recharge/controller/operator_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/water/controller/water_controller.dart';
+import 'package:digibank/presentation/registration_screen/controller/registration_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:digibank/presentation/request_loan_screen/controller/loan_type_controller.dart';
 import 'package:digibank/presentation/transaction_screen/controller/transaction_controller.dart';
@@ -16,7 +17,8 @@ import 'core/constants/colors.dart';
 import 'presentation/bottom_navigation_screen/controller/bottom_nav_controller.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.white,statusBarIconBrightness: Brightness.dark));
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark));
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
     ChangeNotifierProvider(create: (context) => HomeController()),
@@ -27,8 +29,8 @@ void main() {
     ChangeNotifierProvider(create: (context) => ElectricityController()),
     ChangeNotifierProvider(create: (context) => CreditScrController()),
     ChangeNotifierProvider(create: (context) => WaterController()),
-    ChangeNotifierProvider(create: (context) => LoanTypeController())
-
+    ChangeNotifierProvider(create: (context) => LoanTypeController()),
+    ChangeNotifierProvider(create: (context) => RegistrationController()),
     // ChangeNotifierProvider(
     //   create: (context) =>
     // ),
