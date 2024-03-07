@@ -1,25 +1,30 @@
-import 'dart:convert';
+import 'dart:developer';
 
+import 'package:digibank/core/app_utils/app_utils.dart';
+import 'package:digibank/presentation/login_screen/view/login_screen.dart';
+import 'package:digibank/repository/helper/api_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class RegistrationController extends ChangeNotifier {
-  postData(String username,String acc) async {
-    print("object");
-    var url = Uri.parse("http://10.0.2.2:8081/password-reset-view/");
-    // try {
-    // print("object2");
-    var response = await http
-        .post(url, body: {"username": username, "account_number": acc});
-    // print("${response.body}");
-    var data = response.body;
-    var decodeddata = jsonDecode(data);
-    var asd = decodeddata['message'];
-    print(asd);
-    // print("asd");
-    // print("object3");
-    // } catch (e) {
-    //   print("error ${e}");
-    // }
+  registrationPostData(
+      String username, String accountNumber, var context) async {
+    var data = {"username": username, "account_number": accountNumber};
+    try {
+      var decodedData = await ApiHelper.postData(
+          endPoint: "password-reset-view/", body: data);
+      var message = decodedData["message"];
+      if (decodedData["status"] == 1) {
+        log("RegistrationController>registrationPostData()>success = $message");
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      } else {
+        log(decodedData["status"].toString());
+        log("RegistrationController>registrationPostData()>failed ");
+        var error = decodedData["error"];
+        AppUtils.oneTimeSnackBar(error, context: context);
+      }
+    } catch (e) {
+      log("$e");
+    }
   }
 }

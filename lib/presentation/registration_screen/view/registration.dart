@@ -33,19 +33,31 @@ class RegistrationScreen extends StatelessWidget {
               // TextFormFieldRefactor(),
               // TextRefactor(text: "Mobile Number", textSize: 18),
               // TextFormFieldRefactor(),
-               Column(
+              Column(
                 children: [
-                  TitleAndTextFormField(text: "Account Number", textSize: 18,textEditingController: usernameTextEditingController,),
-                  TitleAndTextFormField(text: "Mobile Number", textSize: 18,textEditingController: accountTextEditingController,),
+                  TitleAndTextFormField(
+                    text: "Username",
+                    textSize: 18,
+                    textEditingController: usernameTextEditingController,
+                  ),
+                  TitleAndTextFormField(
+                    text: "Account Number",
+                    textSize: 18,
+                    textEditingController: accountTextEditingController,
+                  ),
                 ],
               ),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
                     Provider.of<RegistrationController>(context, listen: false)
-                        .postData(usernameTextEditingController.text, accountTextEditingController.text);
+                        .registrationPostData(
+                            usernameTextEditingController.text,
+                            accountTextEditingController.text, context);
                     // Navigator.push(
                     //     context, MaterialPageRoute(builder: (context) => const CreateMpinScreen()));
+                    usernameTextEditingController.clear();
+                    accountTextEditingController.clear();
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
