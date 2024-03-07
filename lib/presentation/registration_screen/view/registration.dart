@@ -36,8 +36,7 @@ class RegistrationScreen extends StatelessWidget {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => const CreateMpinScreen()));
+
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
