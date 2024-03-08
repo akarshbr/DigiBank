@@ -1,6 +1,6 @@
 import 'package:digibank/global_widget/pin_and_otp_box.dart';
 import 'package:digibank/global_widget/text_refactor.dart';
-import 'package:digibank/presentation/forgot_mpin_screen/view/forgot_mpin_screen.dart';
+import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
               TextButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => const ForgotMpinScreen()));
+                        context, MaterialPageRoute(builder: (context) => const RegistrationScreen()));
                   },
                   child: const TextRefactor(text: "Forgot MPIN ?")),
             ],

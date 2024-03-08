@@ -31,9 +31,7 @@ void main() {
     ChangeNotifierProvider(create: (context) => WaterController()),
     ChangeNotifierProvider(create: (context) => LoanTypeController()),
     ChangeNotifierProvider(create: (context) => RegistrationController()),
-    // ChangeNotifierProvider(
-    //   create: (context) =>
-    // ),
+    // ChangeNotifierProvider(create: (context) => ), 
   ], child: const MyApp()));
 }
 

@@ -68,7 +68,7 @@ class AppUtils {
         duration: Duration(seconds: time),
         margin: showOnTop
             ? EdgeInsets.only(
-                bottom: MediaQuery.of(context ?? context).size.height - 100,
+                bottom: MediaQuery.of(context).size.height - 100,
                 right: 20,
                 left: 20)
             : null,

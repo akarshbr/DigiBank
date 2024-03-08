@@ -36,7 +36,6 @@ class ApiHelper {
       }
     } catch (e) {
       log("$e");
-      
     }
   }
 }
