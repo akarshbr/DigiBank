@@ -16,7 +16,7 @@ class RegistrationController extends ChangeNotifier {
       if (decodedData["status"] == 1) {
         log("RegistrationController>registrationPostData()>success = $message");
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+            context, MaterialPageRoute(builder: (context) => const LoginScreen()));
       } else {
         log(decodedData["status"].toString());
         log("RegistrationController>registrationPostData()>failed ");
