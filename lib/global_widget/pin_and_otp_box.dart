@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class PinAndOtpBox extends StatelessWidget {
-  const PinAndOtpBox({super.key});
+   PinAndOtpBox({super.key, required this.textEditingController,});
 
   //final double gap;
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +15,24 @@ class PinAndOtpBox extends StatelessWidget {
       width: 64,
       margin: EdgeInsets.symmetric(horizontal: size.width*.02),
       decoration: BoxDecoration(border: Border.all(), borderRadius: BorderRadius.circular(10)),
-      child: TextFormField(
-        onChanged: (value) {
-          if (value.length == 1) {
-            FocusScope.of(context).nextFocus();
-          }
-        },
-        decoration: const InputDecoration(
-          border: InputBorder.none
+      child: Center(
+        child: TextFormField(
+          controller: textEditingController,
+          onChanged: (value) {
+            if (value.length == 1) {
+              FocusScope.of(context).nextFocus();
+            }
+          },
+          decoration: const InputDecoration(
+            border: InputBorder.none
+          ),
+          keyboardType: TextInputType.number,
+          textAlign: TextAlign.center,
+          inputFormatters: [
+            LengthLimitingTextInputFormatter(1),
+            FilteringTextInputFormatter.digitsOnly
+          ],
         ),
-        keyboardType: TextInputType.number,
-        textAlign: TextAlign.center,
-        inputFormatters: [
-          LengthLimitingTextInputFormatter(1),
-          FilteringTextInputFormatter.digitsOnly
-        ],
       ),
     );
   }
