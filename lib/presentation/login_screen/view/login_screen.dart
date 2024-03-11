@@ -52,8 +52,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                     Provider.of<LoginController>(context, listen: false)
-                      .onLogin(mpinController.text,context);
+                    Provider.of<LoginController>(context, listen: false)
+                        .onLogin(mpinController.text, context);
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
@@ -76,6 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           MaterialPageRoute(
                               builder: (context) =>
                                   const RegistrationScreen()));
+                      mpinController.clear();
                     },
                     child: const TextRefactor(text: "Forgot MPIN ?")),
               ],
