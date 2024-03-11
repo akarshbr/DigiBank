@@ -6,7 +6,6 @@ import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/constants/colors.dart';
-import '../../../core/constants/global_text_style.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
