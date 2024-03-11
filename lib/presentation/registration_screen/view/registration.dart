@@ -24,7 +24,9 @@ class RegistrationScreen extends StatelessWidget {
             children: [
               const Center(
                 child: TextRefactor(
-                    text: "Register your account", textSize: 22, textFontWeight: FontWeight.bold),
+                    text: "Register your account",
+                    textSize: 22,
+                    textFontWeight: FontWeight.bold),
               ),
               // TextRefactor(text: "Account Number", textSize: 18),
               // TextFormFieldRefactor(),
@@ -48,7 +50,7 @@ class RegistrationScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Provider.of<RegistrationController>(context, listen: false)
-                        .registrationPostData(usernameTextEditingController.text,
+                        .onRegistration(usernameTextEditingController.text,
                             accountTextEditingController.text, context);
                     // Navigator.push(
                     //     context, MaterialPageRoute(builder: (context) => const CreateMpinScreen()));
@@ -62,9 +64,12 @@ class RegistrationScreen extends StatelessWidget {
                           right: size.width * .2,
                           top: size.height * .02,
                           bottom: size.height * .02),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
                   child: const TextRefactor(
-                      text: "SIGN IN", textSize: 16, textFontWeight: FontWeight.bold),
+                      text: "SIGN IN",
+                      textSize: 16,
+                      textFontWeight: FontWeight.bold),
                 ),
               )
             ],
