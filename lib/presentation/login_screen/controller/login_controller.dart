@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/app_utils/app_utils.dart';
 import '../../../repository/api/login_screen/services/login_services.dart';
+import '../../bottom_navigation_screen/view/bottom_navigation.dart';
 
 class LoginController extends ChangeNotifier {
   late SharedPreferences sharedPreferences;
@@ -20,7 +21,7 @@ class LoginController extends ChangeNotifier {
 
         if (resData["status"] == "$userName logged in successfully") {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) =>HomeScreen()));
+              MaterialPageRoute(builder: (context) =>BottomNavigation()));
           log("LoginController>>onLogin>>success");
         } else {
           var message = resData["error"];
