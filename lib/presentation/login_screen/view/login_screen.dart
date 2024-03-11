@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Provider.of<LoginController>(context, listen: false)
-                      .onLogin("1212");
+                      .onLogin("1212",context);
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorTheme.mainClr,
