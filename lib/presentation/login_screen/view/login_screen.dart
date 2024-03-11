@@ -2,8 +2,8 @@ import 'package:digibank/global_widget/text_refactor.dart';
 import 'package:digibank/presentation/login_screen/controller/login_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:pinput/pinput.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/colors.dart';
 
@@ -51,7 +51,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Provider.of<LoginController>(context, listen: false)
+                      .onLogin(mpinController.text,context);
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
