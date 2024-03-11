@@ -2,6 +2,7 @@ import 'package:digibank/presentation/confirm_mpin_screen/view/confirm_mpin_scre
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
+import '../../../core/constants/global_text_style.dart';
 import '../../../global_widget/pin_and_otp_box.dart';
 import '../../../global_widget/text_refactor.dart';
 
@@ -19,6 +20,11 @@ class CreateMpinScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              Center(
+                  child: Text(
+                'digiBank.',
+                style: GLTextStyles.digiBankYellow,
+              )),
               const TextRefactor(
                 text: "Create Your MPIN",
                 textSize: 22,
@@ -32,7 +38,9 @@ class CreateMpinScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => const ConfirmMpinScreen()));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ConfirmMpinScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorTheme.mainClr,
@@ -41,8 +49,12 @@ class CreateMpinScreen extends StatelessWidget {
                         right: size.width * .2,
                         top: size.height * .02,
                         bottom: size.height * .02),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-                child: const TextRefactor(text: "NEXT", textSize: 16, textFontWeight: FontWeight.bold),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10))),
+                child: const TextRefactor(
+                    text: "NEXT",
+                    textSize: 16,
+                    textFontWeight: FontWeight.bold),
               ),
             ],
           ),

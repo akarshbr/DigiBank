@@ -9,6 +9,7 @@ import 'package:digibank/presentation/recharge_and_pay_bills/water/controller/wa
 import 'package:digibank/presentation/registration_screen/controller/registration_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:digibank/presentation/request_loan_screen/controller/loan_type_controller.dart';
+import 'package:digibank/presentation/splash_screen/view/splash_screen.dart';
 import 'package:digibank/presentation/transaction_screen/controller/transaction_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
       title: 'DigiBank',
       theme: /*isDark == true ? ThemeData.dark() : ThemeData.light()*/
           ThemeData(scaffoldBackgroundColor: ColorTheme.white),
-      home: const RegistrationScreen(),
+      home: const SplashScreen(),
     );
   }
 }

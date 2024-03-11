@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/constants/colors.dart';
+import '../../../core/constants/global_text_style.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -21,6 +22,11 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              Center(
+                  child: Text(
+                'digiBank.',
+                style: GLTextStyles.digiBankYellow,
+              )),
               const TextRefactor(
                 text: "Login using MPIN",
                 textSize: 22,

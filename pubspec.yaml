@@ -73,6 +73,7 @@ flutter:
     - asset/electricity_icon/
     - asset/water_icon/
     - asset/animation/
+    - asset/splash/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

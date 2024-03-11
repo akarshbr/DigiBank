@@ -5,6 +5,8 @@ import 'package:digibank/presentation/registration_screen/controller/registratio
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/constants/global_text_style.dart';
+
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({super.key});
 
@@ -22,6 +24,11 @@ class RegistrationScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                  child: Text(
+                    'digiBank.',
+                    style: GLTextStyles.digiBankYellow,
+                  )),
               const Center(
                 child: TextRefactor(
                     text: "Register your account",
