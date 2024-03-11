@@ -1,6 +1,8 @@
 import 'package:digibank/global_widget/text_refactor.dart';
+import 'package:digibank/presentation/login_screen/controller/login_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../core/constants/colors.dart';
@@ -52,13 +54,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
-                      padding: EdgeInsets.only(left: size.width * .2, right: size.width * .2, top: size.height * .02, bottom: size.height * .02),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-                  child: const TextRefactor(text: "Login", textSize: 16, textFontWeight: FontWeight.bold),
+                      padding: EdgeInsets.only(
+                          left: size.width * .2,
+                          right: size.width * .2,
+                          top: size.height * .02,
+                          bottom: size.height * .02),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  child: const TextRefactor(
+                      text: "Login",
+                      textSize: 16,
+                      textFontWeight: FontWeight.bold),
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const RegistrationScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const RegistrationScreen()));
                     },
                     child: const TextRefactor(text: "Forgot MPIN ?")),
               ],

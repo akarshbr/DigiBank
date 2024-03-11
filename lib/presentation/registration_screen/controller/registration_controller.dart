@@ -10,12 +10,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 class RegistrationController extends ChangeNotifier {
   late SharedPreferences sharedPreferences;
 
-  Future onRegistration(String enteredUsername, String accountNumber, var context) async {
+  Future onRegistration(
+      String enteredUsername, String accountNumber, var context) async {
     var data = {"username": enteredUsername, "account_number": accountNumber};
-    RegistrationService.postRegistratioonData(data).then((resData) {
+    RegistrationService.postRegistrationData(data).then((resData) {
       log("onRegistration ${resData["status"]}");
       if (resData["status"] == 1) {
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const LoginScreen()));
         storeUserName(enteredUsername);
       } else {
         var message = resData["error"];
