@@ -1,10 +1,11 @@
 import 'package:digibank/global_widget/pin_and_otp_box.dart';
 import 'package:digibank/global_widget/text_refactor.dart';
+import 'package:digibank/presentation/login_screen/controller/login_controller.dart';
 import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/colors.dart';
-import '../../bottom_navigation_screen/view/bottom_navigation.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -32,8 +33,8 @@ class LoginScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => const BottomNavigation()));
+                  Provider.of<LoginController>(context, listen: false)
+                      .onLogin("1212");
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorTheme.mainClr,
@@ -42,13 +43,19 @@ class LoginScreen extends StatelessWidget {
                         right: size.width * .2,
                         top: size.height * .02,
                         bottom: size.height * .02),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-                child: const TextRefactor(text: "Login", textSize: 16, textFontWeight: FontWeight.bold),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10))),
+                child: const TextRefactor(
+                    text: "Login",
+                    textSize: 16,
+                    textFontWeight: FontWeight.bold),
               ),
               TextButton(
                   onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => const RegistrationScreen()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RegistrationScreen()));
                   },
                   child: const TextRefactor(text: "Forgot MPIN ?")),
             ],

@@ -28,10 +28,6 @@ class RegistrationScreen extends StatelessWidget {
                     textSize: 22,
                     textFontWeight: FontWeight.bold),
               ),
-              // TextRefactor(text: "Account Number", textSize: 18),
-              // TextFormFieldRefactor(),
-              // TextRefactor(text: "Mobile Number", textSize: 18),
-              // TextFormFieldRefactor(),
               Column(
                 children: [
                   TitleAndTextFormField(
@@ -52,8 +48,6 @@ class RegistrationScreen extends StatelessWidget {
                     Provider.of<RegistrationController>(context, listen: false)
                         .onRegistration(usernameTextEditingController.text,
                             accountTextEditingController.text, context);
-                    // Navigator.push(
-                    //     context, MaterialPageRoute(builder: (context) => const CreateMpinScreen()));
                     usernameTextEditingController.clear();
                     accountTextEditingController.clear();
                   },

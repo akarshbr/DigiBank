@@ -1,6 +1,7 @@
 import 'package:digibank/presentation/account_summary_screen/controller/account_summary_control.dart';
 import 'package:digibank/presentation/credit_score_screen/controller/credit_scr_controller.dart';
 import 'package:digibank/presentation/home_screen/controller/home_controler.dart';
+import 'package:digibank/presentation/login_screen/controller/login_controller.dart';
 import 'package:digibank/presentation/profile_screen/controller/profile_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/electricity/controller/electricity_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/mobile_recharge/controller/operator_controller.dart';
@@ -21,6 +22,7 @@ void main() {
       statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark));
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
+    ChangeNotifierProvider(create: (context) => LoginController()), 
     ChangeNotifierProvider(create: (context) => HomeController()),
     ChangeNotifierProvider(create: (context) => ProfileController()),
     ChangeNotifierProvider(create: (context) => OperatorController()),
