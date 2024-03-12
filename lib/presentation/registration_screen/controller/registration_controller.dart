@@ -29,5 +29,6 @@ class RegistrationController extends ChangeNotifier {
   void storeUserName(String enteredUsername) async {
     sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.setString(AppConfig.userName, enteredUsername);
+    sharedPreferences.setBool(AppConfig.status, true);
   }
 }
