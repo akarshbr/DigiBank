@@ -13,7 +13,7 @@ class LoginController extends ChangeNotifier {
   late SharedPreferences sharedPreferences;
   Future onLogin(String mpin, BuildContext context) async {
     log("started onlogin from logincontroller");
-    fetchusername().then((userName) {
+    fetchUsername().then((userName) {
       log("Shared preferance data>> $userName");
       var data = {"username": userName, "mpin": mpin};
       LoginService.postLoginData(data).then((resData) {
@@ -21,7 +21,7 @@ class LoginController extends ChangeNotifier {
 
         if (resData["status"] == "$userName logged in successfully") {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) =>BottomNavigation()));
+              MaterialPageRoute(builder: (context) =>const BottomNavigation()));
           log("LoginController>>onLogin>>success");
         } else {
           var message = resData["error"];
@@ -32,7 +32,7 @@ class LoginController extends ChangeNotifier {
     });
   }
 
-  Future<String> fetchusername() async {
+  Future<String> fetchUsername() async {
     sharedPreferences = await SharedPreferences.getInstance();
     var uname = sharedPreferences.getString(AppConfig.userName);
     log("fetchusername >> ${uname!}");
