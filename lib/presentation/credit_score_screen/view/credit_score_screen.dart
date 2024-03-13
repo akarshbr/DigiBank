@@ -28,6 +28,13 @@ class CreditScrScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         child: Column(
           children: [
+
+            Center(
+                child: Text(
+                  'digiBank.',
+                  style: GLTextStyles.digiBankGrey,
+                )),
+            SizedBox(height: 20,),
             Text(
               "Your Credit Report",
               style: GLTextStyles.labeltxtBlk16,

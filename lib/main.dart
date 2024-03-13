@@ -13,7 +13,6 @@ import 'package:digibank/presentation/transaction_screen/controller/transaction_
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
 import 'core/constants/colors.dart';
 import 'presentation/bottom_navigation_screen/controller/bottom_nav_controller.dart';
 
