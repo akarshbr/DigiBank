@@ -6,8 +6,23 @@ import 'package:digibank/presentation/profile_screen/controller/profile_controll
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  fetchData() async {
+    Provider.of<ProfileController>(context).fetchProfileData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +53,8 @@ class ProfileScreen extends StatelessWidget {
                   Center(
                     child: Container(
                       width: size.width * .95,
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
                           color: ColorTheme.darkClr,
                           borderRadius: BorderRadius.circular(10)),

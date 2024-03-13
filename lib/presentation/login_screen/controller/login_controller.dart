@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:digibank/app_config/app_config.dart';
@@ -19,8 +20,12 @@ class LoginController extends ChangeNotifier {
         log("LoginController>>onLogin ${resData["status"]}");
 
         if (resData["status"] == "$userName logged in successfully") {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) =>const BottomNavigation()));
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const BottomNavigation()));
+          storeRecivedData(resData);
+          storeUserData(resData);
           log("LoginController>>onLogin>>success");
         } else {
           var message = resData["error"];
@@ -36,5 +41,19 @@ class LoginController extends ChangeNotifier {
     var uname = sharedPreferences.getString(AppConfig.userName);
     log("fetchusername >> ${uname!}");
     return uname;
+  }
+
+  storeRecivedData(resData) async {
+    log("storeRecivedData>>resData");
+    sharedPreferences = await SharedPreferences.getInstance();
+    String storeData = json.encode(resData);
+    sharedPreferences.setString(AppConfig.loginData, storeData);
+  }
+
+  storeUserData(resData) async {
+    log("storeUserData from>>UserData");
+    sharedPreferences = await SharedPreferences.getInstance();
+    String dataUser = json.encode(resData["user"]);
+    sharedPreferences.setString(AppConfig.userData, dataUser);
   }
 }
