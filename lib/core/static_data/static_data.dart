@@ -1,4 +1,6 @@
 class StaticData {
+  static String errorMsg = "contact your nearest branch";
+  
   static int id = 23453456;
   static String username = "Akarsh";
   static int accNo = 123456723456783;
@@ -70,4 +72,3 @@ class StaticData {
     ),
   ];
 }
- 

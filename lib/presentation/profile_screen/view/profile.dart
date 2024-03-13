@@ -16,12 +16,13 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
+    fetchData(context);
     super.initState();
-    fetchData();
   }
 
-  fetchData() async {
-    Provider.of<ProfileController>(context).fetchProfileData();
+  fetchData(context) {
+    Provider.of<ProfileController>(context, listen: false)
+        .fetchProfileData(context);
   }
 
   @override
@@ -81,7 +82,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 style: GLTextStyles.bodyTextwhite,
                               ),
                               Text(
-                                pControl.ifsc,
+                                "${pControl.ifsc}",
                                 style: GLTextStyles.subtitleWhite2,
                               )
                             ],
@@ -106,11 +107,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 15,
                         ),
                         Text(
-                          "Customer ID",
+                          "Address",
                           style: GLTextStyles.subtitleGrey,
                         ),
                         Text(
-                          "${pControl.id}",
+                          "${pControl.address}",
                           style: GLTextStyles.subtitleBlk14,
                         ),
                         const SizedBox(
