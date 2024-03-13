@@ -12,7 +12,7 @@ import '../../../repository/api/profile_screen/services/profile_service.dart';
 class ProfileController extends ChangeNotifier {
   late ProfileModel profileModel = ProfileModel();
   late SharedPreferences sharedPreferences;
-  var _fillMessage = StaticData.errorMsg;
+  final _fillMessage = StaticData.errorMsg;
 
   late Map<String, dynamic> userData;
 
@@ -37,7 +37,7 @@ class ProfileController extends ChangeNotifier {
 
   String? get username => profileModel.username??_fillMessage;
   int? get accNo => profileModel.accountNumber;
-  int? get balance => profileModel.accountBalance;
+  double? get balance => profileModel.accountBalance;
   String? get address => profileModel.address??_fillMessage;
   String? get ifsc => profileModel.ifsc;
   int? get mobileNo => profileModel.phone;

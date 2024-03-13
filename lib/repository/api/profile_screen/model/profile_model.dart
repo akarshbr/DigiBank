@@ -25,7 +25,7 @@ class ProfileModel {
     dynamic mpin;
     int? accountNumber;
     String? ifsc;
-    int? accountBalance;
+    double? accountBalance;
     List<dynamic>? groups;
     List<dynamic>? userPermissions;
 
@@ -68,7 +68,7 @@ class ProfileModel {
         mpin: json["mpin"],
         accountNumber: json["account_number"],
         ifsc: json["ifsc"],
-        accountBalance: json["account_balance"],
+        accountBalance: json["account_balance"]?.toDouble(),
         groups: json["groups"] == null ? [] : List<dynamic>.from(json["groups"]!.map((x) => x)),
         userPermissions: json["user_permissions"] == null ? [] : List<dynamic>.from(json["user_permissions"]!.map((x) => x)),
     );
