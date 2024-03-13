@@ -21,8 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   fetchData(context) {
-    Provider.of<ProfileController>(context, listen: false)
-        .fetchProfileData(context);
+    Provider.of<ProfileController>(context, listen: false).fetchProfileData(context);
   }
 
   @override
@@ -45,6 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               )),
           body: Consumer<ProfileController>(
             builder: (context, pControl, child) {
+              const sizedBox = const SizedBox(height: 15);
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -54,11 +54,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Center(
                     child: Container(
                       width: size.width * .95,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 10),
-                      decoration: BoxDecoration(
-                          color: ColorTheme.darkClr,
-                          borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      decoration: BoxDecoration(color: ColorTheme.darkClr, borderRadius: BorderRadius.circular(10)),
                       child: Column(
                         children: [
                           Row(
@@ -103,9 +100,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           "Personal Details",
                           style: GLTextStyles.titleTextBlk,
                         ),
-                        const SizedBox(
-                          height: 15,
+                        sizedBox,
+                        Text(
+                          "Name",
+                          style: GLTextStyles.subtitleGrey,
                         ),
+                        Text(
+                          "${pControl.firstName} ${pControl.lastName}",
+                          style: GLTextStyles.subtitleBlk14,
+                        ),
+                        sizedBox,
+                        Text(
+                          "Username",
+                          style: GLTextStyles.subtitleGrey,
+                        ),
+                        Text(
+                          "${pControl.username}",
+                          style: GLTextStyles.subtitleBlk14,
+                        ),
+                        sizedBox,
                         Text(
                           "Address",
                           style: GLTextStyles.subtitleGrey,
@@ -114,20 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           "${pControl.address}",
                           style: GLTextStyles.subtitleBlk14,
                         ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        Text(
-                          "Name",
-                          style: GLTextStyles.subtitleGrey,
-                        ),
-                        Text(
-                          "${pControl.username}",
-                          style: GLTextStyles.subtitleBlk14,
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
+                        sizedBox,
                         Text(
                           "Mobile Number",
                           style: GLTextStyles.subtitleGrey,
@@ -136,9 +136,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           "+91 ${pControl.mobileNo}",
                           style: GLTextStyles.subtitleBlk14,
                         ),
-                        const SizedBox(
-                          height: 15,
-                        ),
+                        sizedBox,
                         Text(
                           "Email",
                           style: GLTextStyles.subtitleGrey,
