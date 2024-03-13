@@ -3,6 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class GLTextStyles {
+  static TextStyle digiBankYellow = GoogleFonts.leagueSpartan(
+    fontSize: 26.0,
+    fontWeight: FontWeight.w600,
+    color: ColorTheme.darkClr,
+  );
+  static TextStyle digiBankGrey = GoogleFonts.leagueSpartan(
+    fontSize: 26.0,
+    fontWeight: FontWeight.w600,
+    color: ColorTheme.grey,
+  );
   static TextStyle titleStyle = GoogleFonts.poppins(
     fontSize: 20.0,
     fontWeight: FontWeight.w500,
@@ -71,6 +81,16 @@ class GLTextStyles {
     fontWeight: FontWeight.w500,
     color: ColorTheme.black,
   );
+  static TextStyle labeltxtBlk16300 = GoogleFonts.kanit(
+    fontSize: 16,
+    fontWeight: FontWeight.w300,
+    color: ColorTheme.black,
+  );
+  static TextStyle labeltxtred16 = GoogleFonts.kanit(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: ColorTheme.red,
+  );
   static TextStyle labeltxtBlk20 = GoogleFonts.kanit(
     fontSize: 20,
     fontWeight: FontWeight.w500,
@@ -82,5 +102,10 @@ class GLTextStyles {
     color: ColorTheme.black,
   );
   static TextStyle bottomlabel = GoogleFonts.kanit(fontSize: 11);
+  static TextStyle maincolor16 = GoogleFonts.kanit(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: ColorTheme.darkClr,
+  );
 
 }

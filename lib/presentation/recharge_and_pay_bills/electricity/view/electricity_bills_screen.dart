@@ -33,6 +33,7 @@ class ElectricityBillsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              Center(child: Text('digiBank.',style: GLTextStyles.digiBankGrey,)),
               Consumer<ElectricityController>(builder: (builder, electricityController, _) {
                 return DropdownButton(
                     padding: const EdgeInsets.all(5),

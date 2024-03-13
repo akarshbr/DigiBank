@@ -1,6 +1,5 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/core/constants/global_text_style.dart';
-import 'package:digibank/global_widget/global_appbar.dart';
 import 'package:digibank/presentation/home_screen/view/widget/advertisment_slider.dart';
 import 'package:digibank/presentation/home_screen/view/widget/buttons_for_loan.dart';
 import 'package:digibank/presentation/home_screen/view/widget/tools_to_use.dart';

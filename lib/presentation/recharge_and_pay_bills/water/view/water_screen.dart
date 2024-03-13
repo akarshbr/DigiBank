@@ -32,6 +32,7 @@ class WaterBillsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              Center(child: Text('digiBank.',style: GLTextStyles.digiBankGrey,)),
               Consumer<WaterController>(builder: (context, waterController, _) {
                 return DropdownButton(
                     padding: const EdgeInsets.all(5),

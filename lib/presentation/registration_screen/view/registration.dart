@@ -1,14 +1,19 @@
 import 'package:digibank/core/constants/colors.dart';
 import 'package:digibank/global_widget/text_refactor.dart';
 import 'package:digibank/global_widget/title_and_textformfield.dart';
-import 'package:digibank/presentation/login_screen/view/login_screen.dart';
+import 'package:digibank/presentation/registration_screen/controller/registration_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../core/constants/global_text_style.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var usernameTextEditingController = TextEditingController();
+    var accountTextEditingController = TextEditingController();
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Center(
@@ -19,29 +24,53 @@ class RegistrationScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                  child: Text(
+                'digiBank.',
+                style: GLTextStyles.digiBankYellow,
+              )),
               const Center(
-                child: TextRefactor(text: "Register your account", textSize: 22, textFontWeight: FontWeight.bold),
+                child: TextRefactor(
+                    text: "Register your account",
+                    textSize: 22,
+                    textFontWeight: FontWeight.bold),
               ),
-              // TextRefactor(text: "Account Number", textSize: 18),
-              // TextFormFieldRefactor(),
-              // TextRefactor(text: "Mobile Number", textSize: 18),
-              // TextFormFieldRefactor(),
-              const Column(
+              Column(
                 children: [
-                  TitleAndTextFormField(text: "Username", textSize: 18),
-                  TitleAndTextFormField(text: "Account Number", textSize: 18),
+                  TitleAndTextFormField(
+                    text: "Username",
+                    textSize: 18,
+                    textEditingController: usernameTextEditingController,
+                  ),
+                  TitleAndTextFormField(
+                    text: "Account Number",
+                    textSize: 18,
+                    textEditingController: accountTextEditingController,
+                  ),
                 ],
               ),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                    Provider.of<RegistrationController>(context, listen: false)
+                        .onRegistration(usernameTextEditingController.text,
+                            accountTextEditingController.text, context);
+                    usernameTextEditingController.clear();
+                    accountTextEditingController.clear();
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
-                      padding: EdgeInsets.only(left: size.width * .2, right: size.width * .2, top: size.height * .02, bottom: size.height * .02),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-                  child: const TextRefactor(text: "SIGN IN", textSize: 16, textFontWeight: FontWeight.bold),
+                      padding: EdgeInsets.only(
+                          left: size.width * .2,
+                          right: size.width * .2,
+                          top: size.height * .02,
+                          bottom: size.height * .02),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  child: const TextRefactor(
+                      text: "SIGN IN",
+                      textSize: 16,
+                      textFontWeight: FontWeight.bold),
                 ),
               )
             ],

@@ -2,7 +2,7 @@ import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_meterial_btn.dart';
 import 'package:digibank/global_widget/text_form_field.dart';
 import 'package:flutter/material.dart';
-
+import '../../../../core/constants/global_text_style.dart';
 import '../../../core/constants/colors.dart';
 
 class SendMoney extends StatelessWidget {
@@ -26,8 +26,13 @@ class SendMoney extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
+              Center(
+                  child: Text(
+                    'digiBank.',
+                    style: GLTextStyles.digiBankGrey,
+                  )),
               Padding(
-                padding: const EdgeInsets.only(top: 100),
+                padding: const EdgeInsets.only(top: 80),
                 child: Container(
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(15)),
@@ -118,22 +123,22 @@ class SendMoney extends StatelessWidget {
                     child: Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      color: ColorTheme.lightGrey,
-                      child: const Row(
+                      color: ColorTheme.white,
+                      child:  Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Icon(
+                          const Icon(color: Color(0xFFb57e3d),
                             Icons.home_outlined,
                             size: 30,
                           ),
                           Text(
                             "Transfer to Bank",
-                            style: TextStyle(fontSize: 15),
+                            style: GLTextStyles.maincolor16,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 15,
                           ),
-                          Icon(
+                          const Icon(color: Color(0xFFb57e3d),
                             Icons.arrow_forward_ios,
                             size: 20,
                           ),
@@ -249,19 +254,19 @@ class SendMoney extends StatelessWidget {
                     child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        color: ColorTheme.lightGrey,
-                        child: const Row(
+                        color: ColorTheme.white,
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(
+                            const Icon(color: Color(0xFFb57e3d),
                               Icons.phone_iphone_rounded,
                               size: 25,
                             ),
                             Text(
                               "Pay to Phone Number",
-                              style: TextStyle(fontSize: 15),
+                              style: GLTextStyles.maincolor16,
                             ),
-                            Icon(
+                            const Icon(color: Color(0xFFb57e3d),
                               Icons.arrow_forward_ios,
                               size: 20,
                             )
