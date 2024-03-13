@@ -44,6 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               )),
           body: Consumer<ProfileController>(
             builder: (context, pControl, child) {
+              String? accountNumber = pControl.accNo.toString();
               const sizedBox = const SizedBox(height: 15);
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +67,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 style: GLTextStyles.bodyTextwhite,
                               ),
                               Text(
-                                "${pControl.accNo}",
+                                "${accountNumber.substring(0,accountNumber.length-5)}*****",
                                 style: GLTextStyles.subtitleWhite2,
                               )
                             ],
