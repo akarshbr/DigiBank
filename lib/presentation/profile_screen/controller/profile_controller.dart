@@ -13,26 +13,28 @@ class ProfileController extends ChangeNotifier {
   late ProfileModel profileModel = ProfileModel();
   late SharedPreferences sharedPreferences;
   final _fillMessage = StaticData.errorMsg;
-
+  bool isLoading = false;
   late Map<String, dynamic> userData;
 
   fetchProfileData(context) async {
+    isLoading = true;
+    notifyListeners();
     log("ProfileController>>fetchProfileData");
-    fetchUserdetails().then((rawData) {
+    fetchUserDetails().then((rawData) {
       userData = json.decode(rawData);
       var uId = userData["id"];
       log("$uId");
       ProfileService.fetchProfile(uId).then((resData) {
         if (resData["status"] == 1) {
           profileModel = ProfileModel.fromJson(resData["data"]);
+          isLoading=false;
         } else {
           AppUtils.oneTimeSnackBar("Error: Data Not Found ", context: context);
         }
         notifyListeners();
       });
-      notifyListeners();
     });
-    notifyListeners();
+
   }
 
   String? get firstName => profileModel.firstName??_fillMessage;
@@ -45,10 +47,10 @@ class ProfileController extends ChangeNotifier {
   int? get mobileNo => profileModel.phone;
   String? get mailid => profileModel.email??_fillMessage;
 
-  Future<String> fetchUserdetails() async {
+  Future<String> fetchUserDetails() async {
     sharedPreferences = await SharedPreferences.getInstance();
     var uData = sharedPreferences.getString(AppConfig.userData);
-    log("ProfileController>>fetchusername >> ${uData!}");
+    log("ProfileController>>fetch username >> ${uData!}");
     return uData;
   }
 }

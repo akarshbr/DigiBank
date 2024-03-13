@@ -1,13 +1,14 @@
 import 'package:digibank/presentation/account_summary_screen/view/account_summary.dart';
 import 'package:digibank/presentation/home_screen/controller/home_controler.dart';
+import 'package:digibank/presentation/profile_screen/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/global_text_style.dart';
 
-Consumer<HomeController> UserDetailsCard(Size size) {
-  return Consumer<HomeController>(
+Consumer<HomeScreenController> userDetailsCard(Size size,String name,int accountNumber,double balance) {
+  return Consumer<HomeScreenController>(
     builder: (context, hControl, child) {
       return Container(
         width: size.aspectRatio,
@@ -40,7 +41,7 @@ Consumer<HomeController> UserDetailsCard(Size size) {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  hControl.username,
+                  name,
                   style: GLTextStyles.titleTextBlk,
                 ),
                 // TextButton(
@@ -58,7 +59,7 @@ Consumer<HomeController> UserDetailsCard(Size size) {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${hControl.accNo}",
+                  "$accountNumber",
                   style: GLTextStyles.subtitleBlk,
                 ),
                 TextButton(

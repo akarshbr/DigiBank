@@ -43,7 +43,7 @@ class ApiHelper {
     Map<String, String>? header,
     required Map<String, dynamic> body,
   }) async {
-    log("Apihelper>postData");
+    log("Api-helper>postData");
     log("$body");
     final url = Uri.parse(AppConfig.baseurl + endPoint);
     try {

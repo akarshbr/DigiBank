@@ -22,7 +22,7 @@ void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => BottomNavigationController()),
     ChangeNotifierProvider(create: (context) => LoginController()), 
-    ChangeNotifierProvider(create: (context) => HomeController()),
+    ChangeNotifierProvider(create: (context) => HomeScreenController()),
     ChangeNotifierProvider(create: (context) => ProfileController()),
     ChangeNotifierProvider(create: (context) => OperatorController()),
     ChangeNotifierProvider(create: (context) => TransactionController()),
