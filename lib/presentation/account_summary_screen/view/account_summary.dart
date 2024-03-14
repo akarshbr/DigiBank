@@ -104,7 +104,7 @@ class _AccountSummaryState extends State<AccountSummary> {
                                   style: GLTextStyles.bodyTextwhite,
                                 ),
                                 Text(
-                                  "${accountNumber.substring(0, accountNumber.length - 5)}*****",
+                                  "${aSControl.maskedAccountNumber}",
                                   style: GLTextStyles.subtitleWhite2,
                                 )
                               ],

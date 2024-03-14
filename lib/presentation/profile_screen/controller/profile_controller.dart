@@ -46,6 +46,19 @@ class ProfileController extends ChangeNotifier {
   String? get ifsc => profileModel.ifsc;
   int? get mobileNo => profileModel.phone;
   String? get mailid => profileModel.email??_fillMessage;
+  // Method to get masked account number
+  String get maskedAccountNumber {
+    final String accountNumber = profileModel.accountNumber.toString();
+    if (accountNumber.length >= 8) {
+      final String firstFourDigits = accountNumber.substring(0, 4);
+      final String lastFourDigits = accountNumber.substring(accountNumber.length - 4);
+      final String maskedDigits = 'X' * (accountNumber.length - 8); // Number of masked digits between first and last four digits
+      return '$firstFourDigits$maskedDigits$lastFourDigits';
+    } else {
+      return accountNumber;
+    }
+  }
+
 
   Future<String> fetchUserDetails() async {
     sharedPreferences = await SharedPreferences.getInstance();

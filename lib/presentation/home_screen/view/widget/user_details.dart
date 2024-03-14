@@ -10,7 +10,6 @@ Consumer<HomeScreenController> userDetailsCard(
     Size size, String name, int accountNumber, double balance) {
   return Consumer<HomeScreenController>(
     builder: (context, hControl, child) {
-      String? accountNumber = hControl.accNo.toString();
       return Container(
         width: size.aspectRatio,
         padding: const EdgeInsets.only(left: 8, right: 8, top: 15, bottom: 5),
@@ -51,7 +50,7 @@ Consumer<HomeScreenController> userDetailsCard(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${accountNumber.substring(0, accountNumber.length - 5)}*****",
+                  "${hControl.maskedAccountNumber}",
                   style: GLTextStyles.subtitleBlk,
                 ),
                 TextButton(

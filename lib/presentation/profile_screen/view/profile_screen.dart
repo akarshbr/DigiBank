@@ -92,7 +92,7 @@ class ProfileBody extends StatelessWidget {
                       style: GLTextStyles.bodyTextwhite,
                     ),
                     Text(
-                      "${accountNumber?.substring(0,accountNumber!.length-5)}*****",
+                      "${pControl.maskedAccountNumber}",
                       style: GLTextStyles.subtitleWhite2,
                     )
                   ],
