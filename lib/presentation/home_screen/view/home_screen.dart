@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   fetchData(context) {
     Provider.of<HomeScreenController>(context, listen: false)
-        .fetchProfileDataHomeScreen();
+        .fetchProfileDataHomeScreen(context);
   }
 
   @override
