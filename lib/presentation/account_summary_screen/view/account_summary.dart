@@ -5,8 +5,25 @@ import 'package:provider/provider.dart';
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/global_text_style.dart';
 import '../../../global_widget/global_appbar.dart';
-class AccountSummary extends StatelessWidget {
+
+class AccountSummary extends StatefulWidget {
   const AccountSummary({super.key});
+
+  @override
+  State<AccountSummary> createState() => _AccountSummaryState();
+}
+
+class _AccountSummaryState extends State<AccountSummary> {
+  @override
+  void initState() {
+    fetchData(context);
+    super.initState();
+  }
+
+  fetchData(context) {
+    Provider.of<ACCSumaryCantrol>(context, listen: false)
+        .fetchProfileData(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +42,7 @@ class AccountSummary extends StatelessWidget {
       ),
       body: Consumer<ACCSumaryCantrol>(
         builder: (context, aSControl, child) {
+          String? accountNumber = aSControl.accNo.toString();
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,7 +52,8 @@ class AccountSummary extends StatelessWidget {
               Center(
                 child: Container(
                   width: size.width * .95,
-                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
                       color: ColorTheme.darkClr,
                       borderRadius: BorderRadius.circular(10)),
@@ -48,7 +67,7 @@ class AccountSummary extends StatelessWidget {
                       ),
                       Center(
                         child: Text(
-                          "${aSControl.balance}",
+                          "${accountNumber.substring(0, accountNumber.length - 5)}*****",
                           style: GLTextStyles.subtitleWhite,
                         ),
                       ),
@@ -68,7 +87,8 @@ class AccountSummary extends StatelessWidget {
               Center(
                 child: Container(
                   width: size.width * .95,
-                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
                       color: ColorTheme.darkClr,
                       borderRadius: BorderRadius.circular(10)),
@@ -95,7 +115,7 @@ class AccountSummary extends StatelessWidget {
                             style: GLTextStyles.bodyTextwhite,
                           ),
                           Text(
-                            aSControl.ifsc,
+                            "${aSControl.ifsc}",
                             style: GLTextStyles.subtitleWhite2,
                           )
                         ],
@@ -120,22 +140,31 @@ class AccountSummary extends StatelessWidget {
                       height: 15,
                     ),
                     Text(
-                      "Customer ID",
+                      "Name",
                       style: GLTextStyles.subtitleGrey,
                     ),
                     Text(
-                      "${aSControl.id}",
+                      "${aSControl.firstName} ${aSControl.lastName}",
                       style: GLTextStyles.subtitleBlk14,
                     ),
                     const SizedBox(
                       height: 15,
                     ),
                     Text(
-                      "Name",
+                      "Username",
                       style: GLTextStyles.subtitleGrey,
                     ),
                     Text(
                       "${aSControl.username}",
+                      style: GLTextStyles.subtitleBlk14,
+                    ),
+                    const SizedBox(height: 15),
+                    Text(
+                      "Address",
+                      style: GLTextStyles.subtitleGrey,
+                    ),
+                    Text(
+                      "${aSControl.address}",
                       style: GLTextStyles.subtitleBlk14,
                     ),
                     const SizedBox(
