@@ -42,7 +42,6 @@ class _AccountSummaryState extends State<AccountSummary> {
       ),
       body: Consumer<ACCSumaryCantrol>(
         builder: (context, aSControl, child) {
-          String? accountNumber = aSControl.accNo.toString();
           return aSControl.isLoading
               ? const CircleAvatar()
               : Column(
