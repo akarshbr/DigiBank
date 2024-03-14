@@ -6,19 +6,39 @@ import 'package:digibank/presentation/home_screen/view/widget/buttons_for_loan.d
 import 'package:digibank/presentation/home_screen/view/widget/tools_to_use.dart';
 import 'package:digibank/presentation/home_screen/view/widget/user_details.dart';
 import 'package:digibank/presentation/home_screen/view/widget/user_function.dart';
-import 'package:digibank/presentation/profile_screen/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../../global_widget/drawer_refactored.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    fetchData(context);
+    super.initState();
+  }
+
+  fetchData(context) {
+    Provider.of<HomeScreenController>(context, listen: false)
+        .fetchProfileDataHomeScreen();
+  }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    var homeScreenController = Provider.of<HomeScreenController>(context);
+    String? fullName =
+        "${homeScreenController.firstName} ${homeScreenController.lastName}";
+    int? accountNumber = homeScreenController.accNo;
+    double? balance = homeScreenController.balance;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -46,63 +66,38 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         drawer: const DrawerRefactored(),
-        body: Consumer<ProfileController>(builder: (context, pControl, _) {
-          return pControl.isLoading ? const Center(child: CircularProgressIndicator()) : HomeWidget(size: size);
+        body:
+            Consumer<HomeScreenController>(builder: (context, pControl, child) {
+          return pControl.isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  child: ListView(
+                    children: [
+                      //users functions card
+                      UsersFunctions(size, context),
+                      SizedBox(height: size.height * .05),
+                      //user details
+                      userDetailsCard(size, fullName, accountNumber!, balance!),
+                      SizedBox(height: size.height * .05),
+                      Text("Recharge & Pay Bills",
+                          style: GLTextStyles.subtitleBlk),
+                      SizedBox(height: size.height * .05),
+                      //tools like recharge etc
+                      ToolsToUse(size: size),
+                      SizedBox(height: size.height * .05),
+                      Text("Loans", style: GLTextStyles.subtitleBlk),
+                      SizedBox(height: size.height * .02),
+                      //buttons like emiCalculator and credit score
+                      ButtonsForLoan(size: size),
+                      SizedBox(height: size.height * .04),
+                      // carousel slider for advertisement
+                      AdvertisementSlider(size: size)
+                    ],
+                  ),
+                );
         }),
-      ),
-    );
-  }
-}
-
-class HomeWidget extends StatefulWidget {
-  const HomeWidget({super.key, required this.size});
-
-  final Size size;
-
-  @override
-  State<HomeWidget> createState() => _HomeWidgetState();
-}
-
-class _HomeWidgetState extends State<HomeWidget> {
-  @override
-  void initState() {
-    fetchData(context);
-    super.initState();
-  }
-
-  fetchData(context) {
-    Provider.of<HomeScreenController>(context, listen: false).fetchProfileDataHomeScreen();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var homeScreenController = Provider.of<ProfileController>(context);
-    String? fullName = "${homeScreenController.firstName} ${homeScreenController.lastName}";
-    int? accountNumber = homeScreenController.accNo;
-    double? balance = homeScreenController.balance;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-      child: ListView(
-        children: [
-          //users functions card
-          UsersFunctions(widget.size, context),
-          SizedBox(height: widget.size.height * .05),
-          //user details
-          userDetailsCard(widget.size, fullName, accountNumber!, balance!),
-          SizedBox(height: widget.size.height * .05),
-          Text("Recharge & Pay Bills", style: GLTextStyles.subtitleBlk),
-          SizedBox(height: widget.size.height * .05),
-          //tools like recharge etc
-          ToolsToUse(size: widget.size),
-          SizedBox(height: widget.size.height * .05),
-          Text("Loans", style: GLTextStyles.subtitleBlk),
-          SizedBox(height: widget.size.height * .02),
-          //buttons like emiCalculator and credit score
-          ButtonsForLoan(size: widget.size),
-          SizedBox(height: widget.size.height * .04),
-          // carousel slider for advertisement
-          AdvertisementSlider(size: widget.size)
-        ],
       ),
     );
   }

@@ -37,7 +37,7 @@ class ProfileController extends ChangeNotifier {
 
   }
 
-  String? get firstName => profileModel.firstName??_fillMessage;
+  String? get firstName => profileModel.firstName;
   String? get lastName => profileModel.lastName??_fillMessage;
   String? get username => profileModel.username??_fillMessage;
   int? get accNo => profileModel.accountNumber;
