@@ -6,9 +6,11 @@ import 'package:provider/provider.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/global_text_style.dart';
 
-Consumer<HomeScreenController> userDetailsCard(Size size,String name,int accountNumber,double balance) {
+Consumer<HomeScreenController> userDetailsCard(
+    Size size, String name, int accountNumber, double balance) {
   return Consumer<HomeScreenController>(
     builder: (context, hControl, child) {
+      String? accountNumber = hControl.accNo.toString();
       return Container(
         width: size.aspectRatio,
         padding: const EdgeInsets.only(left: 8, right: 8, top: 15, bottom: 5),
@@ -43,22 +45,13 @@ Consumer<HomeScreenController> userDetailsCard(Size size,String name,int account
                   name,
                   style: GLTextStyles.titleTextBlk,
                 ),
-                // TextButton(
-                //     onPressed: () {
-                //       Navigator.of(context).push(MaterialPageRoute(
-                //           builder: (context) => ProfileScreen()));
-                //     },
-                //     child: Text(
-                //       "View All Accounts",
-                //       style: GLTextStyles.bodyTextGrey,
-                //     ))
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "$accountNumber",
+                  "${accountNumber.substring(0, accountNumber.length - 5)}*****",
                   style: GLTextStyles.subtitleBlk,
                 ),
                 TextButton(

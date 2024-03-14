@@ -2,7 +2,6 @@ import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_meterial_btn.dart';
 import 'package:digibank/global_widget/text_form_field.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/constants/global_text_style.dart';
 import '../../../core/constants/colors.dart';
 
 class SendMoney extends StatelessWidget {
@@ -28,9 +27,9 @@ class SendMoney extends StatelessWidget {
             children: [
               Center(
                   child: Text(
-                    'digiBank.',
-                    style: GLTextStyles.digiBankGrey,
-                  )),
+                'digiBank.',
+                style: GLTextStyles.digiBankGrey,
+              )),
               Padding(
                 padding: const EdgeInsets.only(top: 80),
                 child: Container(
@@ -89,15 +88,14 @@ class SendMoney extends StatelessWidget {
                                           hintText:
                                               "Bank Account Holder's Name",
                                         )),
-                                        const Padding(
+                                    const Padding(
                                         padding: EdgeInsets.only(
                                             left: 15,
                                             right: 15,
                                             top: 15,
                                             bottom: 15),
                                         child: TextFormFieldRefactor(
-                                          hintText:
-                                              "Enter Amount",
+                                          hintText: "Enter Amount",
                                         )),
                                     const SizedBox(
                                       height: 15,
@@ -124,10 +122,11 @@ class SendMoney extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       color: ColorTheme.white,
-                      child:  Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          const Icon(color: Color(0xFFb57e3d),
+                          const Icon(
+                            color: Color(0xFFb57e3d),
                             Icons.home_outlined,
                             size: 30,
                           ),
@@ -138,7 +137,8 @@ class SendMoney extends StatelessWidget {
                           const SizedBox(
                             width: 15,
                           ),
-                          const Icon(color: Color(0xFFb57e3d),
+                          const Icon(
+                            color: Color(0xFFb57e3d),
                             Icons.arrow_forward_ios,
                             size: 20,
                           ),
@@ -157,42 +157,6 @@ class SendMoney extends StatelessWidget {
                   width: size.width * .8,
                   child: InkWell(
                     onTap: () {
-                      // showModalBottomSheet(
-                      //   context: context,
-                      //   builder: (BuildContext context){
-                      //     return Padding(
-                      //       padding: const EdgeInsets.all(10.0),
-                      //       child: Center(
-                      //         child: Column(
-                      //           crossAxisAlignment: CrossAxisAlignment.start,
-                      //           children: [
-                      //             Padding(
-                      //                 padding: const EdgeInsets.only(
-                      //                     left: 15,
-                      //                     right: 15,
-                      //                     top: 10,
-                      //                     bottom: 10),
-                      //                 child: TextFormFieldRefactor(
-                      //                   hintText:
-                      //                   "Enter Mobile Number",
-                      //                 )),
-                      //             SizedBox(height: 15,),
-                      //             Center(
-                      //                 child: Container(
-                      //                   width: size.width*.3,
-                      //                   height: size.height*.05,
-                      //                   child: GLMetrialButton(
-                      //                       color: ColorTheme.darkClr,
-                      //                       text: 'PAY',
-                      //                       txtClr: ColorTheme.white,
-                      //                       style:GLTextStyles.subtitleWhite),
-                      //                 )),
-                      //           ],
-                      //         ),
-                      //       ),
-                      //     );
-                      //   },
-                      // );
                       showModalBottomSheet(
                         context: context,
                         isScrollControlled:
@@ -225,8 +189,7 @@ class SendMoney extends StatelessWidget {
                                             top: 15,
                                             bottom: 15),
                                         child: TextFormFieldRefactor(
-                                          hintText:
-                                              "Enter Amount",
+                                          hintText: "Enter Amount",
                                         )),
                                     const SizedBox(
                                       height: 15,
@@ -258,7 +221,8 @@ class SendMoney extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            const Icon(color: Color(0xFFb57e3d),
+                            const Icon(
+                              color: Color(0xFFb57e3d),
                               Icons.phone_iphone_rounded,
                               size: 25,
                             ),
@@ -266,7 +230,8 @@ class SendMoney extends StatelessWidget {
                               "Pay to Phone Number",
                               style: GLTextStyles.maincolor16,
                             ),
-                            const Icon(color: Color(0xFFb57e3d),
+                            const Icon(
+                              color: Color(0xFFb57e3d),
                               Icons.arrow_forward_ios,
                               size: 20,
                             )

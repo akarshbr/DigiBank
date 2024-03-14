@@ -9,9 +9,6 @@ import '../../../../core/constants/global_text_style.dart';
 import '../../../../global_widget/global_appbar.dart';
 import '../../../../global_widget/text_refactor.dart';
 import '../controller/operator_controller.dart';
-void main (){
-  runApp(MaterialApp(home: MobileRecharge(),));
-}
 class MobileRecharge extends StatelessWidget {
   const MobileRecharge({super.key});
 
