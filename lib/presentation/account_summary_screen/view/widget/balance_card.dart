@@ -2,8 +2,10 @@ import 'package:digibank/presentation/account_summary_screen/controller/account_
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/constants/colors.dart';
-import '../../../core/constants/global_text_style.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/global_text_style.dart';
+
+
 
 class BalanceCard extends StatelessWidget {
   const BalanceCard({
