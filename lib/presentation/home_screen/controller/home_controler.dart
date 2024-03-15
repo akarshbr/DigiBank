@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:digibank/core/static_data/static_data.dart';
+import 'package:digibank/presentation/registration_screen/view/registration.dart';
 import 'package:digibank/repository/api/home_screen/model/home_screen_model.dart';
 import 'package:digibank/repository/api/home_screen/services/home_screen_services.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,16 @@ class HomeScreenController extends ChangeNotifier {
     });
   }
 
+  void logOutFunction(BuildContext context) async {
+    deleteUserData().then((value) {
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => const RegistrationScreen()),
+          (route) => false);
+      setStatus();
+    });
+  }
+
   String? get firstName => homeModel.firstName;
   String? get lastName => homeModel.lastName ?? _fillMessage;
   String? get username => homeModel.username ?? _fillMessage;
@@ -57,19 +68,33 @@ class HomeScreenController extends ChangeNotifier {
     final String accountNumber = homeModel.accountNumber.toString();
     if (accountNumber.length >= 8) {
       final String firstFourDigits = accountNumber.substring(0, 4);
-      final String lastFourDigits = accountNumber.substring(accountNumber.length - 4);
-      final String maskedDigits = 'X' * (accountNumber.length - 8); // Number of masked digits between first and last four digits
+      final String lastFourDigits =
+          accountNumber.substring(accountNumber.length - 4);
+      final String maskedDigits = 'X' *
+          (accountNumber.length -
+              8); // Number of masked digits between first and last four digits
       return '$firstFourDigits$maskedDigits$lastFourDigits';
     } else {
       return accountNumber;
     }
   }
 
-
   Future<String> fetchUserDetails() async {
     sharedPreferences = await SharedPreferences.getInstance();
     var uData = sharedPreferences.getString(AppConfig.userData);
     log("ProfileController>>fetch username >> ${uData!}");
     return uData;
+  }
+
+  deleteUserData() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    await sharedPreferences.remove(AppConfig.loginData);
+    await sharedPreferences.remove(AppConfig.userData);
+    await sharedPreferences.remove(AppConfig.userName);
+  }
+
+  void setStatus() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    await sharedPreferences.setBool(AppConfig.status, false);
   }
 }

@@ -27,14 +27,16 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   fetchData(context) {
-    Provider.of<HomeScreenController>(context, listen: false).fetchProfileDataHomeScreen(context);
+    Provider.of<HomeScreenController>(context, listen: false)
+        .fetchProfileDataHomeScreen(context);
   }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var homeScreenController = Provider.of<HomeScreenController>(context);
-    String? fullName = "${homeScreenController.firstName} ${homeScreenController.lastName}";
+    String? fullName =
+        "${homeScreenController.firstName} ${homeScreenController.lastName}";
     int? accountNumber = homeScreenController.accNo;
     double? balance = homeScreenController.balance;
     return SafeArea(
@@ -50,12 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             IconButton(
                 onPressed: () {
-                  // TODO
-                },
-                icon: const Icon(Icons.notifications)),
-            IconButton(
-                onPressed: () {
-                  // TODO
+                  _showAlertDialog(context);
                 },
                 icon: const Icon(Icons.logout_outlined)),
             const SizedBox(
@@ -64,11 +61,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         drawer: const DrawerRefactored(),
-        body: Consumer<HomeScreenController>(builder: (context, pControl, child) {
+        body:
+            Consumer<HomeScreenController>(builder: (context, pControl, child) {
           return pControl.isLoading
               ? const Center(child: CircularProgressIndicator())
               : Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   child: ListView(
                     children: [
                       //users functions card
@@ -77,7 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       //user details
                       userDetailsCard(size, fullName, accountNumber!, balance!),
                       SizedBox(height: size.height * .05),
-                      Text("Recharge & Pay Bills", style: GLTextStyles.subtitleBlk),
+                      Text("Recharge & Pay Bills",
+                          style: GLTextStyles.subtitleBlk),
                       SizedBox(height: size.height * .05),
                       //tools like recharge etc
                       ToolsToUse(size: size),
@@ -95,5 +95,42 @@ class _HomeScreenState extends State<HomeScreen> {
         }),
       ),
     );
+  }
+
+  void _showAlertDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+                backgroundColor: Colors.white,
+                title: Text(
+                  'Do you wish to Logout',
+                  style: GLTextStyles.labeltxtBlk16300,
+                ),
+                actions: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          "Cancel",
+                          style: TextStyle(color: ColorTheme.darkClr),
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Provider.of<HomeScreenController>(context,listen: false)
+                              .logOutFunction(context);
+                        },
+                        child: Text(
+                          "Logout",
+                          style: TextStyle(color: ColorTheme.darkClr),
+                        ),
+                      )
+                    ],
+                  )
+                ]));
   }
 }
