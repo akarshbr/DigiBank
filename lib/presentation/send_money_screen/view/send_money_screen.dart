@@ -1,7 +1,8 @@
 import 'package:digibank/core/constants/global_text_style.dart';
 import 'package:digibank/global_widget/global_meterial_btn.dart';
 import 'package:digibank/global_widget/text_form_field.dart';
-import 'package:digibank/presentation/mpin_validation_screen/view/mpin_validation_screen.dart';
+import 'package:digibank/presentation/send_money_screen/view/widget/mpin_validation_screen_same_bank.dart';
+import 'package:digibank/presentation/send_money_screen/view/widget/mpin_validation_different_bank.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
@@ -155,42 +156,66 @@ class SendMoney extends StatelessWidget {
                   child: InkWell(
                     onTap: () {
                       showModalBottomSheet(
+                        isScrollControlled: true,
                         context: context,
-                        isScrollControlled: true, // Enable dragging to adjust height
                         builder: (BuildContext context) {
                           return SingleChildScrollView(
-                            // Wrap with SingleChildScrollView
-                            physics: const AlwaysScrollableScrollPhysics(), // Enable scrolling
+                            physics: const AlwaysScrollableScrollPhysics(),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Center(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Padding(
-                                      padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
-                                      child: TextFormFieldRefactor(
-                                        hintText: "Enter Mobile Number",
-                                      ),
-                                    ),
-                                    const Padding(
+                                    Padding(
+                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        child: TextFormFieldRefactor(
+                                          hintText: 'Enter Account Number',
+                                          textEditingController: accountNumberController,
+                                        )),
+                                    Padding(
+                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        child: TextFormFieldRefactor(
+                                          hintText: 'Re-enter Account Number',
+                                          textEditingController: reEnterAccountNumberController,
+                                        )),
+                                    Padding(
+                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        child: TextFormFieldRefactor(
+                                          hintText: 'Enter IFSC',
+                                          textEditingController: ifscController,
+                                        )),
+                                    Padding(
+                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        child: TextFormFieldRefactor(
+                                          hintText: "Receivers Name(Optional)",
+                                          textEditingController: receiversUserNameController,
+                                        )),
+                                    Padding(
                                         padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
                                         child: TextFormFieldRefactor(
                                           hintText: "Enter Amount",
+                                          textEditingController: amountController,
                                         )),
                                     const SizedBox(
                                       height: 15,
                                     ),
                                     Center(
                                       child: SizedBox(
-                                        width: size.width * .3,
+                                        width: size.width * .4,
                                         height: size.height * .05,
                                         child: GLMetrialButton(
-                                          color: ColorTheme.darkClr,
-                                          text: 'PAY',
-                                          txtClr: ColorTheme.white,
-                                          style: GLTextStyles.subtitleWhite,
-                                        ),
+                                            route: MpinValidationScreenDiffBank(
+                                              accountNumber: accountNumberController.text.trim(),
+                                              reEnterAccountNumber: reEnterAccountNumberController.text.trim(),
+                                              ifsc: ifscController.text.trim(),
+                                              receiversUsername: receiversUserNameController.text.trim()??"No Name",
+                                              amount: amountController.text.trim(),
+                                            ),
+                                            color: ColorTheme.darkClr,
+                                            text: 'CONFIRM',
+                                            txtClr: ColorTheme.white,
+                                            style: GLTextStyles.subtitleWhite),
                                       ),
                                     ),
                                   ],
@@ -202,27 +227,31 @@ class SendMoney extends StatelessWidget {
                       );
                     },
                     child: Card(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                        color: ColorTheme.white,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            const Icon(
-                              color: Color(0xFFb57e3d),
-                              Icons.phone_iphone_rounded,
-                              size: 25,
-                            ),
-                            Text(
-                              "Transfer to different Bank",
-                              style: GLTextStyles.maincolor16,
-                            ),
-                            const Icon(
-                              color: Color(0xFFb57e3d),
-                              Icons.arrow_forward_ios,
-                              size: 20,
-                            )
-                          ],
-                        )),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      color: ColorTheme.white,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const Icon(
+                            color: Color(0xFFb57e3d),
+                            Icons.receipt,
+                            size: 30,
+                          ),
+                          Text(
+                            "Transfer to other Bank",
+                            style: GLTextStyles.maincolor16,
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          const Icon(
+                            color: Color(0xFFb57e3d),
+                            Icons.arrow_forward_ios,
+                            size: 20,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),

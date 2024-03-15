@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/constants/colors.dart';
-import '../../../global_widget/text_refactor.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../global_widget/text_refactor.dart';
 
-class MpinValidationScreen extends StatefulWidget {
-  const MpinValidationScreen(
+
+
+class MpinValidationScreenDiffBank extends StatefulWidget {
+  const MpinValidationScreenDiffBank(
       {super.key,
-      required this.accountNumber,
-      required this.reEnterAccountNumber,
-      required this.ifsc,
-      required this.receiversUsername,
-      required this.amount});
+        required this.accountNumber,
+        required this.reEnterAccountNumber,
+        required this.ifsc,
+        required this.receiversUsername,
+        required this.amount});
 
   final String accountNumber;
   final String reEnterAccountNumber;
@@ -22,10 +24,10 @@ class MpinValidationScreen extends StatefulWidget {
   final String amount;
 
   @override
-  State<MpinValidationScreen> createState() => _MpinValidationScreenState();
+  State<MpinValidationScreenDiffBank> createState() => _MpinValidationScreenDiffBankState();
 }
 
-class _MpinValidationScreenState extends State<MpinValidationScreen> {
+class _MpinValidationScreenDiffBankState extends State<MpinValidationScreenDiffBank> {
   var mpinController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
@@ -61,7 +63,7 @@ class _MpinValidationScreenState extends State<MpinValidationScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Provider.of<SendMoneyController>(context,listen: false).onSend(widget.accountNumber, widget.reEnterAccountNumber,
+                    Provider.of<SendMoneyController>(context,listen: false).onSendOtherBank(widget.accountNumber, widget.reEnterAccountNumber,
                         widget.ifsc, widget.receiversUsername, widget.amount, mpinController.text, context);
                   },
                   style: ElevatedButton.styleFrom(

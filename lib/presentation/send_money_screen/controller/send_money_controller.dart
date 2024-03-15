@@ -11,7 +11,7 @@ import '../../../core/app_utils/app_utils.dart';
 class SendMoneyController extends ChangeNotifier {
   late SharedPreferences sharedPreferences;
 
-  Future onSend(String accountNumber, String reEnterAccountNumber, String ifsc, String receiversUsername,
+  Future onSendSameBank(String accountNumber, String reEnterAccountNumber, String ifsc, String receiversUsername,
       String amount, String mpin,BuildContext context) async {
     fetchUsername().then((username) {
       var data = {
@@ -23,11 +23,38 @@ class SendMoneyController extends ChangeNotifier {
         "amount": amount,
         "mpin": mpin
       };
-      SendMoneyService.postTransactionData(data).then((recData) {
+      SendMoneyService.postTransactionDataSameBank(data).then((recData) {
         log("SendMoneyController>>${recData["message"]}");
         if (recData["message"] == "fund tranfered succesfully") {
           Navigator.pushAndRemoveUntil(
               context, MaterialPageRoute(builder: (context) => BottomNavigation()), (route) => false);
+          log(recData["message"]);
+        }else{
+          AppUtils.oneTimeSnackBar("failed", context: context);
+          log("LoginController>>onLogin>>failed");
+        }
+      });
+    });
+  }
+
+  Future onSendOtherBank(String accountNumber, String reEnterAccountNumber, String ifsc, String receiversUsername,
+      String amount, String mpin,BuildContext context) async {
+    fetchUsername().then((username) {
+      var data = {
+        "sender_user": username,
+        "account_number": accountNumber,
+        "confirm_account_number": reEnterAccountNumber,
+        "ifsc": ifsc,
+        "receiving_account_holder_name": receiversUsername,
+        "amount": amount,
+        "mpin": mpin
+      };
+      SendMoneyService.postTransactionDataDiffBank(data).then((recData) {
+        log("SendMoneyController>>${recData["message"]}");
+        if (recData["message"] == "fund tranfered succesfully") {
+          Navigator.pushAndRemoveUntil(
+              context, MaterialPageRoute(builder: (context) => BottomNavigation()), (route) => false);
+          log(recData["message"]);
         }else{
           AppUtils.oneTimeSnackBar("failed", context: context);
           log("LoginController>>onLogin>>failed");
