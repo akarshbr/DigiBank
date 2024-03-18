@@ -48,11 +48,9 @@ class _TransactionScreenState extends State<TransactionScreen> {
       ),
       body: Consumer<TransactionController>(
         builder: (context, tControl, child) {
-          return
-              // tControl.isLoading
-              //     ? const Center(child: CircularProgressIndicator())
-              //     :
-              ListView.builder(
+          return tControl.isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : ListView.separated(
                   itemCount: tControl.transactionHistory!.length,
                   itemBuilder: (context, index) {
                     TransactionModel transaction =
@@ -72,31 +70,35 @@ class _TransactionScreenState extends State<TransactionScreen> {
                             style: GLTextStyles.labeltxtBlk12,
                           ),
                         ),
-                        ListTile(
-                          title: Text(
-                            // Check whether it is payment received or payment done and mention that or if payment done for any bill payment
-                            transaction.userBillPayments != null
-                                ? 'Bill Payment: ${transaction.userBillPayments}'
-                                : 'Transaction',
-                            style: GLTextStyles.labeltxtBlk16,
-                          ),
-                          subtitle: Text(
-                            // Mention if received where it's received from if sent where to
-                            transaction.receivingAccountHolderNameUsername !=
-                                    null
-                                ? 'To: ${transaction.receivingAccountHolderNameUsername}'
-                                : 'From: ${transaction.senderUserUsername}',
-                            style: GLTextStyles.subtitleGrey,
-                          ),
-                          trailing: Text(
-                            // Amount
-                            "${transaction.amount}",
-                            style: GLTextStyles.labeltxtBlk16,
-                          ),
-                        ),
                       ],
                     );
-                  });
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    TransactionModel transaction =
+                        tControl.transactionHistory!.reversed.toList()[index];
+                    return ListTile(
+                      title: Text(
+                        // Check whether it is payment received or payment done and mention that or if payment done for any bill payment
+                        transaction.userBillPayments != null
+                            ? 'Bill Payment: ${transaction.userBillPayments}'
+                            : 'Transaction',
+                        style: GLTextStyles.labeltxtBlk16,
+                      ),
+                      subtitle: Text(
+                        // Mention if received where it's received from if sent where to
+                        transaction.receivingAccountHolderNameUsername != null
+                            ? 'To: ${transaction.receivingAccountHolderNameUsername ?? ""}'
+                            : 'From: ${transaction.senderUserUsername}',
+                        style: GLTextStyles.subtitleGrey,
+                      ),
+                      trailing: Text(
+                        // Amount
+                        "${transaction.amount}",
+                        style: GLTextStyles.labeltxtBlk16,
+                      ),
+                    );
+                  },
+                );
         },
       ),
     );
