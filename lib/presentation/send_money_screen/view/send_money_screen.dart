@@ -41,7 +41,8 @@ class SendMoney extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 80),
                 child: Container(
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(15)),
                   height: size.height * .1,
                   width: size.width * .8,
                   child: InkWell(
@@ -59,34 +60,58 @@ class SendMoney extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
                                         child: TextFormFieldRefactor(
                                           hintText: 'Enter Account Number',
-                                          textEditingController: accountNumberController,
+                                          textEditingController:
+                                              accountNumberController,
                                         )),
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
                                         child: TextFormFieldRefactor(
                                           hintText: 'Re-enter Account Number',
-                                          textEditingController: reEnterAccountNumberController,
+                                          textEditingController:
+                                              reEnterAccountNumberController,
                                         )),
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
                                         child: TextFormFieldRefactor(
                                           hintText: 'Enter IFSC',
                                           textEditingController: ifscController,
                                         )),
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
                                         child: TextFormFieldRefactor(
                                           hintText: "Receivers Username",
-                                          textEditingController: receiversUserNameController,
+                                          textEditingController:
+                                              receiversUserNameController,
                                         )),
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 15,
+                                            bottom: 15),
                                         child: TextFormFieldRefactor(
                                           hintText: "Enter Amount",
-                                          textEditingController: amountController,
+                                          textEditingController:
+                                              amountController,
                                         )),
                                     const SizedBox(
                                       height: 15,
@@ -97,11 +122,20 @@ class SendMoney extends StatelessWidget {
                                         height: size.height * .05,
                                         child: GLMetrialButton(
                                             route: MpinValidationScreen(
-                                              accountNumber: accountNumberController.text.trim(),
-                                              reEnterAccountNumber: reEnterAccountNumberController.text.trim(),
+                                              accountNumber:
+                                                  accountNumberController.text
+                                                      .trim(),
+                                              reEnterAccountNumber:
+                                                  reEnterAccountNumberController
+                                                      .text
+                                                      .trim(),
                                               ifsc: ifscController.text.trim(),
-                                              receiversUsername: receiversUserNameController.text.trim(),
-                                              amount: amountController.text.trim(),
+                                              receiversUsername:
+                                                  receiversUserNameController
+                                                      .text
+                                                      .trim(),
+                                              amount:
+                                                  amountController.text.trim(),
                                             ),
                                             color: ColorTheme.darkClr,
                                             text: 'CONFIRM',
@@ -118,7 +152,8 @@ class SendMoney extends StatelessWidget {
                       );
                     },
                     child: Card(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                       color: ColorTheme.white,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -168,34 +203,58 @@ class SendMoney extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
                                         child: TextFormFieldRefactor(
                                           hintText: 'Enter Account Number',
-                                          textEditingController: accountNumberController,
+                                          textEditingController:
+                                              accountNumberController,
                                         )),
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
                                         child: TextFormFieldRefactor(
                                           hintText: 'Re-enter Account Number',
-                                          textEditingController: reEnterAccountNumberController,
+                                          textEditingController:
+                                              reEnterAccountNumberController,
                                         )),
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
                                         child: TextFormFieldRefactor(
                                           hintText: 'Enter IFSC',
                                           textEditingController: ifscController,
                                         )),
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 10,
+                                            bottom: 10),
                                         child: TextFormFieldRefactor(
                                           hintText: "Receivers Name(Optional)",
-                                          textEditingController: receiversUserNameController,
+                                          textEditingController:
+                                              receiversUserNameController,
                                         )),
                                     Padding(
-                                        padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
+                                        padding: const EdgeInsets.only(
+                                            left: 15,
+                                            right: 15,
+                                            top: 15,
+                                            bottom: 15),
                                         child: TextFormFieldRefactor(
                                           hintText: "Enter Amount",
-                                          textEditingController: amountController,
+                                          textEditingController:
+                                              amountController,
                                         )),
                                     const SizedBox(
                                       height: 15,
@@ -206,11 +265,21 @@ class SendMoney extends StatelessWidget {
                                         height: size.height * .05,
                                         child: GLMetrialButton(
                                             route: MpinValidationScreenDiffBank(
-                                              accountNumber: accountNumberController.text.trim(),
-                                              reEnterAccountNumber: reEnterAccountNumberController.text.trim(),
+                                              accountNumber:
+                                                  accountNumberController.text
+                                                      .trim(),
+                                              reEnterAccountNumber:
+                                                  reEnterAccountNumberController
+                                                      .text
+                                                      .trim(),
                                               ifsc: ifscController.text.trim(),
-                                              receiversUsername: receiversUserNameController.text.trim()??"No Name",
-                                              amount: amountController.text.trim(),
+                                              receiversUsername:
+                                                  receiversUserNameController
+                                                          .text
+                                                          .trim() ??
+                                                      "No Name",
+                                              amount:
+                                                  amountController.text.trim(),
                                             ),
                                             color: ColorTheme.darkClr,
                                             text: 'CONFIRM',
@@ -227,7 +296,8 @@ class SendMoney extends StatelessWidget {
                       );
                     },
                     child: Card(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                       color: ColorTheme.white,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

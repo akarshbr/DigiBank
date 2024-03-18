@@ -52,17 +52,68 @@ class ApiHelper {
       if (response.statusCode == 200) {
         var data = response.body;
         var decodedData = jsonDecode(data);
-        log(decodedData["status"].toString());
         return decodedData;
       } else {
         log("Else Condition -> Api failed");
         var data = response.body;
         var decodedData = jsonDecode(data);
-        log(decodedData["status"].toString());
         return decodedData;
       }
     } catch (e) {
       log("$e");
+    }
+  }
+
+  static postBillData({
+    required String endPoint,
+    Map<String, String>? header,
+    required Map<String, dynamic> body,
+  }) async {
+    log("Api-helper>postBillData");
+    log("$body");
+    final url = Uri.parse(AppConfig.baseurl + endPoint);
+    log("$url");
+    try {
+      var response = await http.post(url, body: body);
+      log("Api Called => status code=${response.statusCode}");
+      if (response.statusCode == 201) {
+        var resdata = response.body;
+        var decodedData = jsonDecode(resdata);
+        var data={
+          "status":1,
+          "data":decodedData
+        };
+        return data;
+      } else if (response.statusCode == 203) {
+        var resdata = response.body;
+        var decodedData = jsonDecode(resdata);
+        var data={
+          "status":1,
+          "data":decodedData
+        };
+        return data;
+      } else if (response.statusCode == 400) {
+        var resdata = response.body;
+        var decodedData = jsonDecode(resdata);
+        var data={
+          "status":1,
+          "data":decodedData
+        };
+        return data;
+      } else {
+        log("Else Condition -> Api failed");
+        var resdata = response.body;
+        var decodedData = jsonDecode(resdata);
+        var data={
+          "status":0,
+          "data":decodedData
+        };
+        return data;
+      }
+    } catch (e) {
+      var error = e.toString();
+      log("++++++++++++$error");
+      rethrow;
     }
   }
 }

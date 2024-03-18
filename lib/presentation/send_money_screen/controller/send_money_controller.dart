@@ -27,11 +27,10 @@ class SendMoneyController extends ChangeNotifier {
         log("SendMoneyController>>${recData["message"]}");
         if (recData["message"] == "fund tranfered succesfully") {
           Navigator.pushAndRemoveUntil(
-              context, MaterialPageRoute(builder: (context) => BottomNavigation()), (route) => false);
+              context, MaterialPageRoute(builder: (context) => const BottomNavigation()), (route) => false);
           log(recData["message"]);
         }else{
           AppUtils.oneTimeSnackBar("failed", context: context);
-          log("LoginController>>onLogin>>failed");
         }
       });
     });
@@ -53,11 +52,10 @@ class SendMoneyController extends ChangeNotifier {
         log("SendMoneyController>>${recData["message"]}");
         if (recData["message"] == "fund tranfered succesfully") {
           Navigator.pushAndRemoveUntil(
-              context, MaterialPageRoute(builder: (context) => BottomNavigation()), (route) => false);
+              context, MaterialPageRoute(builder: (context) => const BottomNavigation()), (route) => false);
           log(recData["message"]);
         }else{
           AppUtils.oneTimeSnackBar("failed", context: context);
-          log("LoginController>>onLogin>>failed");
         }
       });
     });

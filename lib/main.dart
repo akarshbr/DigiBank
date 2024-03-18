@@ -3,6 +3,7 @@ import 'package:digibank/presentation/credit_score_screen/controller/credit_scr_
 import 'package:digibank/presentation/home_screen/controller/home_controler.dart';
 import 'package:digibank/presentation/login_screen/controller/login_controller.dart';
 import 'package:digibank/presentation/profile_screen/controller/profile_controller.dart';
+import 'package:digibank/presentation/recharge_and_pay_bills/controller/paybills_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/electricity/controller/electricity_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/mobile_recharge/controller/operator_controller.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/water/controller/water_controller.dart';
@@ -34,7 +35,8 @@ void main() {
     ChangeNotifierProvider(create: (context) => WaterController()),
     ChangeNotifierProvider(create: (context) => LoanTypeController()),
     ChangeNotifierProvider(create: (context) => RegistrationController()),
-    ChangeNotifierProvider(create: (context) => SendMoneyController())
+    ChangeNotifierProvider(create: (context) => SendMoneyController()),
+     ChangeNotifierProvider(create: (context) => PayBillsController()),
     // ChangeNotifierProvider(create: (context) => ),
   ], child: const MyApp()));
 }

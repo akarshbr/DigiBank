@@ -1,5 +1,6 @@
 import 'package:digibank/global_widget/title_and_textformfield.dart';
 import 'package:digibank/presentation/recharge_and_pay_bills/water/controller/water_controller.dart';
+import 'package:digibank/presentation/recharge_and_pay_bills/widget/mpin_paybills.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,7 @@ class WaterBillsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var amountController = TextEditingController();
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: GLAppBar(
@@ -32,7 +34,11 @@ class WaterBillsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Center(child: Text('digiBank.',style: GLTextStyles.digiBankGrey,)),
+              Center(
+                  child: Text(
+                'digiBank.',
+                style: GLTextStyles.digiBankGrey,
+              )),
               Consumer<WaterController>(builder: (context, waterController, _) {
                 return DropdownButton(
                     padding: const EdgeInsets.all(5),
@@ -44,9 +50,21 @@ class WaterBillsScreen extends StatelessWidget {
                     });
               }),
               const TitleAndTextFormField(text: "Enter Consumer ID"),
+              TitleAndTextFormField(
+                text: "₹ Enter Amount",
+                keyboardType: TextInputType.number,
+                textEditingController: amountController,
+              ),
               Center(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PayBillsMpin(
+                                catagory: "Water",
+                                amount: amountController.text)));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
@@ -54,9 +72,12 @@ class WaterBillsScreen extends StatelessWidget {
                           right: size.width * .2,
                           top: size.height * .02,
                           bottom: size.height * .02),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-                  child:
-                      const TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  child: const TextRefactor(
+                      text: "PROCEED",
+                      textSize: 16,
+                      textFontWeight: FontWeight.bold),
                 ),
               )
             ],
@@ -72,7 +93,8 @@ List<DropdownMenuItem<String>> get dropdownItems {
     const DropdownMenuItem(
       value: "Kerala Water Authority(KWA)",
       child: ListTile(
-          leading: Image(width: 30,image: AssetImage("asset/water_icon/kwa.png")),
+          leading:
+              Image(width: 30, image: AssetImage("asset/water_icon/kwa.png")),
           title: Text("Kerala Water Authority(KWA)")),
     )
   ];

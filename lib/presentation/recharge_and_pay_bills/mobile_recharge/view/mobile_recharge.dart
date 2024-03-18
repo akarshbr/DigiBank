@@ -8,12 +8,15 @@ import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/global_text_style.dart';
 import '../../../../global_widget/global_appbar.dart';
 import '../../../../global_widget/text_refactor.dart';
+import '../../widget/mpin_paybills.dart';
 import '../controller/operator_controller.dart';
+
 class MobileRecharge extends StatelessWidget {
   const MobileRecharge({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var amountController = TextEditingController();
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: GLAppBar(
@@ -33,9 +36,14 @@ class MobileRecharge extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Center(child: Text('digiBank.',style: GLTextStyles.digiBankGrey,)),
+              Center(
+                  child: Text(
+                'digiBank.',
+                style: GLTextStyles.digiBankGrey,
+              )),
               const TitleAndTextFormField(text: "Enter Mobile Number"),
-              Consumer<OperatorController>(builder: (context, operatorController, _) {
+              Consumer<OperatorController>(
+                  builder: (context, operatorController, _) {
                 return DropdownButton<String>(
                   padding: const EdgeInsets.all(5),
                   isExpanded: true,
@@ -48,10 +56,21 @@ class MobileRecharge extends StatelessWidget {
                   items: dropdownItems,
                 );
               }),
-              const TitleAndTextFormField(text: "₹ Enter Amount"),
+              TitleAndTextFormField(
+                text: "₹ Enter Amount",
+                keyboardType: TextInputType.number,
+                textEditingController: amountController,
+              ),
               Center(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PayBillsMpin(
+                                catagory: "Recharge",
+                                amount: amountController.text)));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorTheme.mainClr,
                       padding: EdgeInsets.only(
@@ -59,9 +78,12 @@ class MobileRecharge extends StatelessWidget {
                           right: size.width * .2,
                           top: size.height * .02,
                           bottom: size.height * .02),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-                  child:
-                      const TextRefactor(text: "PROCEED", textSize: 16, textFontWeight: FontWeight.bold),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  child: const TextRefactor(
+                      text: "PROCEED",
+                      textSize: 16,
+                      textFontWeight: FontWeight.bold),
                 ),
               )
             ],
@@ -77,22 +99,26 @@ List<DropdownMenuItem<String>> get dropdownItems {
     const DropdownMenuItem(
         value: "Airtel",
         child: ListTile(
-            leading: Image(width: 30, image: AssetImage("asset/operator_icon/airtel.png")),
+            leading: Image(
+                width: 30, image: AssetImage("asset/operator_icon/airtel.png")),
             title: Text("Airtel"))),
     const DropdownMenuItem(
         value: "BSNL",
         child: ListTile(
-            leading: Image(width: 30, image: AssetImage("asset/operator_icon/bsnl.png")),
+            leading: Image(
+                width: 30, image: AssetImage("asset/operator_icon/bsnl.png")),
             title: Text("BSNL"))),
     const DropdownMenuItem(
         value: "Jio",
         child: ListTile(
-            leading: Image(width: 30, image: AssetImage("asset/operator_icon/jio.png")),
+            leading: Image(
+                width: 30, image: AssetImage("asset/operator_icon/jio.png")),
             title: Text("Jio"))),
     const DropdownMenuItem(
         value: "VI",
         child: ListTile(
-            leading: Image(width: 30, image: AssetImage("asset/operator_icon/vi.png")),
+            leading: Image(
+                width: 30, image: AssetImage("asset/operator_icon/vi.png")),
             title: Text("data")))
   ];
   return menuItems;
