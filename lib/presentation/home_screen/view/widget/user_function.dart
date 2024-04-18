@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/global_text_style.dart';
-import '../../../request_money_screen/view/request_money.dart';
 import '../../../send_money_screen/view/send_money_screen.dart';
 import 'icon_btn.dart';
 
@@ -23,12 +22,6 @@ Container UsersFunctions(Size size, BuildContext context) {
             route: const SendMoney(),
             title: "Send Money",
             icon: FontAwesomeIcons.moneyBillTransfer,
-            style: GLTextStyles.labeltxtwhite,
-            color: ColorTheme.white),
-        IconBtn(context,
-            route: const RequestMoney(),
-            title: "Request Money",
-            icon: FontAwesomeIcons.moneyCheck,
             style: GLTextStyles.labeltxtwhite,
             color: ColorTheme.white),
         IconBtn(context,

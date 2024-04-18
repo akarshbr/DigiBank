@@ -34,7 +34,7 @@ class CreditScrScreen extends StatelessWidget {
                   'digiBank.',
                   style: GLTextStyles.digiBankGrey,
                 )),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Text(
               "Your Credit Report",
               style: GLTextStyles.labeltxtBlk16,

@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
+import 'package:digibank/core/app_utils/app_utils.dart';
+import 'package:digibank/repository/api/profile_screen/model/profile_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -8,39 +10,60 @@ import '../../../core/static_data/static_data.dart';
 import '../../../repository/api/profile_screen/services/profile_service.dart';
 
 class ProfileController extends ChangeNotifier {
+  late ProfileModel profileModel = ProfileModel();
   late SharedPreferences sharedPreferences;
-
+  final _fillMessage = StaticData.errorMsg;
+  bool isLoading = false;
   late Map<String, dynamic> userData;
-  final int _id = StaticData.id;
-  final String _username = StaticData.username;
-  final int _accNo = StaticData.accNo;
-  final int _balance = StaticData.balance;
 
-  final String _ifsc = StaticData.ifsc;
-  final int _mobileNo = StaticData.mobileNo;
-  final String _mailId = StaticData.mailid;
-
-  fetchProfileData() async {
+  fetchProfileData(context) async {
+    isLoading = true;
+    notifyListeners();
     log("ProfileController>>fetchProfileData");
-    fetchUserdetails().then((rawData) {
+    fetchUserDetails().then((rawData) {
       userData = json.decode(rawData);
       var uId = userData["id"];
-      ProfileService.fetchProfile(uId);
+      log("$uId");
+      ProfileService.fetchProfile(uId).then((resData) {
+        if (resData["status"] == 1) {
+          profileModel = ProfileModel.fromJson(resData["data"]);
+          isLoading=false;
+        } else {
+          AppUtils.oneTimeSnackBar("Error: Data Not Found ", context: context);
+        }
+        notifyListeners();
+      });
     });
+
   }
 
-  String get username => _username;
-  int get accNo => _accNo;
-  int get balance => _balance;
-  int get id => _id;
-  String get ifsc => _ifsc;
-  int get mobileNo => _mobileNo;
-  String get mailid => _mailId;
+  String? get firstName => profileModel.firstName;
+  String? get lastName => profileModel.lastName??_fillMessage;
+  String? get username => profileModel.username??_fillMessage;
+  int? get accNo => profileModel.accountNumber;
+  double? get balance => profileModel.accountBalance;
+  String? get address => profileModel.address??_fillMessage;
+  String? get ifsc => profileModel.ifsc;
+  int? get mobileNo => profileModel.phone;
+  String? get mailid => profileModel.email??_fillMessage;
+  // Method to get masked account number
+  String get maskedAccountNumber {
+    final String accountNumber = profileModel.accountNumber.toString();
+    if (accountNumber.length >= 8) {
+      final String firstFourDigits = accountNumber.substring(0, 4);
+      final String lastFourDigits = accountNumber.substring(accountNumber.length - 4);
+      final String maskedDigits = 'X' * (accountNumber.length - 8); // Number of masked digits between first and last four digits
+      return '$firstFourDigits$maskedDigits$lastFourDigits';
+    } else {
+      return accountNumber;
+    }
+  }
 
-  Future<String> fetchUserdetails() async {
+
+  Future<String> fetchUserDetails() async {
     sharedPreferences = await SharedPreferences.getInstance();
     var uData = sharedPreferences.getString(AppConfig.userData);
-    log("fetchusername >> ${uData!}");
+    log("ProfileController>>fetch username >> ${uData!}");
     return uData;
   }
 }

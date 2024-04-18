@@ -6,8 +6,9 @@ import 'package:provider/provider.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/global_text_style.dart';
 
-Consumer<HomeController> UserDetailsCard(Size size) {
-  return Consumer<HomeController>(
+Consumer<HomeScreenController> userDetailsCard(
+    Size size, String name, int accountNumber, double balance) {
+  return Consumer<HomeScreenController>(
     builder: (context, hControl, child) {
       return Container(
         width: size.aspectRatio,
@@ -40,25 +41,16 @@ Consumer<HomeController> UserDetailsCard(Size size) {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  hControl.username,
+                  name,
                   style: GLTextStyles.titleTextBlk,
                 ),
-                // TextButton(
-                //     onPressed: () {
-                //       Navigator.of(context).push(MaterialPageRoute(
-                //           builder: (context) => ProfileScreen()));
-                //     },
-                //     child: Text(
-                //       "View All Accounts",
-                //       style: GLTextStyles.bodyTextGrey,
-                //     ))
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${hControl.accNo}",
+                  "${hControl.maskedAccountNumber}",
                   style: GLTextStyles.subtitleBlk,
                 ),
                 TextButton(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/colors.dart';
-import '../../../core/constants/global_text_style.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/global_text_style.dart';
 
 Widget dateSection(String date) {
     return Container(

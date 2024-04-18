@@ -23,7 +23,7 @@ class ButtonsForLoan extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GLMetrialButton(
-              route: RequestLoanScreen(),
+              route: const RequestLoanScreen(),
               width: size.width * .35,
               height: size.height * .065,
               color: ColorTheme.darkClr,

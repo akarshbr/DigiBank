@@ -19,7 +19,7 @@ class GLTextStyles {
     color: ColorTheme.black,
   );
   static TextStyle titleWhite = GoogleFonts.poppins(
-    fontSize: 22.0,
+    fontSize: 18.0,
     fontWeight: FontWeight.w600,
     color: ColorTheme.white,
   );

@@ -1,14 +1,14 @@
 // To parse this JSON data, do
 //
-//     final profileModel = profileModelFromJson(jsonString);
+//     final accSummeryModel = accSummeryModelFromJson(jsonString);
 
 import 'dart:convert';
 
-ProfileModel profileModelFromJson(String str) => ProfileModel.fromJson(json.decode(str));
+AccSummeryModel accSummeryModelFromJson(String str) => AccSummeryModel.fromJson(json.decode(str));
 
-String profileModelToJson(ProfileModel data) => json.encode(data.toJson());
+String accSummeryModelToJson(AccSummeryModel data) => json.encode(data.toJson());
 
-class ProfileModel {
+class AccSummeryModel {
     int? id;
     String? password;
     dynamic lastLogin;
@@ -29,7 +29,7 @@ class ProfileModel {
     List<dynamic>? groups;
     List<dynamic>? userPermissions;
 
-    ProfileModel({
+    AccSummeryModel({
         this.id,
         this.password,
         this.lastLogin,
@@ -51,7 +51,7 @@ class ProfileModel {
         this.userPermissions,
     });
 
-    factory ProfileModel.fromJson(Map<String, dynamic> json) => ProfileModel(
+    factory AccSummeryModel.fromJson(Map<String, dynamic> json) => AccSummeryModel(
         id: json["id"],
         password: json["password"],
         lastLogin: json["last_login"],

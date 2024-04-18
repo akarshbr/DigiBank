@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import '../../../helper/api_helper.dart';
 
-class ProfileService {
+class ACCSummaryService {
   static Future<dynamic> fetchProfile(id) async {
     try {
       var decodedData = await ApiHelper.getData(
